@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use Faker\Core\File;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
@@ -14,13 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Storage::deleteDirectory('categories');
-        Storage::deleteDirectory('subcategories');
-        Storage::deleteDirectory('products');
+        FacadesFile::deleteDirectory(public_path('assets/images/categories'));
+        FacadesFile::deleteDirectory(public_path('assets/images/subcategories'));
+        FacadesFile::deleteDirectory(public_path('assets/images/products'));
 
-        Storage::makeDirectory('categories');
-        Storage::makeDirectory('subcategories');
-        Storage::makeDirectory('products');
+        FacadesFile::makeDirectory(public_path('assets/images/categories'));
+        FacadesFile::makeDirectory(public_path('assets/images/subcategories'));
+        FacadesFile::makeDirectory(public_path('assets/images/products'));
 
 
         $this->call(UserSeeder::class);
