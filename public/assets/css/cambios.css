@@ -1,0 +1,163 @@
+/* Header */
+.header-height-1 {
+    min-height: auto;
+}
+.main-menu > nav > ul > li > ul.mega-menu-style {
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+.main-menu
+    > nav
+    > ul
+    > li
+    > ul.mega-menu-style
+    > li
+    > ul
+    > div
+    > div
+    li
+    > a.dropdown-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.main-menu > nav > ul > li > ul li,
+.main-menu > nav > ul > li > ul > div > div li {
+    display: block;
+    position: relative;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.main-menu > nav > ul > li > ul li:last-child,
+.main-menu > nav > ul > li > ul > div > div li:last-child {
+    margin-bottom: 0px;
+}
+
+.main-menu > nav > ul > li > ul li a,
+.main-menu > nav > ul > li > ul > div > div li a {
+    display: block;
+    color: #000000;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.main-menu > nav > ul > li > ul li:hover > a,
+.main-menu > nav > ul > li > ul > div > div li:hover > a {
+    color: #e97730;
+}
+.main-menu > nav > ul > li > ul.mega-menu-style {
+    width: 750px;
+    padding: 28px 30px 10px;
+    text-align: left;
+}
+.main-menu > nav > ul > li > ul.mega-menu-style.mega-menu-mrg-1 {
+    margin-left: calc(50% - 35vw);
+    margin-right: calc(50% - 50vw);
+}
+.main-menu > nav > ul > li > ul.mega-menu-style {
+    width: calc(100vw - 7vw);
+}
+.main-menu > nav > ul > li > ul.mega-menu-style.mega-menu-mrg-1 {
+    left: 0px;
+}
+/* Cambios en el dropbottom user */
+.language-currency-wrap .currency-wrap {
+    margin-right: 0px;
+}
+.language-currency-wrap .border-style::before {
+    display: none;
+}
+.hover__orange:hover {
+    color: #e97730;
+}
+
+@media only screen and (max-width: 767px) {
+    .language-currency-wrap.language-currency-wrap-modify
+        .currency-wrap
+        .currency-dropdown,
+    .language-currency-wrap.language-currency-wrap-modify
+        .currency-wrap
+        .language-dropdown,
+    .language-currency-wrap.language-currency-wrap-modify
+        .language-wrap
+        .currency-dropdown,
+    .language-currency-wrap.language-currency-wrap-modify
+        .language-wrap
+        .language-dropdown {
+        width: 122px;
+        margin-left: -20px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+}
+
+/* Productos */
+.content__product {
+    width: 100%;
+    height: 300px;
+}
+.product-slider-active-1.swiper-container {
+    padding: 90px 0 90px 0;
+}
+
+/* Loading */
+
+.loading-skeleton h1,
+.loading-skeleton h2,
+.loading-skeleton h3,
+.loading-skeleton h4,
+.loading-skeleton h5,
+.loading-skeleton h6,
+.loading-skeleton p,
+.loading-skeleton li,
+.loading-skeleton .btn,
+.loading-skeleton label,
+.loading-skeleton .form-control {
+    color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #eee;
+    border-color: #eee;
+}
+.loading-skeleton h1::placeholder,
+.loading-skeleton h2::placeholder,
+.loading-skeleton h3::placeholder,
+.loading-skeleton h4::placeholder,
+.loading-skeleton h5::placeholder,
+.loading-skeleton h6::placeholder,
+.loading-skeleton p::placeholder,
+.loading-skeleton li::placeholder,
+.loading-skeleton .btn::placeholder,
+.loading-skeleton label::placeholder,
+.loading-skeleton .form-control::placeholder {
+    color: transparent;
+}
+
+@keyframes loading-skeleton {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.loading-skeleton {
+    pointer-events: none;
+    animation: loading-skeleton 1s infinite alternate;
+}
+.loading-skeleton img {
+    filter: grayscale(100) contrast(0%) brightness(1.8);
+}
+/* Utilidades */
+
+.w-70 {
+    width: 70%;
+}
+
+.ft-14 {
+    font-size: 14px;
+}
