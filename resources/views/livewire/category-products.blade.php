@@ -17,12 +17,12 @@
 
                 </style>
             @endif --}}
-            <div class="swiper-slide">
+            <div class="swiper-slide" :wire:key="$product->id">
                 <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-img img-zoom mb-25">
                         <a href="product-details.html">
                             <div class="content__product"
-                                style="background-image: url({{ asset('assets/images/product/product-9.png') }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                style="background-image: url({{ asset('assets/images/' . $product->images->first()->url) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
                             </div>
                         </a>
                         <div class="product-badge badge-top badge-right badge-pink">

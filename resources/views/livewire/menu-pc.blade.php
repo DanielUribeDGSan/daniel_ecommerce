@@ -70,10 +70,10 @@
                                                                     style="height: 300px">
                                                                     <li>
                                                                         <div class="mb-3"
-                                                                            style="width: 150px; height: 100px;background-image: url('{{ asset('assets/images/product/product-1.png') }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                                                            style="width: 150px; height: 100px;background-image: url('{{ asset('assets/images/categories/' . $category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
                                                                         </div>
                                                                         <a class="dropdown-title"
-                                                                            href="#">{{ $category->name }}</a>
+                                                                            href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
                                                                         <ul>
                                                                             @foreach ($category->subcategories as $subcategory)
                                                                                 <li><a

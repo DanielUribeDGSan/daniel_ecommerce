@@ -23,7 +23,7 @@
                      @foreach ($categories as $category)
 
                          <li>
-                             <a href="#">{{ $category->name }}</a>
+                             <a href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
                              <ul>
                                  @foreach ($category->subcategories as $subcategory)
                                      <li><a href="index.html">{{ $subcategory->name }} </a></li>
