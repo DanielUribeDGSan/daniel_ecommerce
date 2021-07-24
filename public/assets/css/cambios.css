@@ -59,6 +59,7 @@
 }
 .main-menu > nav > ul > li > ul.mega-menu-style {
     width: calc(100vw - 7vw);
+    height: auto;
 }
 .main-menu > nav > ul > li > ul.mega-menu-style.mega-menu-mrg-1 {
     left: 0px;
