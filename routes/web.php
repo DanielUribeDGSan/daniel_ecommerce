@@ -20,6 +20,9 @@ Route::get('/', [App\Http\Controllers\WebController::class, 'inicio'])->name('in
 
 Route::get('categorias/{category}', [App\Http\Controllers\CategoryController::class, 'categoria'])->name('categoria');
 
+Route::get('productos/{product}', [App\Http\Controllers\ProductController::class, 'producto'])->name('producto');
+
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

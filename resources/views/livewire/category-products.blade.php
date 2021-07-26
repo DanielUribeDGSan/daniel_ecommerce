@@ -4,7 +4,7 @@
             <div class="swiper-slide" :wire:key="$product->id">
                 <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-img img-zoom mb-25">
-                        <a href="product-details.html">
+                        <a href="{{ route('producto', $product) }}">
                             <div class="content__product"
                                 style="background-image: url({{ asset('assets/images/' . $product->images->first()->url) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
                             </div>
@@ -26,7 +26,8 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h3><a href="product-details.html">{{ $product->name }} </a></h3>
+                        <h3><a href="{{ route('producto', $product) }}">{{ Str::limit($product->name, 20) }} </a>
+                        </h3>
                         <div class="product-price">
                             <span>{{ $product->price }} MXN</span>
                         </div>

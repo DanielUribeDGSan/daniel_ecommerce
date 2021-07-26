@@ -102,6 +102,14 @@
     width: 100%;
     height: 300px;
 }
+.content__product__detail__small {
+    width: 100%;
+    height: 96px;
+}
+.content__product__detail {
+    width: 100%;
+    height: 522px;
+}
 .product-slider-active-1.swiper-container {
     padding: 90px 0 90px 0;
 }
@@ -154,7 +162,34 @@
 .loading-skeleton img {
     filter: grayscale(100) contrast(0%) brightness(1.8);
 }
+/* Paginacion */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #e97730;
+    border-color: #e97730;
+}
+.page-link {
+    position: relative;
+    display: block;
+    color: #e97730;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 /* Utilidades */
+
+.active-a {
+    color: #e97730 !important;
+}
 
 .w-70 {
     width: 70%;
