@@ -414,7 +414,7 @@
     });
 
     // Instantiate EasyZoom instances
-    var $easyzoom = $('.easyzoom').easyZoom();
+    // var $easyzoom = $('.easyzoom').easyZoom();
 
     /*----------------------------------------
             Product details small img slider 1
