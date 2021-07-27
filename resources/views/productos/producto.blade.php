@@ -70,7 +70,7 @@
                             {{-- <span class="old-price">$25.89 </span> --}}
                             <span class="new-price">{{ $product->price }} MXN</span>
                         </div>
-                        {{-- <div class="product-details-review">
+                        <div class="product-details-review">
                             <div class="product-rating">
                                 <i class=" ti-star"></i>
                                 <i class=" ti-star"></i>
@@ -79,7 +79,7 @@
                                 <i class=" ti-star"></i>
                             </div>
                             <span>( 1 Customer Review )</span>
-                        </div> --}}
+                        </div>
                         <div class="product-color product-color-active product-details-color">
                             <span>Color :</span>
                             <ul>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="product-details-meta">
                             <ul>
-                                <li><span class="title">SKU:</span> Ch-256xl</li>
+                                <li><span class="title">Marca:</span> {{ $product->brand->name }}</li>
                                 <li><span class="title">Category:</span>
                                     <ul>
                                         <li><a href="#">Office</a>,</li>
@@ -137,20 +137,12 @@
             <div class="description-review-topbar nav" data-aos="fade-up" data-aos-delay="200">
                 <a class="active" data-bs-toggle="tab" href="#des-details1"> Description </a>
                 <a data-bs-toggle="tab" href="#des-details2" class=""> Information </a>
-                <a data-bs-toggle="tab" href="#des-details3" class=""> Reviews </a>
+                {{-- <a data-bs-toggle="tab" href="#des-details3" class=""> Reviews </a> --}}
             </div>
             <div class="tab-content">
                 <div id="des-details1" class="tab-pane active">
                     <div class="product-description-content text-center">
-                        <p data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. </p>
-                        <p data-aos="fade-up" data-aos-delay="400">Excepteur sint occaecat cupidatat non proident, sunt
-                            in culpa qui officia deserunt mollit anim id est laborum. Sed ut per unde omnis iste natus
-                            error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-                            ab illo</p>
+                        <p data-aos="fade-up" data-aos-delay="200">{{ $product->description }}</p>
                     </div>
                 </div>
                 <div id="des-details2" class="tab-pane">
@@ -173,7 +165,7 @@
                         </table>
                     </div>
                 </div>
-                <div id="des-details3" class="tab-pane">
+                {{-- <div id="des-details3" class="tab-pane">
                     <div class="review-wrapper">
                         <h3>1 review for Sleeve Button Cowl Neck</h3>
                         <div class="single-review">
@@ -244,7 +236,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
