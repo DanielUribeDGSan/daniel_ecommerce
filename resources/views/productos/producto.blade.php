@@ -80,28 +80,13 @@
                             </div>
                             <span>( 1 Customer Review )</span>
                         </div>
-                        <div class="product-color product-color-active product-details-color">
-                            <span>Color :</span>
-                            <ul>
-                                <li><a title="Pink" class="pink" href="#">pink</a></li>
-                                <li><a title="Yellow" class="active yellow" href="#">yellow</a></li>
-                                <li><a title="Purple" class="purple" href="#">purple</a></li>
-                            </ul>
-                        </div>
-                        <div class="product-details-action-wrap">
-                            <div class="product-quality">
-                                <input class="cart-plus-minus-box input-text qty text" name="qtybutton" value="1">
-                            </div>
-                            <div class="single-product-cart btn-hover">
-                                <a href="#">Add to cart</a>
-                            </div>
-                            <div class="single-product-wishlist">
-                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
-                            </div>
-                            <div class="single-product-compare">
-                                <a title="Compare" href="#"><i class="pe-7s-shuffle"></i></a>
-                            </div>
-                        </div>
+                        @if ($product->subcategory->size)
+                            @livewire('add-cart-item-size',['product' => $product])
+                        @elseif($product->subcategory->color)
+                            @livewire('add-cart-item-color',['product' => $product])
+                        @else
+                            @livewire('add-cart-item',['product' => $product])
+                        @endif
                         <div class="product-details-meta">
                             <ul>
                                 <li><span class="title">Marca:</span> {{ $product->brand->name }}</li>
