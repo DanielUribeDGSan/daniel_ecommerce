@@ -5482,9 +5482,21 @@ textarea {
     padding: 20px 37px;
     z-index: 1;
 }
+.single-product-cart > button {
+    display: inline-block;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #e97730;
+    padding: 20px 37px;
+    z-index: 1;
+    border: 0px;
+}
 
 @media only screen and (max-width: 767px) {
     .single-product-cart > a {
+        padding: 20px 17px;
+    }
+    .single-product-cart > button {
         padding: 20px 17px;
     }
 }
@@ -5499,8 +5511,19 @@ textarea {
     color: #010101;
 }
 
+.single-product-wishlist button,
+.single-product-compare button {
+    font-size: 18px;
+    color: #010101;
+}
+
 .single-product-wishlist a:hover,
 .single-product-compare a:hover {
+    color: #e97730;
+}
+
+.single-product-wishlist button:hover,
+.single-product-compare button:hover {
     color: #e97730;
 }
 
