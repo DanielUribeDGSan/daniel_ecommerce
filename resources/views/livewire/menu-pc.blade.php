@@ -237,11 +237,9 @@
                             <div class="header-action-style">
                                 <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
                             </div>
-                            <div class="header-action-style header-action-cart">
-                                <a class="cart-active" href="#"><i class="pe-7s-shopbag"></i>
-                                    <span class="product-count bg-black">01</span>
-                                </a>
-                            </div>
+
+                            @livewire('icon-cart')
+
                             <div class="header-action-style d-block d-lg-none">
                                 <a class="mobile-menu-active-button" href="#"><i class="pe-7s-menu"></i></a>
                             </div>

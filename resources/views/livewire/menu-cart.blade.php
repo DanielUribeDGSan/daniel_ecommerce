@@ -2,41 +2,52 @@
     <div class="sidebar-cart-all">
         <a class="cart-close" href="#"><i class="pe-7s-close"></i></a>
         <div class="cart-content">
-            <h3>Shopping Cart</h3>
+            <h3>Carrito de compras</h3>
             <ul>
-                <li>
-                    <div class="cart-img">
-                        <a href="#"><img src="{{ asset('assets/images/cart/cart-1.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="cart-title">
-                        <h4><a href="#">Stylish Swing Chair</a></h4>
-                        <span> 1 × $49.00 </span>
-                    </div>
-                    <div class="cart-delete">
-                        <a href="#">×</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="cart-img">
-                        <a href="#"><img src="{{ asset('assets/images/cart/cart-2.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="cart-title">
-                        <h4><a href="#">Modern Chairs</a></h4>
-                        <span> 1 × $49.00 </span>
-                    </div>
-                    <div class="cart-delete">
-                        <a href="#">×</a>
-                    </div>
-                </li>
+                @forelse (Cart::content() as $item)
+                    <li>
+                        <div class="cart-img">
+                            <a href="#">
+                                @if ($item->options->image)
+                                    <div class="content__product__cart"
+                                        style="background-image: url({{ asset($item->options->image) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                    </div>
+                                @else
+                                    <div class="content__product__cart"
+                                        style="background-image: url({{ asset($item->options['image']) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                    </div>
+                                @endif
+                            </a>
+                        </div>
+                        <div class="cart-title">
+                            <h4><a href="#">{{ $item->name }}</a></h4>
+                            <span> {{ $item->qty }} × {{ $item->price }} MXN</span>
+                            @isset($item->options['color'])
+                                <span> {{ $item->options['color'] }}</span>
+                            @endisset
+                        </div>
+                        <div class="cart-delete">
+                            <a href="#">×</a>
+                        </div>
+                    </li>
+                @empty
+                    <li>
+                        <div class="cart-title">
+                            <h4><a>No tiene ningún item en el carrito</a></h4>
+                        </div>
+                    </li>
+                @endforelse
             </ul>
-            <div class="cart-total">
-                <h4>Subtotal: <span>$170.00</span></h4>
-            </div>
+            @if (Cart::count())
+                <div class="cart-total">
+                    <h4>Subtotal: <span>{{ Cart::subtotal() }} MXN</span></h4>
+                </div>
+            @endif
             <div class="cart-btn btn-hover">
-                <a class="theme-color" href="cart.html">view cart</a>
+                <a class="theme-color" href="cart.html">Ver el carrito de compras</a>
             </div>
             <div class="checkout-btn btn-hover">
-                <a class="theme-color" href="checkout.html">checkout</a>
+                <a class="theme-color" href="checkout.html">Pagar</a>
             </div>
         </div>
     </div>

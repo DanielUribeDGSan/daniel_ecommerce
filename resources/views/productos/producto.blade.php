@@ -46,7 +46,7 @@
                                     <div class="swiper-slide">
                                         <div class="easyzoom-style">
                                             <div class="easyzoom easyzoom--overlay">
-                                                <a href="{{ asset('assets/images/' . $image->url) }}">
+                                                <a>
                                                     <div class="content__product__detail"
                                                         style="background-image: url({{ asset('assets/images/' . $image->url) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
                                                     </div>

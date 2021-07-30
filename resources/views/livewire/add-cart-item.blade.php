@@ -1,6 +1,6 @@
 <div x-data>
     <div class="product-details-action-wrap mt-3">
-        <div class="product-quality">
+        <div class="product-quality" wire:loading.remove>
             <button class="dec qtybutton" disabled x-bind:disabled="$wire.qty <= 1" wire:loading.attr="disabled"
                 wire:target="decrement" wire:click="decrement" style="border: none;
     background: transparent;
@@ -15,13 +15,16 @@
     padding: 0px;
     color: #8f8f8f;">+</button>
         </div>
-        <div class="single-product-cart btn-hover">
-            <a href="#">Add to cart</a>
+        <div class="single-product-cart btn-hover" wire:loading.remove>
+            <button wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem">Agregar al carrito</button>
         </div>
-        <div class="single-product-wishlist">
+        <div wire:loading>
+            <x-loading-cart />
+        </div>
+        <div class="single-product-wishlist" wire:loading.remove>
             <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
         </div>
-        <div class="single-product-compare">
+        <div class="single-product-compare" wire:loading.remove>
             <a title="Compare" href="#"><i class="pe-7s-shuffle"></i></a>
         </div>
     </div>

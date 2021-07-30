@@ -4,12 +4,12 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class MenuCart extends Component
+class IconCart extends Component
 {
     protected $listeners = ['render'];
 
     public function render()
     {
-        return view('livewire.menu-cart');
+        return view('livewire.icon-cart');
     }
 }

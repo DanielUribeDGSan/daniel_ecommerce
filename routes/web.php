@@ -31,3 +31,8 @@ Route::get('productos/{product}', [App\Http\Controllers\ProductController::class
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('web.inicio');
 })->name('dashboard');
+
+
+Route::get('prueba', function () {
+    \Cart::destroy();
+});
