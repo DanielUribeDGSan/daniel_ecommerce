@@ -405,6 +405,31 @@ button:disabled {
         opacity: 1;
     }
 }
+/* Cart */
+.cart_anchor {
+    float: right;
+    vertical-align: top;
+    background: url("../images/logo/logo.png") no-repeat center center / 100%
+        auto;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;
+}
+.img__none {
+    display: none;
+}
+.img__block {
+    display: block;
+}
+.img-float {
+    width: 10px;
+    position: fixed;
+    top: 0%;
+    left: 20px;
+    z-index: -1;
+    transition: all 300ms ease 0ms;
+}
+
 /* Utilidades */
 
 .active-a {

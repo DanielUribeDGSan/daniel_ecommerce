@@ -118,10 +118,9 @@
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </head>
-
-
 
 
 <body>
@@ -330,12 +329,11 @@
     <script src="{{ asset('assets/js/plugins/ajax-mail.js') }}" async></script>
     <script src="{{ asset('assets/js/loading.js') }}"></script>
 
-    <!-- Main JS -->
+
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
-    <script>
 
-    </script>
+
 
 </body>
 

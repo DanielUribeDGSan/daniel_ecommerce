@@ -87,24 +87,7 @@
                         @else
                             @livewire('add-cart-item',['product' => $product])
                         @endif
-                        <div class="product-details-meta">
-                            <ul>
-                                <li><span class="title">Marca:</span> {{ $product->brand->name }}</li>
-                                <li><span class="title">Category:</span>
-                                    <ul>
-                                        <li><a href="#">Office</a>,</li>
-                                        <li><a href="#">Home</a></li>
-                                    </ul>
-                                </li>
-                                @if ($product->quantity)
-                                    <li><span class="title">Disponible:</span>
-                                        <ul class="tag">
-                                            <li><a href="#">{{ $product->quantity }}</a></li>
-                                        </ul>
-                                    </li>
-                                @endif
-                            </ul>
-                        </div>
+
                         <div class="social-icon-style-4">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-dribbble"></i></a>

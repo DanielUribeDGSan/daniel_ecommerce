@@ -11,7 +11,9 @@ class AddCartItemColor extends Component
     public $product, $colors, $color_id;
     public $quantity = 0;
     public $qty = 1;
-    public $options = [];
+    public $options = [
+        'size_id' => null
+    ];
 
     public function mount()
     {
@@ -21,9 +23,10 @@ class AddCartItemColor extends Component
 
     public function changeColorId($value)
     {
+        $this->color_id = $value;
         $color = $this->product->colors->find($value);
-        $this->qty = 1;
-        $this->quantity = $color->pivot->quantity;
+        $this->reset('qty');
+        $this->quantity = qty_available($this->product->id, $color->id);
         $this->options['color'] = $color->name;
     }
 
@@ -39,16 +42,26 @@ class AddCartItemColor extends Component
 
     public function addItem()
     {
-        FacadesCart::add([
-            'id' => $this->product->id,
-            'name' => $this->product->name,
-            'qty' => $this->qty,
-            'price' => $this->product->price,
-            'weight' => 550,
-            'options' => $this->options
-        ]);
-        $this->emitTo('menu-cart', 'render');
-        $this->emitTo('icon-cart', 'render');
+        $this->quantity = qty_available($this->product->id, $this->color_id->id);
+
+        if ($this->qty > $this->quantity) {
+            $this->emitTo('menu-cart', 'render');
+            $this->emitTo('icon-cart', 'render');
+            $this->reset('qty');
+        } else {
+            FacadesCart::add([
+                'id' => $this->product->id,
+                'name' => $this->product->name,
+                'qty' => $this->qty,
+                'price' => $this->product->price,
+                'weight' => 550,
+                'options' => $this->options
+            ]);
+            $this->quantity = qty_available($this->product->id, $this->color_id);
+            $this->emitTo('menu-cart', 'render');
+            $this->emitTo('icon-cart', 'render');
+            $this->reset('qty');
+        }
     }
 
     public function render()

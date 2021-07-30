@@ -21,9 +21,12 @@
                         </div>
                         <div class="cart-title">
                             <h4><a href="#">{{ $item->name }}</a></h4>
-                            <span> {{ $item->qty }} × {{ $item->price }} MXN</span>
+                            <span> {{ $item->qty }} × {{ $item->price }} MXN</span><br>
                             @isset($item->options['color'])
-                                <span> {{ $item->options['color'] }}</span>
+                                <span><b>Color:</b> {{ $item->options['color'] }}</span><br>
+                            @endisset
+                            @isset($item->options['size'])
+                                <span><b>Talla:</b> {{ $item->options['size'] }}</span>
                             @endisset
                         </div>
                         <div class="cart-delete">
