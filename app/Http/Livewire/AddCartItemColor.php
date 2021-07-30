@@ -42,7 +42,7 @@ class AddCartItemColor extends Component
 
     public function addItem()
     {
-        $this->quantity = qty_available($this->product->id, $this->color_id->id);
+        $this->quantity = qty_available($this->product->id, $this->color_id);
 
         if ($this->qty > $this->quantity) {
             $this->emitTo('menu-cart', 'render');
