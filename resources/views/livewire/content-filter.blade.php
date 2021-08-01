@@ -56,8 +56,7 @@
                                                             wire:loading.attr="disabled"
                                                             wire:target="addItem({{ $product->id }})"><i
                                                                 class="pe-7s-cart"></i>
-                                                            Add
-                                                            to cart </button>
+                                                            Agregar al carrito </button>
                                                     </div>
                                                 </div>
                                                 <div class="product-content">

@@ -501,26 +501,29 @@
     });
 
     // Related product active
-    var relatedProductActive = new Swiper('.related-product-active', {
-        loop: true,
-        spaceBetween: 30,
-        breakpoints: {
-            320: {
-                slidesPerView: 1
+    Livewire.on('swiper2', function () {
+
+        var relatedProductActive = new Swiper('.related-product-active', {
+            loop: false,
+            spaceBetween: 30,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1
+                },
+                576: {
+                    slidesPerView: 2
+                },
+                768: {
+                    slidesPerView: 3
+                },
+                992: {
+                    slidesPerView: 3
+                },
+                1200: {
+                    slidesPerView: 4
+                }
             },
-            576: {
-                slidesPerView: 2
-            },
-            768: {
-                slidesPerView: 3
-            },
-            992: {
-                slidesPerView: 3
-            },
-            1200: {
-                slidesPerView: 4
-            }
-        },
+        });
     });
 
     /*-----------------------

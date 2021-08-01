@@ -32,27 +32,26 @@ class CategoryProducts extends Component
         $this->colorArr = $product->colors->first();
         $this->size = $product->sizes->first();
 
-        if (!isset($this->colorArr->name) && !isset($this->size)) {
-            $this->options = [
-                'color_id' => null,
-                'size_id' => null
-            ];
-            $this->quantity = qty_available($product->id);
-        }
-        if (isset($this->colorArr->name)) {
-            $this->options['color'] = $this->colorArr->name;
-            $this->options = [
-                'size_id' => null
-            ];
-            $this->quantity = qty_available($product->id, $this->colorArr->id);
-        }
         if (isset($this->size)) {
 
             $this->colorSize = $this->size->colors->find($this->size->id);
             $this->options['size'] = $this->size->name;
             $this->options['color'] = $this->colorSize->name;
             $this->quantity = qty_available($product->id, $this->colorSize->id, $this->size->id);
+        } else if (isset($this->colorArr->name)) {
+            $this->options = [
+                'size_id' => null
+            ];
+            $this->options['color'] = $this->colorArr->name;
+            $this->quantity = qty_available($product->id, $this->colorArr->id);
+        } else if (!isset($this->colorArr->name) && !isset($this->size)) {
+            $this->options = [
+                'color_id' => null,
+                'size_id' => null
+            ];
+            $this->quantity = qty_available($product->id);
         }
+
         $this->options['image'] = asset('assets/images/' . $product->images->first()->url);
 
         if ($this->qty > $this->quantity) {

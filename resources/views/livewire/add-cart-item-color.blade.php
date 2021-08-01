@@ -89,12 +89,12 @@
     <div class="product-details-meta" wire:loading.remove>
         <ul>
             <li><span class="title">Marca:</span> {{ $product->brand->name }}</li>
-            <li><span class="title">Category:</span>
+            {{-- <li><span class="title">Category:</span>
                 <ul>
-                    <li><a href="#">Office</a>,</li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#">{{ $product->subcategory->category->name }}</a>,</li>
+                    <li><a href="#">{{ $product->subcategory->name }}</a></li>
                 </ul>
-            </li>
+            </li> --}}
             @if ($product->quantity)
                 <li><span class="title">Disponible:</span>
                     <ul class="tag">

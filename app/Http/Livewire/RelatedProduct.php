@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use Livewire\Component;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
-use Illuminate\Database\Eloquent\Builder;
-use Livewire\Component;
 
-class ContentFilter extends Component
+class RelatedProduct extends Component
 {
-    public $category, $subcategoria, $marca;
+    public $category, $id_category;
+    public $products = [];
     public $options = [];
     public $colorArr = [];
     public $size = [];
@@ -18,18 +18,12 @@ class ContentFilter extends Component
     public $qty = 1;
 
 
-    public $loading = 0;
-
-
-    public function limpiar()
-    {
-        $this->reset(['subcategoria', 'marca']);
-    }
-
     public function loadData()
     {
-        $this->loading = 1;
+        $this->products = $this->category->products()->where('status', 2)->where('subcategory_id', '!=', $this->id_category)->limit(6)->get();
+        $this->emit('swiper2');
     }
+
 
     public function addItem($id)
     {
@@ -57,9 +51,10 @@ class ContentFilter extends Component
             $this->quantity = qty_available($product->id);
         }
 
-
         $this->options['image'] = asset('assets/images/' . $product->images->first()->url);
+
         if ($this->qty > $this->quantity) {
+            $this->emit('swiper2');
             $this->emitTo('menu-cart', 'render');
             $this->emitTo('icon-cart', 'render');
             return 0;
@@ -74,28 +69,12 @@ class ContentFilter extends Component
             ]);
             $this->emitTo('menu-cart', 'render');
             $this->emitTo('icon-cart', 'render');
+            $this->emit('swiper2');
         }
     }
 
     public function render()
     {
-        $productsQuery = Product::query()->whereHas('subcategory.category', function (Builder $query) {
-            $query->where('id', $this->category->id);
-        });
-
-        if ($this->subcategoria) {
-            $productsQuery = $productsQuery->whereHas('subcategory', function (Builder $query) {
-                $query->where('name', $this->subcategoria);
-            });
-        }
-
-        if ($this->marca) {
-            $productsQuery = $productsQuery->whereHas('brand', function (Builder $query) {
-                $query->where('name', $this->marca);
-            });
-        }
-
-        $products = $productsQuery->paginate(12);
-        return view('livewire.content-filter', compact('products'));
+        return view('livewire.related-product');
     }
 }

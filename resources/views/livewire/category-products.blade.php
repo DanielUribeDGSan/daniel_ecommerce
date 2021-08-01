@@ -26,8 +26,7 @@
                             <button class="product-action-btn-2 cart-btn" title="Add To Cart"
                                 wire:click="addItem({{ $product->id }})" wire:loading.attr="disabled"
                                 wire:target="addItem({{ $product->id }})"><i class="pe-7s-cart"></i>
-                                Add
-                                to cart </button>
+                                Agregar al carrito </button>
                         </div>
                     </div>
                     <div class="product-content">
