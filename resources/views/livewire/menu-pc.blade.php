@@ -86,74 +86,7 @@
                                                                 </div>
                                                             @endforeach
                                                         @else
-                                                            <div class="container loading-skeleton">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        <div class="card"
-                                                                            style="height: 300px; overflow: hidden;">
-                                                                            <img src="//placekitten.com/300/200"
-                                                                                class="card-img-top" alt="...">
-                                                                            <div class="card-body">
-                                                                                <h5 class="card-title">Card title</h5>
-                                                                                <p class="card-text">Some quick example
-                                                                                    text to build on the card title and
-                                                                                    make up the bulk
-                                                                                    of the card's content.</p>
-                                                                                <a href="#" class="btn btn-primary">Go
-                                                                                    somewhere</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="card"
-                                                                            style="height: 300px; overflow: hidden;">
-                                                                            <img src="//placebear.com/300/200"
-                                                                                class="card-img-top" alt="...">
-                                                                            <div class="card-body">
-                                                                                <h5 class="card-title">Card title</h5>
-                                                                                <p class="card-text">Some quick example
-                                                                                    text to build on the card title and
-                                                                                    make up the bulk
-                                                                                    of the card's content.</p>
-                                                                                <a href="#" class="btn btn-primary">Go
-                                                                                    somewhere</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="card"
-                                                                            style="height: 300px; overflow: hidden;">
-                                                                            <img src="//placebear.com/300/200"
-                                                                                class="card-img-top" alt="...">
-                                                                            <div class="card-body">
-                                                                                <h5 class="card-title">Card title</h5>
-                                                                                <p class="card-text">Some quick example
-                                                                                    text to build on the card title and
-                                                                                    make up the bulk
-                                                                                    of the card's content.</p>
-                                                                                <a href="#" class="btn btn-primary">Go
-                                                                                    somewhere</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="card"
-                                                                            style="height: 300px; overflow: hidden;">
-                                                                            <img src="//placebear.com/300/200"
-                                                                                class="card-img-top" alt="...">
-                                                                            <div class="card-body">
-                                                                                <h5 class="card-title">Card title</h5>
-                                                                                <p class="card-text">Some quick example
-                                                                                    text to build on the card title and
-                                                                                    make up the bulk
-                                                                                    of the card's content.</p>
-                                                                                <a href="#" class="btn btn-primary">Go
-                                                                                    somewhere</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            <x-loading-products />
                                                         @endif
                                                         {{-- <div class="col-auto mt-2">
                                                             <li>

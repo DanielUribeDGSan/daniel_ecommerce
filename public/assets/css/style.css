@@ -1375,7 +1375,22 @@ textarea {
     overflow: hidden;
 }
 
+.search-wrap-1 div {
+    position: relative;
+    overflow: hidden;
+}
+
 .search-wrap-1 form input {
+    background-color: #fff;
+    border: 1px solid #e2dcdc;
+    color: #000000;
+    line-height: 30px;
+    padding: 5px 60px 5px 20px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.search-wrap-1 div input {
     background-color: #fff;
     border: 1px solid #e2dcdc;
     color: #000000;
@@ -1391,6 +1406,16 @@ textarea {
 }
 
 .search-wrap-1 form input::-webkit-input-placeholder {
+    color: #000000;
+    opacity: 1;
+}
+
+.search-wrap-1 div input::-moz-input-placeholder {
+    color: #000000;
+    opacity: 1;
+}
+
+.search-wrap-1 div input::-webkit-input-placeholder {
     color: #000000;
     opacity: 1;
 }
@@ -1413,7 +1438,29 @@ textarea {
     line-height: 45px;
 }
 
+.search-wrap-1 div button.button-search {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    font-size: 18px;
+    border-left: 1px solid #e2dcdc;
+    padding: 0 15px;
+    color: #000000;
+    line-height: 45px;
+}
+
 .search-wrap-1 form button.button-search:hover {
+    color: #e97730;
+}
+
+.search-wrap-1 div button.button-search:hover {
     color: #e97730;
 }
 

@@ -60,10 +60,79 @@
 .main-menu > nav > ul > li > ul.mega-menu-style {
     width: calc(100vw - 7vw);
     min-height: 450px;
+    max-height: 450px;
     height: auto;
+    overflow-x: auto;
 }
 .main-menu > nav > ul > li > ul.mega-menu-style.mega-menu-mrg-1 {
     left: 0px;
+}
+/* Search */
+.search-wrap-1.open {
+    opacity: 1;
+    right: 100%;
+    visibility: visible;
+    z-index: 99;
+    margin-left: calc(50% - 10vw);
+    margin-right: calc(50% - 17vw);
+    width: calc(100vw - 7vw);
+    min-height: 450px;
+    max-height: 450px;
+    overflow-x: auto;
+    height: auto;
+    top: 1300%;
+    background-color: #fff;
+}
+.form-search {
+    width: 400px;
+    box-shadow: 0 3px 20px rgb(193 193 193 / 28%);
+    border-radius: 10px;
+}
+.search-wrap-1 form input {
+    background-color: #fff;
+    border: 0px solid rgb(195 195 195 / 20%);
+    box-shadow: 0 3px 20px rgb(193 193 193 / 28%);
+}
+.search-wrap-1 div input {
+    background-color: #fff;
+    border: 0px solid #e2dcdc;
+}
+@media only screen and (max-width: 767px) {
+    .search-wrap-1.open {
+        margin-left: calc(50% - 10vw);
+        margin-right: calc(50% - 27vw);
+    }
+    .search-wrap-1 form input {
+        background-color: #fff;
+        border: 0px solid rgb(195 195 195 / 20%);
+    }
+    .form-search {
+        box-shadow: 0 3px 20px rgb(193 193 193 / 28%);
+        border-radius: 10px;
+    }
+}
+@media only screen and (max-width: 760px) {
+    .search-wrap-1.open {
+        opacity: 1;
+        right: 100%;
+        visibility: visible;
+        z-index: 99;
+        margin-left: calc(50% - 23vw);
+        margin-right: calc(50% - 0vw);
+        width: calc(100vw - 7vw);
+        min-height: 450px;
+        height: auto;
+        top: 335%;
+    }
+    .form-search {
+        width: 300px;
+        box-shadow: 0 3px 20px rgb(193 193 193 / 28%);
+        border-radius: 10px;
+    }
+    .search-wrap-1 form input {
+        background-color: #fff;
+        border: 0px solid rgb(195 195 195 / 20%);
+    }
 }
 /* Cambios en el dropbottom user */
 .language-currency-wrap .currency-wrap {

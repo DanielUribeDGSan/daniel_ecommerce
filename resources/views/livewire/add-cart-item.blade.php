@@ -1,4 +1,5 @@
 <div x-data>
+
     <div class="product-details-action-wrap mt-3">
         <div class="product-quality" wire:loading.remove>
             <button class="dec qtybutton" disabled x-bind:disabled="$wire.qty <= 1" wire:loading.attr="disabled"
@@ -76,16 +77,16 @@
     <div class="product-details-meta" wire:loading.remove>
         <ul>
             <li><span class="title">Marca:</span> {{ $product->brand->name }}</li>
-            <li><span class="title">Category:</span>
+            {{-- <li><span class="title">Category:</span>
                 <ul>
                     <li><a href="#">Office</a>,</li>
                     <li><a href="#">Home</a></li>
                 </ul>
-            </li>
+            </li> --}}
             @if ($product->quantity)
                 <li><span class="title">Disponible:</span>
                     <ul class="tag">
-                        <li><a href="#">{{ $quantity }}</a></li>
+                        <li><a href="#">{{ $product->stock }}</a></li>
                     </ul>
                 </li>
             @endif

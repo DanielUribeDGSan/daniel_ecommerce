@@ -32,85 +32,19 @@
  ============================================ -->
 
 
-    <link rel="preload" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/vendor/pe-icon-7-stroke.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/vendor/pe-icon-7-stroke.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/vendor/themify-icons.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/vendor/themify-icons.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/vendor/font-awesome.min.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/vendor/font-awesome.min.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/animate.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/aos.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/magnific-popup.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnific-popup.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/swiper.min.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper.min.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/jquery-ui.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/jquery-ui.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/nice-select.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/nice-select.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/select2.min.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/easyzoom.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/easyzoom.css') }}">
-    </noscript>
-
-    <link rel="preload" href="{{ asset('assets/css/plugins/slinky.css') }}" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins/slinky.css') }}">
-    </noscript>
-
-
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/pe-icon-7-stroke.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/themify-icons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/jquery-ui.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/nice-select.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/easyzoom.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/slinky.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css') }}" />
@@ -305,12 +239,12 @@
     <!-- All JS is here -->
     @livewireScripts
 
-    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}" async></script>
+    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.2.min.js') }}" async></script>
-    <script src="{{ asset('assets/js/vendor/popper.min.js') }}" async></script>
-    <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}" async></script>
-    <script src="{{ asset('assets/js/plugins/wow.js') }}" async></script>
+    <script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/wow.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/scrollup.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/aos.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/magnific-popup.js') }}"></script>
@@ -319,16 +253,15 @@
     <script src="{{ asset('assets/js/plugins/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/jquery-ui.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/jquery-ui-touch-punch.js') }}" async></script>
+    <script src="{{ asset('assets/js/plugins/jquery-ui-touch-punch.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/waypoints.min.js') }}" async></script>
+    <script src="{{ asset('assets/js/plugins/waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/counterup.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/select2.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/easyzoom.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/slinky.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/ajax-mail.js') }}" async></script>
+    <script src="{{ asset('assets/js/plugins/ajax-mail.js') }}"></script>
     <script src="{{ asset('assets/js/loading.js') }}"></script>
-
 
     <script src="{{ asset('assets/js/main.js') }}"></script>
 

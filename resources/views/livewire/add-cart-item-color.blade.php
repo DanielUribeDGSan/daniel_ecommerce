@@ -95,13 +95,17 @@
                     <li><a href="#">{{ $product->subcategory->name }}</a></li>
                 </ul>
             </li> --}}
-            @if ($product->quantity)
-                <li><span class="title">Disponible:</span>
+            <li><span class="title">Disponible:</span>
+                @if ($quantity)
                     <ul class="tag">
-                        <li><a href="#">{{ $quantity }}</a></li>
+                        <li><a>{{ $quantity }}</a></li>
                     </ul>
-                </li>
-            @endif
+                @else
+                    <ul class="tag">
+                        <li><a>{{ $product->stock }}</a></li>
+                    </ul>
+                @endif
+            </li>
         </ul>
     </div>
 </div>

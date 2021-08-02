@@ -12,21 +12,15 @@
             e.preventDefault();
             var $this = $(this);
             if (!$this.parent().hasClass('show')) {
-                $this.siblings('.currency-dropdown').addClass('show').slideDown().parent()
-                    .addClass(
-                        'show');
+                $this.siblings('.currency-dropdown').addClass('show').slideDown().parent().addClass('show');
             } else {
-                $this.siblings('.currency-dropdown').removeClass('show').slideUp().parent()
-                    .removeClass(
-                        'show');
+                $this.siblings('.currency-dropdown').removeClass('show').slideUp().parent().removeClass('show');
             }
         });
         /*Close When Click Outside*/
         $body2.on('click', function (e) {
             var $target = e.target;
-            if (!$($target).is('.currency-wrap') && !$($target).parents().is(
-                '.currency-wrap') &&
-                $urdanDropdown2.hasClass('show')) {
+            if (!$($target).is('.currency-wrap') && !$($target).parents().is('.currency-wrap') && $urdanDropdown2.hasClass('show')) {
                 $urdanDropdown2.removeClass('show');
                 $urdanDropdownMenu2.removeClass('show').slideUp();
             }
@@ -44,21 +38,15 @@
             e.preventDefault();
             var $this = $(this);
             if (!$this.parent().hasClass('show')) {
-                $this.siblings('.language-dropdown').addClass('show').slideDown().parent()
-                    .addClass(
-                        'show');
+                $this.siblings('.language-dropdown').addClass('show').slideDown().parent().addClass('show');
             } else {
-                $this.siblings('.language-dropdown').removeClass('show').slideUp().parent()
-                    .removeClass(
-                        'show');
+                $this.siblings('.language-dropdown').removeClass('show').slideUp().parent().removeClass('show');
             }
         });
         /*Close When Click Outside*/
         $body3.on('click', function (e) {
             var $target = e.target;
-            if (!$($target).is('.language-wrap') && !$($target).parents().is(
-                '.language-wrap') &&
-                $urdanDropdown3.hasClass('show')) {
+            if (!$($target).is('.language-wrap') && !$($target).parents().is('.language-wrap') && $urdanDropdown3.hasClass('show')) {
                 $urdanDropdown3.removeClass('show');
                 $urdanDropdownMenu3.removeClass('show').slideUp();
             }
@@ -88,6 +76,34 @@
         periodic: false,
         periodUnit: 'd'
     });
+
+    // Product slider active 1
+    var sliderActiveTwo = new Swiper('.product-slider-active-1', {
+        loop: true,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.product-next-1',
+            prevEl: '.product-prev-1',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 3
+            },
+            992: {
+                slidesPerView: 3
+            },
+            1200: {
+                slidesPerView: 4
+            }
+        },
+    });
+
     Livewire.on('swiper', function (id) {
 
         // Product slider active 1
@@ -117,6 +133,7 @@
             },
         });
     });
+
     // Brand logo active
     var sliderActiveThree = new Swiper('.brand-logo-active', {
         loop: true,
@@ -235,23 +252,23 @@
         Cart Plus Minus Button
     ------------------------------ */
     var CartPlusMinus = $('.product-quality');
-    // CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-    // CartPlusMinus.append('<div class="inc qtybutton">+</div>');
-    // $(".qtybutton").on("click", function () {
-    //     var $button = $(this);
-    //     var oldValue = $button.parent().find("input").val();
-    //     if ($button.text() === "+") {
-    //         var newVal = parseFloat(oldValue) + 1;
-    //     } else {
-    //         // Don't allow decrementing below zero
-    //         if (oldValue > 1) {
-    //             var newVal = parseFloat(oldValue) - 1;
-    //         } else {
-    //             newVal = 1;
-    //         }
-    //     }
-    //     $button.parent().find("input").val(newVal);
-    // });
+    CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+    $(".qtybutton").on("click", function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+        if ($button.text() === "+") {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            // Don't allow decrementing below zero
+            if (oldValue > 1) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 1;
+            }
+        }
+        $button.parent().find("input").val(newVal);
+    });
 
     /*------ ScrollUp -------- */
     $.scrollUp({
@@ -276,8 +293,8 @@
     });
 
     /*-------------------------------
-           Header Search Toggle
-        -----------------------------------*/
+       Header Search Toggle
+    -----------------------------------*/
     var searchToggle = $('.search-toggle');
     searchToggle.on('click', function (e) {
         e.preventDefault();
@@ -414,11 +431,11 @@
     });
 
     // Instantiate EasyZoom instances
-    // var $easyzoom = $('.easyzoom').easyZoom();
+    var $easyzoom = $('.easyzoom').easyZoom();
 
     /*----------------------------------------
-            Product details small img slider 1
-        -----------------------------------------*/
+        Product details small img slider 1
+    -----------------------------------------*/
     var productDetailsSmallOne = new Swiper('.product-details-small-img-slider-1', {
         loop: false,
         spaceBetween: 12,
@@ -445,8 +462,8 @@
     });
 
     /*----------------------------------------
-            Product details big img slider 1
-        -----------------------------------------*/
+        Product details big img slider 1
+    -----------------------------------------*/
     var productDetailsBigThree = new Swiper('.product-details-big-img-slider-1', {
         autoplay: false,
         delay: 5000,
@@ -458,8 +475,8 @@
     });
 
     /*----------------------------------------
-            Product details small img slider 2
-        -----------------------------------------*/
+        Product details small img slider 2
+    -----------------------------------------*/
     var productDetailsSmallTwo = new Swiper('.product-details-small-img-slider-2', {
         loop: false,
         spaceBetween: 20,
@@ -488,8 +505,8 @@
     });
 
     /*----------------------------------------
-            Product details big img slider 2
-        -----------------------------------------*/
+        Product details big img slider 2
+    -----------------------------------------*/
     var productDetailsBigTwo = new Swiper('.product-details-big-img-slider-2', {
         autoplay: false,
         delay: 5000,
@@ -501,6 +518,28 @@
     });
 
     // Related product active
+    var relatedProductActive = new Swiper('.related-product-active', {
+        loop: true,
+        spaceBetween: 30,
+        breakpoints: {
+            320: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 3
+            },
+            992: {
+                slidesPerView: 3
+            },
+            1200: {
+                slidesPerView: 4
+            }
+        },
+    });
+
     Livewire.on('swiper2', function () {
 
         var relatedProductActive = new Swiper('.related-product-active', {
@@ -525,6 +564,7 @@
             },
         });
     });
+
 
     /*-----------------------
         Image Popup active
@@ -577,3 +617,4 @@
     });
 
 })(jQuery);
+
