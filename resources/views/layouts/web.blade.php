@@ -53,6 +53,9 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
 
+    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
+
 </head>
 
 
@@ -238,8 +241,6 @@
     <!-- All JS is here -->
     @livewireScripts
 
-    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
