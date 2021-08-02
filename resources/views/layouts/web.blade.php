@@ -46,9 +46,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/easyzoom.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/slinky.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/cambios.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/loading.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.1') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.1') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.1') }}" />
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
@@ -262,7 +262,7 @@
     <script src="{{ asset('assets/js/plugins/ajax-mail.js') }}"></script>
     <script src="{{ asset('assets/js/loading.js') }}"></script>
 
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js?ver=1.0.1') }}"></script>
 
 
 
