@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Size;
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
+use Alert;
 
 
 class AddCartItemSize extends Component
@@ -61,6 +62,7 @@ class AddCartItemSize extends Component
             $this->emitTo('menu-cart', 'render');
             $this->emitTo('icon-cart', 'render');
             $this->reset('qty');
+            alert()->warning('Producto agotado', 'Este producto no esta disponible')->showConfirmButton('Aceptar');
         } else {
             FacadesCart::add([
                 'id' => $this->product->id,

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Livewire\Component;
+use Alert;
 
 class CategoryProducts extends Component
 {
@@ -16,18 +17,19 @@ class CategoryProducts extends Component
     public $colorSize = [];
     public $quantity = 0;
     public $qty = 1;
-
-
+    public $product_clean = 0;
 
 
     public function loadData()
     {
+
         $this->products = $this->category->products()->where('status', 2)->limit(10)->get();
         $this->emit('swiper', $this->category->id);
     }
 
     public function addItem($id)
     {
+
         $product = Product::where('id', $id)->first();
         $this->colorArr = $product->colors->first();
         $this->size = $product->sizes->first();
@@ -58,7 +60,7 @@ class CategoryProducts extends Component
             $this->emit('swiper', $this->category->id);
             $this->emitTo('menu-cart', 'render');
             $this->emitTo('icon-cart', 'render');
-            return 0;
+            $this->product_clean = 1;
         } else {
             FacadesCart::add([
                 'id' => $product->id,

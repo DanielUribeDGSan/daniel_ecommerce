@@ -19,9 +19,8 @@
         <div class="single-product-cart btn-hover" wire:loading.remove>
             <img class=" img__cart img__none img-float"
                 src="{{ asset('assets/images/' . $product->images->first()->url) }}" alt="kasa" width="50">
-            <button class="cart-btn" wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem"
-                x-bind:disabled="$wire.qty > $wire.quantity">Agregar
-                al carrito</button>
+            <button class="cart-btn" x-bind:disabled="!$wire.quantity" wire:click="addItem" wire:loading.attr="disabled"
+                wire:target="addItem" x-bind:disabled="$wire.qty > $wire.quantity">Agregar al carrito</button>
         </div>
         <div wire:loading>
             <x-loading-cart />
@@ -83,13 +82,12 @@
                     <li><a href="#">Home</a></li>
                 </ul>
             </li> --}}
-            @if ($product->quantity)
-                <li><span class="title">Disponible:</span>
-                    <ul class="tag">
-                        <li><a href="#">{{ $product->stock }}</a></li>
-                    </ul>
-                </li>
-            @endif
+            <li><span class="title">Disponible:</span>
+                <ul class="tag">
+                    <li><a>{{ $quantity }}</a></li>
+                </ul>
+
+            </li>
         </ul>
     </div>
 </div>

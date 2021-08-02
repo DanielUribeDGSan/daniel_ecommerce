@@ -251,24 +251,24 @@
     /*----------------------------
         Cart Plus Minus Button
     ------------------------------ */
-    var CartPlusMinus = $('.product-quality');
-    CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
-    $(".qtybutton").on("click", function () {
-        var $button = $(this);
-        var oldValue = $button.parent().find("input").val();
-        if ($button.text() === "+") {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 1) {
-                var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 1;
-            }
-        }
-        $button.parent().find("input").val(newVal);
-    });
+    // var CartPlusMinus = $('.product-quality');
+    // CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+    // CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+    // $(".qtybutton").on("click", function () {
+    //     var $button = $(this);
+    //     var oldValue = $button.parent().find("input").val();
+    //     if ($button.text() === "+") {
+    //         var newVal = parseFloat(oldValue) + 1;
+    //     } else {
+    //         // Don't allow decrementing below zero
+    //         if (oldValue > 1) {
+    //             var newVal = parseFloat(oldValue) - 1;
+    //         } else {
+    //             newVal = 1;
+    //         }
+    //     }
+    //     $button.parent().find("input").val(newVal);
+    // });
 
     /*------ ScrollUp -------- */
     $.scrollUp({
@@ -431,7 +431,7 @@
     });
 
     // Instantiate EasyZoom instances
-    var $easyzoom = $('.easyzoom').easyZoom();
+    // var $easyzoom = $('.easyzoom').easyZoom();
 
     /*----------------------------------------
         Product details small img slider 1

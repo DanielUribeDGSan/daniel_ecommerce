@@ -50,8 +50,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.2') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.2') }}" />
 
+
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
@@ -264,7 +268,7 @@
     <script src="{{ asset('assets/js/loading.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.2') }}"></script>
-
+    @include('sweetalert::alert')
 
 
 

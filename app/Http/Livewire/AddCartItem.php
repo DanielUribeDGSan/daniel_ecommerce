@@ -4,16 +4,22 @@ namespace App\Http\Livewire;
 
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Livewire\Component;
+use Alert;
 
 class AddCartItem extends Component
 {
-    public $quantity;
+    public $quantity, $product;
     public $qty = 1;
-    public $product;
     public $options = [
         'color_id' => null,
         'size_id' => null
     ];
+
+    public function mount()
+    {
+        $this->quantity = qty_available($this->product->id);
+        $this->options['image'] = asset('assets/images/' . $this->product->images->first()->url);
+    }
 
     public function decrement()
     {
@@ -23,13 +29,6 @@ class AddCartItem extends Component
     public function increment()
     {
         $this->qty = $this->qty + 1;
-    }
-
-    public function mount()
-    {
-        $this->quantity = qty_available($this->product->id);
-
-        $this->options['image'] = asset('assets/images/' . $this->product->images->first()->url);
     }
 
     public function addItem()

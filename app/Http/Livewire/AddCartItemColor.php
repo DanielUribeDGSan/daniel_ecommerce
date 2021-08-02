@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Livewire\Component;
-
+use Alert;
 
 class AddCartItemColor extends Component
 {
@@ -48,6 +48,7 @@ class AddCartItemColor extends Component
             $this->emitTo('menu-cart', 'render');
             $this->emitTo('icon-cart', 'render');
             $this->reset('qty');
+            alert()->warning('Producto agotado', 'Este producto no esta disponible')->showConfirmButton('Aceptar');
         } else {
             FacadesCart::add([
                 'id' => $this->product->id,

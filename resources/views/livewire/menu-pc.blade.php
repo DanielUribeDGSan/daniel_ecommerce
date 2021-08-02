@@ -139,7 +139,34 @@
                     <div class="col-lg-3 col-md-6 col-6">
                         <div class="header-action-wrap">
                             <div class="header-action-style header-search-1">
-                                @livewire('search')
+                                <a class="search-toggle" href="#">
+                                    <i class="pe-7s-search s-open"></i>
+                                    <i class="pe-7s-close s-close"></i>
+                                </a>
+                                <div class="search-wrap-1">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="form-search">
+                                            <input id="search" placeholder="Buscar productos" type="text">
+                                            <button class="button-search" type="button" onclick="buscarProducto()"><i
+                                                    class="pe-7s-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    const buscarProducto = () => {
+                                        const busqueda = document.querySelector('#search').value;
+                                        if (busqueda == '') {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Busqueda vacía',
+                                                html: 'Debes escribir algo antes de buscar un producto',
+                                                confirmButtonText: 'Aceptar',
+                                            });
+                                            return false;
+                                        }
+                                        location.href = '/busqueda/' + busqueda;
+                                    }
+                                </script>
                             </div>
                             <div class="header-action-style">
 

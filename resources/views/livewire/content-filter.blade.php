@@ -27,6 +27,9 @@
                 <div class="shop-bottom-area">
                     <div class="tab-content jump">
                         <div id="shop-1" class="tab-pane active">
+                            @if ($product_clean == 1)
+                                <x-product-no-disponible />
+                            @endif
                             <div wire:init="loadData" class="row">
                                 @if ($loading == 1)
                                     @foreach ($products as $product)
@@ -332,4 +335,5 @@
             </div>
         </div>
     </div>
+
 </div>

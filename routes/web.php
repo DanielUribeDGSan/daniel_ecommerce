@@ -22,6 +22,8 @@ Route::get('categorias/{category}', [App\Http\Controllers\CategoryController::cl
 
 Route::get('productos/{product}', [App\Http\Controllers\ProductController::class, 'producto'])->name('producto');
 
+Route::get('busqueda/{product}', [App\Http\Controllers\SearchController::class, 'busqueda'])->name('busqueda');
+
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

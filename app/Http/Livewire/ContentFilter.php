@@ -6,6 +6,7 @@ use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
+use Alert;
 
 class ContentFilter extends Component
 {
@@ -16,7 +17,7 @@ class ContentFilter extends Component
     public $colorSize = [];
     public $quantity = 0;
     public $qty = 1;
-
+    public $product_clean = 0;
 
     public $loading = 0;
 
@@ -62,7 +63,7 @@ class ContentFilter extends Component
         if ($this->qty > $this->quantity) {
             $this->emitTo('menu-cart', 'render');
             $this->emitTo('icon-cart', 'render');
-            return 0;
+            $this->product_clean = 1;
         } else {
             FacadesCart::add([
                 'id' => $product->id,

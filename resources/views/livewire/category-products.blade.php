@@ -1,4 +1,8 @@
 <div x-data wire:init="loadData" class="swiper-wrapper">
+    @if ($product_clean == 1)
+        <x-product-no-disponible />
+    @endif
+
     @if (count($products))
         @foreach ($products as $product)
             <div class="swiper-slide">
