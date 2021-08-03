@@ -47,7 +47,7 @@
                 </div>
             @endif
             <div class="cart-btn btn-hover">
-                <a class="theme-color" href="cart.html">Ver el carrito de compras</a>
+                <a class="theme-color" href="{{ route('carrito') }}">Ver el carrito de compras</a>
             </div>
             <div class="checkout-btn btn-hover">
                 <a class="theme-color" href="checkout.html">Pagar</a>

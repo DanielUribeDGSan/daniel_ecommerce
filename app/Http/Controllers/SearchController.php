@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function busqueda($product)
+    public function busqueda(Request $request)
     {
-        return view('busquedas.busqueda', compact('product'));
+        $busqueda = $request->search;
+        return view('busquedas.busqueda', compact('busqueda'));
     }
 }

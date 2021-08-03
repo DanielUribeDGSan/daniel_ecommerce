@@ -22,7 +22,9 @@ Route::get('categorias/{category}', [App\Http\Controllers\CategoryController::cl
 
 Route::get('productos/{product}', [App\Http\Controllers\ProductController::class, 'producto'])->name('producto');
 
-Route::get('busqueda/{product}', [App\Http\Controllers\SearchController::class, 'busqueda'])->name('busqueda');
+Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'])->name('busqueda');
+
+Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

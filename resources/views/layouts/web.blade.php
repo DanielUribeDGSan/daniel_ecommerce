@@ -30,6 +30,7 @@
 
     <!-- All CSS is here
  ============================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}" />
@@ -49,6 +50,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.2') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.2') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.2') }}" />
+
 
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

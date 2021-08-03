@@ -18,7 +18,6 @@ class ContentFilter extends Component
     public $quantity = 0;
     public $qty = 1;
     public $product_clean = 0;
-
     public $loading = 0;
 
 

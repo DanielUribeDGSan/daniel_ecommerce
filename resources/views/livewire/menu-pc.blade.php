@@ -145,11 +145,10 @@
                                 </a>
                                 <div class="search-wrap-1">
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <div class="form-search">
-                                            <input id="search" placeholder="Buscar productos" type="text">
-                                            <button class="button-search" type="button" onclick="buscarProducto()"><i
-                                                    class="pe-7s-search"></i></button>
-                                        </div>
+                                        <form action="{{ route('busqueda') }}" class="form-search">
+                                            <input name="search" id="search" placeholder="Buscar productos" type="text">
+                                            <button class="button-search"><i class="pe-7s-search"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                                 <script>
