@@ -13,7 +13,7 @@
                     <div class="clip">
                         <div class="shadow"><span class="digit firstDigit">ps</span></div>
                     </div>
-                    <div class="msg"><i class="fas fa-search"></i><span class="triangle"></span></div>
+                    {{-- <div class="msg"><i class="fas fa-search"></i><span class="triangle"></span></div> --}}
                 </div>
                 <h2 class="h1">No se encontro ningún producto</b></h2>
             </div>
