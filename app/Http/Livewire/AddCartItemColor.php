@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Livewire\Component;
-use Alert;
+
 
 class AddCartItemColor extends Component
 {
@@ -14,6 +14,8 @@ class AddCartItemColor extends Component
     public $options = [
         'size_id' => null
     ];
+    public $product_clean = 0;
+
 
     public function mount()
     {
@@ -28,6 +30,7 @@ class AddCartItemColor extends Component
         $this->reset('qty');
         $this->quantity = qty_available($this->product->id, $color->id);
         $this->options['color'] = $color->name;
+        $this->options['color_id'] = $color->id;
     }
 
     public function decrement()
@@ -45,10 +48,9 @@ class AddCartItemColor extends Component
         $this->quantity = qty_available($this->product->id, $this->color_id);
 
         if ($this->qty > $this->quantity) {
-            $this->emitTo('menu-cart', 'render');
-            $this->emitTo('icon-cart', 'render');
+            $this->emit('render');
             $this->reset('qty');
-            alert()->warning('Producto agotado', 'Este producto no esta disponible')->showConfirmButton('Aceptar');
+            $this->product_clean = 1;
         } else {
             FacadesCart::add([
                 'id' => $this->product->id,
@@ -59,11 +61,11 @@ class AddCartItemColor extends Component
                 'options' => $this->options
             ]);
             $this->quantity = qty_available($this->product->id, $this->color_id);
-            $this->emitTo('menu-cart', 'render');
-            $this->emitTo('icon-cart', 'render');
+            $this->emit('render');
             $this->reset('qty');
         }
     }
+
 
     public function render()
     {

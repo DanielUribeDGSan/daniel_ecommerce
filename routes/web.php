@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WebController;
+use App\Http\Livewire\ShoppingCart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
+// Route::get('carrito-de-compras', ShoppingCart::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

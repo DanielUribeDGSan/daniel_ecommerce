@@ -2,7 +2,7 @@
 
 use App\Models\Product;
 use App\Models\Size;
-use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 function quantity($product_id, $color_id = null, $size_id = null)
 {
@@ -23,7 +23,7 @@ function quantity($product_id, $color_id = null, $size_id = null)
 function qty_added($product_id, $color_id = null, $size_id = null)
 {
 
-    $cart = FacadesCart::content();
+    $cart = Cart::content();
 
     $item = $cart->where('id', $product_id)
         ->where('options.color_id', $color_id)

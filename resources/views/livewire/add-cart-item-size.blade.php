@@ -1,4 +1,7 @@
 <div x-data>
+    @if ($product_clean == 1)
+        <x-product-no-disponible />
+    @endif
 
     <div class="product-color product-color-active product-details-color">
         <span style="width: 3.3rem;">Size :</span>
@@ -29,18 +32,10 @@
     <div class="product-details-action-wrap mt-3">
         <div class="product-quality" wire:loading.remove>
             <button class="dec qtybutton" disabled x-bind:disabled="$wire.qty <= 1" wire:loading.attr="disabled"
-                wire:target="decrement" wire:click="decrement" style="border: none;
-    background: transparent;
-    margin: 0px;
-    padding: 0px;
-    color: #8f8f8f;">-</button>
+                wire:target="decrement" wire:click="decrement">-</button>
             <input class="cart-plus-minus-box input-text " name="qtybutton" value="{{ $qty }}" readonly>
             <button class="inc qtybutton" x-bind:disabled="$wire.qty >= $wire.quantity" wire:loading.attr="disabled"
-                wire:target="increment" wire:click="increment" style="border: none;
-    background: transparent;
-    margin: 0px;
-    padding: 0px;
-    color: #8f8f8f;">+</button>
+                wire:target="increment" wire:click="increment">+</button>
         </div>
         <div class="single-product-cart btn-hover" wire:loading.remove>
             <img class=" img__cart img__none img-float"

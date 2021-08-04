@@ -14,6 +14,8 @@ class AddCartItem extends Component
         'color_id' => null,
         'size_id' => null
     ];
+    public $product_clean = 0;
+
 
     public function mount()
     {
@@ -36,9 +38,9 @@ class AddCartItem extends Component
         $this->quantity = qty_available($this->product->id);
 
         if ($this->qty > $this->quantity) {
-            $this->emitTo('menu-cart', 'render');
-            $this->emitTo('icon-cart', 'render');
+            $this->emit('render');
             $this->reset('qty');
+            $this->product_clean = 1;
         } else {
             FacadesCart::add([
                 'id' => $this->product->id,
@@ -49,8 +51,7 @@ class AddCartItem extends Component
                 'options' => $this->options
             ]);
             $this->quantity = qty_available($this->product->id);
-            $this->emitTo('menu-cart', 'render');
-            $this->emitTo('icon-cart', 'render');
+            $this->emit('render');
             $this->reset('qty');
         }
     }

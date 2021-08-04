@@ -29,7 +29,6 @@ class CategoryProducts extends Component
 
     public function addItem($id)
     {
-
         $product = Product::where('id', $id)->first();
         $this->colorArr = $product->colors->first();
         $this->size = $product->sizes->first();
@@ -38,13 +37,16 @@ class CategoryProducts extends Component
 
             $this->colorSize = $this->size->colors->find($this->size->id);
             $this->options['size'] = $this->size->name;
+            $this->options['size_id'] = $this->size->id;
             $this->options['color'] = $this->colorSize->name;
+            $this->options['color_id'] = $this->colorSize->id;
             $this->quantity = qty_available($product->id, $this->colorSize->id, $this->size->id);
         } else if (isset($this->colorArr->name)) {
             $this->options = [
                 'size_id' => null
             ];
             $this->options['color'] = $this->colorArr->name;
+            $this->options['color_id'] = $this->colorArr->id;
             $this->quantity = qty_available($product->id, $this->colorArr->id);
         } else if (!isset($this->colorArr->name) && !isset($this->size)) {
             $this->options = [
@@ -54,12 +56,12 @@ class CategoryProducts extends Component
             $this->quantity = qty_available($product->id);
         }
 
-        $this->options['image'] = asset('assets/images/' . $product->images->first()->url);
 
+        $this->options['image'] = asset('assets/images/' . $product->images->first()->url);
         if ($this->qty > $this->quantity) {
+            $this->emit('render');
             $this->emit('swiper', $this->category->id);
-            $this->emitTo('menu-cart', 'render');
-            $this->emitTo('icon-cart', 'render');
+
             $this->product_clean = 1;
         } else {
             FacadesCart::add([
@@ -70,8 +72,7 @@ class CategoryProducts extends Component
                 'weight' => 550,
                 'options' => $this->options
             ]);
-            $this->emitTo('menu-cart', 'render');
-            $this->emitTo('icon-cart', 'render');
+            $this->emit('render');
             $this->emit('swiper', $this->category->id);
         }
     }

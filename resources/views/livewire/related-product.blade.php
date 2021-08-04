@@ -4,6 +4,9 @@
             <h2>Productos relacionados</h2>
         </div>
         <div class="related-product-active swiper-container">
+            @if ($product_clean == 1)
+                <x-product-no-disponible />
+            @endif
             <div class="swiper-wrapper">
                 @if (count($products))
                     @foreach ($products as $product)

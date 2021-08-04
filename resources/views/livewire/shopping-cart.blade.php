@@ -28,68 +28,58 @@
                                     <thead>
                                         <tr>
                                             <th class="width-thumbnail"></th>
-                                            <th class="width-name">Product</th>
-                                            <th class="width-price"> Price</th>
-                                            <th class="width-quantity">Quantity</th>
+                                            <th class="width-name">Producto</th>
+                                            <th class="width-quantity">Cantidad</th>
                                             <th class="width-subtotal">Subtotal</th>
                                             <th class="width-remove"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="product-details.html"><img src="assets/images/cart/cart-1.jpg"
-                                                        alt=""></a>
-                                            </td>
-                                            <td class="product-name">
-                                                <h5><a href="product-details.html">Stylish Swing Chair</a></h5>
-                                            </td>
-                                            <td class="product-cart-price"><span class="amount">$120.00</span></td>
-                                            <td class="cart-quality">
-                                                <div class="product-quality">
-                                                    <input class="cart-plus-minus-box input-text qty text"
-                                                        name="qtybutton" value="1">
-                                                </div>
-                                            </td>
-                                            <td class="product-total"><span>$120.00</span></td>
-                                            <td class="product-remove"><a href="#"><i class=" ti-trash "></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="product-details.html"><img src="assets/images/cart/cart-2.jpg"
-                                                        alt=""></a>
-                                            </td>
-                                            <td class="product-name">
-                                                <h5><a href="product-details.html">Modern Lounge Chairs</a></h5>
-                                            </td>
-                                            <td class="product-cart-price"><span class="amount">$120.00</span></td>
-                                            <td class="cart-quality">
-                                                <div class="product-quality">
-                                                    <input class="cart-plus-minus-box input-text qty text"
-                                                        name="qtybutton" value="1">
-                                                </div>
-                                            </td>
-                                            <td class="product-total"><span>$120.00</span></td>
-                                            <td class="product-remove"><a href="#"><i class=" ti-trash "></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="product-details.html"><img src="assets/images/cart/cart-3.jpg"
-                                                        alt=""></a>
-                                            </td>
-                                            <td class="product-name">
-                                                <h5><a href="product-details.html">Modern Swivel Chair</a></h5>
-                                            </td>
-                                            <td class="product-cart-price"><span class="amount">$120.00</span></td>
-                                            <td class="cart-quality">
-                                                <div class="product-quality">
-                                                    <input class="cart-plus-minus-box input-text qty text"
-                                                        name="qtybutton" value="1">
-                                                </div>
-                                            </td>
-                                            <td class="product-total"><span>$120.00</span></td>
-                                            <td class="product-remove"><a href="#"><i class=" ti-trash "></i></a></td>
-                                        </tr>
+                                        @forelse (Cart::content() as $item)
+                                            <tr>
+                                                <td class="product-thumbnail">
+                                                    <a href="product-details.html">
+                                                        @if ($item->options->image)
+                                                            <div class="content__product__cart2"
+                                                                style="background-image: url({{ asset($item->options->image) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                                            </div>
+                                                        @else
+                                                            <div class="content__product__cart2"
+                                                                style="background-image: url({{ asset($item->options['image']) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                                            </div>
+                                                        @endif
+                                                    </a>
+                                                </td>
+                                                <td class="product-name">
+                                                    <h5><a href="product-details.html">{{ $item->name }}</a></h5>
+                                                    @isset($item->options['color'])
+                                                        <span><b>Color:</b> {{ $item->options['color'] }}</span><br>
+                                                    @endisset
+                                                    @isset($item->options['size'])
+                                                        <span><b>Talla:</b> {{ $item->options['size'] }}</span>
+                                                    @endisset
+                                                </td>
+                                                <td class="cart-quality">
+                                                    @if ($item->options->size)
+                                                        @livewire('update-cart-item-size',['rowId' => $item->rowId],
+                                                        key($item->rowId))
+                                                    @elseif ($item->options->color)
+                                                        @livewire('update-cart-item-color',['rowId' => $item->rowId],
+                                                        key($item->rowId))
+                                                    @else
+                                                        @livewire('update-cart-item',['rowId' => $item->rowId],
+                                                        key($item->rowId))
+
+                                                    @endif
+
+                                                </td>
+                                                <td class="product-total"><span>{{ $item->price }}</span></td>
+                                                <td class="product-remove"><a href="#"><i class=" ti-trash "></i></a>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <x-cart-empty />
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>

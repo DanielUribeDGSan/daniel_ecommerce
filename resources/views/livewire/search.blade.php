@@ -1,7 +1,7 @@
 <div class="">
     <div class="product-area pb-60">
         <div class="container">
-            <div class="search-wrap-1 search-wrap-2 mt-5 mb-2">
+            <div class="search-wrap-1 search-wrap-3 mt-5 mb-2">
                 <div class="">
                     <div class="form-search">
                         <input wire:model="search" placeholder="Buscar productos" type="text"
@@ -69,6 +69,10 @@
                             @empty
                                 <x-clean-product />
                             @endforelse
+                            <div class="pagination-style-1" data-aos-delay="200">
+                                {{ $products->links() }}
+
+                            </div>
                         @else
                             <x-loading-products />
                         @endif
@@ -114,9 +118,6 @@
                                 }
                             });
                         </script>
-                        <div class="pagination-style-1" data-aos-delay="200">
-                            {{ $products->links() }}
-                        </div>
                     </div>
                 </div>
             </div>

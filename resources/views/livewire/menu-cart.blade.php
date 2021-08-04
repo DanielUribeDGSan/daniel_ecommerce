@@ -36,7 +36,7 @@
                 @empty
                     <li>
                         <div class="cart-title">
-                            <h4><a>No tiene ningún item en el carrito</a></h4>
+                            <h4><a>No tiene ningún producto en el carrito</a></h4>
                         </div>
                     </li>
                 @endforelse

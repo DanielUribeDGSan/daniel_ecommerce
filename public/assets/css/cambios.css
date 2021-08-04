@@ -68,7 +68,7 @@
     left: 0px;
 }
 /* Search */
-.search-wrap-2 {
+.search-wrap-3 {
     position: relative;
     background-color: transparent;
     opacity: 1;
@@ -85,7 +85,7 @@
     margin-right: 10px;
     left: 0px;
 }
-.search-wrap-2 div input {
+.search-wrap-3 div input {
     background-color: #fff;
     border: 1px solid #e2dcdc;
     color: #000000;
@@ -95,10 +95,10 @@
     border-radius: 50px;
 }
 @media only screen and (max-width: 760px) {
-    .search-wrap-2 {
+    .search-wrap-3 {
         width: 100%;
     }
-    .search-wrap-2 div input {
+    .search-wrap-3 div input {
         width: 100%;
     }
 }
@@ -627,6 +627,10 @@ hr {
     width: 100%;
     height: 70px;
 }
+.content__product__cart2 {
+    width: 100%;
+    height: 98px;
+}
 .product-slider-active-1.swiper-container {
     padding: 90px 0 90px 0;
 }
@@ -647,6 +651,18 @@ hr {
         width: 100%;
         height: 300px;
     }
+}
+/* qtybutton */
+.qtybutton {
+    border: none;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+    color: #8f8f8f;
+}
+.qtybutton:disabled {
+    background-color: transparent;
+    cursor: not-allowed !important;
 }
 /* Loading */
 
