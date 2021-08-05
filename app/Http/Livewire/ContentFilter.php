@@ -6,10 +6,14 @@ use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
-use Alert;
+use Livewire\WithPagination;
+
 
 class ContentFilter extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public $category, $subcategoria, $marca;
     public $options = [];
     public $colorArr = [];

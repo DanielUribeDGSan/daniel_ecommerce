@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="product-details.html">{{ $product->name }}</a></h3>
+                                    <h3><a href="{{ route('producto', $product) }}">{{ $product->name }}</a></h3>
                                     <div class="product-price">
                                         <span>{{ $product->price }} MXN</span>
                                     </div>

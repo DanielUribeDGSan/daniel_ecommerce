@@ -11,7 +11,7 @@ class UpdateCartItemColor extends Component
     public $rowId, $qty, $quantity;
     public $product_clean = 0;
 
-    protected $listeners = ['render'];
+    // protected $listeners = ['render'];
 
 
     public function mount()

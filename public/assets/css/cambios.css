@@ -80,7 +80,7 @@
     transition: all 0.3s ease 0s;
     visibility: visible;
     width: 340px;
-    z-index: 999;
+    z-index: 1;
     padding-bottom: 1px;
     margin-right: 10px;
     left: 0px;
@@ -124,6 +124,9 @@
 .error h2   /*Contrall*/ {
     font-size: 32px;
 }
+.small-text-cart {
+    font-size: 22px !important;
+}
 .error .msg /*Contrall*/ {
     top: -190px;
     left: 30%;
@@ -144,6 +147,12 @@
     /* margin-top: 10%; */
     position: relative;
     height: 250px;
+    /* padding-top: 40px; */
+}
+.error .container-error-404-small {
+    /* margin-top: 10%; */
+    position: relative;
+    height: 125px;
     /* padding-top: 40px; */
 }
 .error .container-error-404 .clip {
@@ -885,6 +894,11 @@ button:disabled {
 .texto__abajo {
     position: absolute;
     bottom: 8%;
+}
+.texto__abajo__delete {
+    position: absolute;
+    bottom: -9%;
+    text-align: center;
 }
 /* Animaciones */
 .parpadea {

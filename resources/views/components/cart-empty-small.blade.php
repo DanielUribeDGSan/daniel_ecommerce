@@ -1,14 +1,14 @@
 <div class="">
     <!-- Error Page -->
-    <div class="error pb-100">
+    <div class="error ">
         <div class="container-floud">
             <div class="col-xs-12 ground-color text-center">
-                <div class="container-error-404">
+                <div class="container-error-404-small">
                     <img class="img-fluid" src="{{ asset('assets/images/cart/carrito-vacio.svg') }}" alt="empty cart"
-                        width="300">
+                        width="150">
                     {{-- <div class="msg"><i class="fas fa-search"></i><span class="triangle"></span></div> --}}
                 </div>
-                <h2 class="h1 mt-4 ">No tiene ningún producto en el carrito</b></h2>
+                <h2 class="h1 mt-4 small-text-cart">No tiene ningún producto en el carrito</b></h2>
             </div>
         </div>
     </div>

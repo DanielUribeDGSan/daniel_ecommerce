@@ -1,4 +1,4 @@
-<div class="sidebar-cart-active">
+<div x-data class="sidebar-cart-active">
     <div class="sidebar-cart-all">
         <a class="cart-close" href="#"><i class="pe-7s-close"></i></a>
         <div class="cart-content">
@@ -30,13 +30,17 @@
                             @endisset
                         </div>
                         <div class="cart-delete">
-                            <a href="#">×</a>
+                            <div wire:loading wire:target="delete('{{ $item->rowId }}')">
+                                <x-loading-delete-product />
+                            </div>
+                            <a wire:loading.remove wire:click="delete('{{ $item->rowId }}')">×</a>
                         </div>
                     </li>
                 @empty
                     <li>
                         <div class="cart-title">
-                            <h4><a>No tiene ningún producto en el carrito</a></h4>
+                            <x-cart-empty-small />
+
                         </div>
                     </li>
                 @endforelse

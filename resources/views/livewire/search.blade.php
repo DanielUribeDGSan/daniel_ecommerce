@@ -6,8 +6,7 @@
                     <div class="form-search">
                         <input wire:model="search" placeholder="Buscar productos" type="text"
                             value="{{ $busqueda }}">
-                        <button class="button-search" type="button" onclick="buscarProducto()"><i
-                                class="pe-7s-search"></i></button>
+                        <button class="button-search" type="button"><i class="pe-7s-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -59,7 +58,8 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h3><a href="product-details.html">{{ $product->name }}</a></h3>
+                                            <h3><a href="{{ route('producto', $product) }}">{{ $product->name }}</a>
+                                            </h3>
                                             <div class="product-price">
                                                 <span>{{ $product->price }} MXN</span>
                                             </div>

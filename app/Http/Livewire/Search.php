@@ -5,9 +5,14 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Livewire\Component;
+use Livewire\WithPagination;
+
 
 class Search extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public $search, $busqueda;
     public $options = [];
     public $colorArr = [];

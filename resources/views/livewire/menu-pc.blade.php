@@ -151,21 +151,6 @@
                                         </form>
                                     </div>
                                 </div>
-                                <script>
-                                    const buscarProducto = () => {
-                                        const busqueda = document.querySelector('#search').value;
-                                        if (busqueda == '') {
-                                            Swal.fire({
-                                                icon: 'error',
-                                                title: 'Busqueda vacía',
-                                                html: 'Debes escribir algo antes de buscar un producto',
-                                                confirmButtonText: 'Aceptar',
-                                            });
-                                            return false;
-                                        }
-                                        location.href = '/busqueda/' + busqueda;
-                                    }
-                                </script>
                             </div>
                             <div class="header-action-style">
 
