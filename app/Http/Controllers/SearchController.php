@@ -9,6 +9,6 @@ class SearchController extends Controller
     public function busqueda(Request $request)
     {
         $busqueda = $request->search;
-        return view('busquedas.busqueda', compact('busqueda'));
+        return view('busquedas.busqueda-page', compact('busqueda'));
     }
 }

@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.3') }}" />
 
-
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
@@ -67,40 +67,28 @@
 
 <body>
     <div class="main-wrapper main-wrapper-2">
-        <div class="preloader">
-            <div class="">
-                <div class="container-fluid loading-skeleton">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="test-wrapper">
-                                <div class="test" style="height: 6rem;"></div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="card card__loading" style="height: calc(100vh - 10rem);overflow: hidden;">
-                                <div class="" style="display: flex;align-items: center;   justify-content: center;">
-                                    <img src="{{ asset('assets/images/logo/logo_kasa.png') }}" alt="logo kasa"
-                                        style="width: 300px; filter: blur(0px);">
-                                </div>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk
-                                        of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
+        <x-preload />
 
+        @livewire('menu-pc')
+        <!-- mini cart start -->
+        <div class="sidebar-cart-active">
+            <div class="sidebar-cart-all">
+                <a class="cart-close" href="#"><i class="pe-7s-close"></i></a>
+                <div class="cart-content">
+                    <h3>Carrito de compras</h3>
+                    @livewire('menu-cart')
+
+                    <div class="cart-btn btn-hover">
+                        <a class="theme-color" href="{{ route('carrito') }}">Ver el carrito de compras</a>
+                    </div>
+                    <div class="checkout-btn btn-hover">
+                        <a class="theme-color" href="checkout.html">Pagar</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        @livewire('menu-pc')
-        <!-- mini cart start -->
-        @livewire('menu-cart')
 
         {{ $slot }}
 

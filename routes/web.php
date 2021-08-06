@@ -27,6 +27,8 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
+Route::get('orden/crear', [App\Http\Controllers\OrderController::class, 'order'])->name('order');
+
 // Route::get('carrito-de-compras', ShoppingCart::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -34,11 +36,6 @@ Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::c
 // })->name('dashboard');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('web.inicio');
-})->name('dashboard');
-
-
-Route::get('prueba', function () {
-    \Cart::destroy();
-});
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('web.inicio');
+// })->name('dashboard');

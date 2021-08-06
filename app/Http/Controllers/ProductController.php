@@ -9,6 +9,6 @@ class ProductController extends Controller
 {
     public function producto(Product $product)
     {
-        return view('productos.producto', compact('product'));
+        return view('productos.producto-page', compact('product'));
     }
 }

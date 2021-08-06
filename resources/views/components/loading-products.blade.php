@@ -1,6 +1,6 @@
     <div class="container loading-skeleton">
         <div class="row">
-            <div class="col">
+            <div class="col mt-lg-0 mt-md-3 mt-3">
                 <div class="card">
                     <img src="//placekitten.com/300/200" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col mt-lg-0 mt-md-3 mt-3">
                 <div class="card">
                     <img src="//placebear.com/300/200" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col mt-lg-0 mt-md-3 mt-3">
                 <div class="card">
                     <img src="//placebear.com/300/200" class="card-img-top" alt="...">
                     <div class="card-body">

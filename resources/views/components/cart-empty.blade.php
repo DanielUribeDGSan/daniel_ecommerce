@@ -3,12 +3,13 @@
     <div class="error pb-100">
         <div class="container-floud">
             <div class="col-xs-12 ground-color text-center">
-                <div class="container-error-404">
-                    <img class="img-fluid" src="{{ asset('assets/images/cart/carrito-vacio.svg') }}" alt="empty cart"
-                        width="300">
+                <div class="container-error-404 d-flex align-items-center justify-content-center">
+                    <lottie-player src="{{ asset('json/emptyCart.json') }}" background="transparent" speed="1"
+                        style="width: 400px; height: 400px;" loop autoplay></lottie-player>
                     {{-- <div class="msg"><i class="fas fa-search"></i><span class="triangle"></span></div> --}}
                 </div>
-                <h2 class="h1 mt-4 ">No tiene ningún producto en el carrito</b></h2>
+                <h2 class="h1 mt-4">No tiene ningún producto en el carrito</b>
+                </h2>
             </div>
         </div>
     </div>

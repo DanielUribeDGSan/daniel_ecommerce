@@ -10,6 +10,6 @@
             wire:target="increment" wire:click="increment" type="button">+</button>
     </div>
     <div wire:loading>
-        <x-loading-cart />
+        <x-loading-add-cart />
     </div>
 </div>

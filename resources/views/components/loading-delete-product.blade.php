@@ -1,5 +1,2 @@
-<div class="contenedor__img">
-    <img src="{{ asset('assets/images/loading/delete.gif') }}" alt="loading kasa" width="150">
-    <div class="texto__abajo__delete text-center"><span><small class="parpadea" style="color:#646464">Eliminando el
-                producto...</small></span></div>
-</div>
+<lottie-player src="{{ asset('json/delete_products.json') }}" background="transparent" speed="1"
+    style="width: 80px; height: 80px;" loop autoplay></lottie-player>

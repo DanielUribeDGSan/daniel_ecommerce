@@ -3,9 +3,9 @@
     <div class="error ">
         <div class="container-floud">
             <div class="col-xs-12 ground-color text-center">
-                <div class="container-error-404-small">
-                    <img class="img-fluid" src="{{ asset('assets/images/cart/carrito-vacio.svg') }}" alt="empty cart"
-                        width="150">
+                <div class="container-error-404-small d-flex align-items-center justify-content-center">
+                    <lottie-player src="{{ asset('json/emptyCart.json') }}" background="transparent" speed="1"
+                        style="width: 200px; height: 200px;" loop autoplay></lottie-player>
                     {{-- <div class="msg"><i class="fas fa-search"></i><span class="triangle"></span></div> --}}
                 </div>
                 <h2 class="h1 mt-4 small-text-cart">No tiene ningún producto en el carrito</b></h2>

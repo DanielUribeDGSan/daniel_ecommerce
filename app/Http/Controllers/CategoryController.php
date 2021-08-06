@@ -10,6 +10,6 @@ class CategoryController extends Controller
     public function categoria(Category $category)
     {
 
-        return view('categorias.categoria', compact('category'));
+        return view('categorias.categoria-page', compact('category'));
     }
 }
