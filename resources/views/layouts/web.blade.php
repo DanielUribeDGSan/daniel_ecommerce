@@ -49,13 +49,13 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.3') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.3') }}" />
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
-
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

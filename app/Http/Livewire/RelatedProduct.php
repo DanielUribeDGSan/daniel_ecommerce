@@ -58,6 +58,7 @@ class RelatedProduct extends Component
         $this->options['image'] = asset('assets/images/' . $product->images->first()->url);
         if ($this->qty > $this->quantity) {
             $this->emit('render');
+            $this->emit('swiper2');
             $this->product_clean = 1;
         } else {
             FacadesCart::add([
@@ -69,6 +70,7 @@ class RelatedProduct extends Component
                 'options' => $this->options
             ]);
             $this->emit('render');
+            $this->emit('swiper2');
         }
     }
 

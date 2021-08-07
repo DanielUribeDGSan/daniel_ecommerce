@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                             <div class="grand-total-btn btn-hover">
-                                <a class="btn theme-color" href="checkout.html">Proceder al pago</a>
+                                <a class="btn theme-color" href="{{ route('order') }}">Proceder al pago</a>
                             </div>
                         </div>
                     </div>
