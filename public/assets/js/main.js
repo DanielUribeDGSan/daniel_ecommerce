@@ -394,6 +394,14 @@
         $('.select-two-active').select2()
     });
 
+    Livewire.on('select', function () {
+        $('.select-two-active').select2();
+        $(window).on('resize', function () {
+            $('.select-two-active').select2()
+        });
+    });
+
+
     /*--- checkout toggle function ----*/
     $('.checkout-click1').on('click', function (e) {
         e.preventDefault();

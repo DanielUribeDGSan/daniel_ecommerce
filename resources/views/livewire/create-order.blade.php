@@ -1,4 +1,4 @@
-<div>
+<div x-data>
     <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
         <div class="container">
             <div class="breadcrumb-content text-center">
@@ -20,42 +20,8 @@
     <div class="checkout-main-area pb-100 pt-100">
         <div class="container">
             <div class="customer-zone mb-20">
-                <p class="cart-page-title">Returning customer? <a class="checkout-click1" href="#">Click here to
-                        login</a></p>
-                <div class="checkout-login-info">
-                    <p>If you have shopped with us before, please enter your details in the boxes below. If you are a
-                        new customer, please proceed to the Billing & Shipping section.</p>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="sin-checkout-login">
-                                    <label>Username or email address <span>*</span></label>
-                                    <input type="text" name="user-name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="sin-checkout-login">
-                                    <label>Passwords <span>*</span></label>
-                                    <input type="password" name="user-password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-remember-wrap">
-                            <button class="button" type="submit">Login</button>
-                            <div class="checkout-login-toggle-btn">
-                                <input type="checkbox">
-                                <label>Remember me</label>
-                            </div>
-                        </div>
-                        <div class="lost-password">
-                            <a href="#">Lost your password?</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="customer-zone mb-20">
-                <p class="cart-page-title">Have a coupon? <a class="checkout-click3" href="#">Click here to enter your
-                        code</a></p>
+                <p class="cart-page-title">¿Tienes un cupón? <a class="checkout-click3" href="#">Haga clic aquí para
+                        introducir su código</a></p>
                 <div class="checkout-login-info3">
                     <form action="#">
                         <input type="text" placeholder="Coupon code">
@@ -67,200 +33,169 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="billing-info-wrap">
-                            <h3>Billing Details</h3>
+                            <h3>Datos de facturación</h3>
                             <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>First Name <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Last Name <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
-                                        <label>Company Name <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
+                                        <label>Nombre completo <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" wire:model.defer="contact">
+                                        @if ($contact == '' && $validate)
+                                            <p class="cl-danger mt-3">El nombre no puede quedar vacío</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-select select-style mb-20">
-                                        <label>Country <abbr class="required" title="required">*</abbr></label>
-                                        <select class="select-two-active">
-                                            <option>Select a country</option>
-                                            <option>Azerbaijan</option>
-                                            <option>Bahamas</option>
-                                            <option>Bahrain</option>
-                                            <option>Bangladesh</option>
-                                            <option>Barbados</option>
+                                        <label>Estado <abbr class="required" title="required">*</abbr></label>
+                                        <select class="form-control-select" wire:model="state_id">
+                                            <option value="" disabled selected>Selecciona un estado</option>
+                                            @foreach ($states as $state)
+                                                <option value="{{ $state->id }}">{{ $state->nombre }}</option>
+                                            @endforeach
                                         </select>
+                                        @if ($state_id == '' && $validate)
+                                            <p class="cl-danger mt-3">El estado no puede quedar vacío</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-select select-style mb-20">
+                                        <label>Municipio <abbr class="required" title="required">*</abbr></label>
+                                        <select class="form-control-select" wire:model="municipality_id">
+                                            <option value="" disabled selected>Selecciona un municipio</option>
+                                            @foreach ($municipalities as $municipality)
+                                                <option value="{{ $municipality->id }}">{{ $municipality->nombre }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @if ($municipality_id == '' && $validate)
+                                            <p class="cl-danger mt-3">El municipio no puede quedar vacío</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-select select-style mb-20">
+                                        <label>Localidad <abbr class="required" title="required">*</abbr></label>
+                                        <select class="form-control-select" wire:model="locality_id">
+                                            <option value="" disabled selected>Selecciona una localidad</option>
+                                            @foreach ($localities as $locality)
+                                                <option value="{{ $locality->id }}">{{ $locality->nombre }}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($locality_id == '' && $validate)
+                                            <p class="cl-danger mt-3">La localidad no puede quedar vacía</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
-                                        <label>Street Address <abbr class="required" title="required">*</abbr></label>
-                                        <input class="billing-address" placeholder="House number and street name"
-                                            type="text">
-                                        <input placeholder="Apartment, suite, unit etc." type="text">
+                                        <label>Pueblo / Ciudad <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" wire:model.defer="city">
+                                        @if ($city == '' && $validate)
+                                            <p class="cl-danger mt-3">La ciudad no puede quedar vacía</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="billing-info mb-20">
+                                        <label>Código postal <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" wire:model.defer="codePostal">
+                                        @if ($codePostal == '' && $validate)
+                                            <p class="cl-danger mt-3">El código postal no puede quedar vacío</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
-                                        <label>Town / City <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
+                                        <label>Dirección <abbr class="required" title="required">*</abbr></label>
+                                        <input class="billing-address" placeholder="Número de casa y nombre de la calle"
+                                            type="text" wire:model.defer="address">
+                                        @if ($address == '' && $validate)
+                                            <p class="cl-danger">La dirección no puede quedar vacía</p>
+                                        @endif
+                                        <input placeholder="Referencia" type="text" wire:model.defer="reference">
+                                        @if ($reference == '' && $validate)
+                                            <p class="cl-danger mt-3">La referencia no puede quedar vacía</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="billing-info mb-20">
-                                        <label>State / County <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
+                                        <label>Teléfono <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" wire:model.defer="phone">
+                                        @if ($phone == '' && $validate)
+                                            <p class="cl-danger mt-3">El teléfono no puede quedar vacío</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="billing-info mb-20">
-                                        <label>Postcode / ZIP <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Phone <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Email Address <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="checkout-account mb-25">
-                                <input class="checkout-toggle2" type="checkbox">
-                                <span>Create an account?</span>
-                            </div>
-                            <div class="checkout-account-toggle open-toggle2 mb-30">
-                                <label>Email Address</label>
-                                <input placeholder="Password" type="password">
-                            </div>
-                            <div class="checkout-account mt-25">
-                                <input class="checkout-toggle" type="checkbox">
-                                <span>Ship to a different address?</span>
-                            </div>
-                            <div class="different-address open-toggle mt-30">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>First Name</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>Last Name</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-info mb-20">
-                                            <label>Company Name</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-select select-style mb-20">
-                                            <label>Country</label>
-                                            <select class="select-two-active">
-                                                <option>Select a country</option>
-                                                <option>Azerbaijan</option>
-                                                <option>Bahamas</option>
-                                                <option>Bahrain</option>
-                                                <option>Bangladesh</option>
-                                                <option>Barbados</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-info mb-20">
-                                            <label>Street Address</label>
-                                            <input class="billing-address" placeholder="House number and street name"
-                                                type="text">
-                                            <input placeholder="Apartment, suite, unit etc." type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-info mb-20">
-                                            <label>Town / City</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>State / County</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>Postcode / ZIP</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>Phone</label>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-20">
-                                            <label>Email Address</label>
-                                            <input type="text">
-                                        </div>
+                                        <label>Correo electrónico <abbr class="required"
+                                                title="required">*</abbr></label>
+                                        <input type="email" wire:model.defer="email">
+                                        @if ($email == '' && $validate)
+                                            <p class="cl-danger mt-3">El Correo electrónico no puede quedar vacío</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="additional-info-wrap">
-                                <label>Order notes</label>
-                                <textarea placeholder="Notes about your order, e.g. special notes for delivery. "
-                                    name="message"></textarea>
+                                <label>Notas de pedido
+                                </label>
+                                <textarea
+                                    placeholder="Notas sobre su pedido, por ejemplo, notas especiales para la entrega."
+                                    wire:model.defer="note"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="your-order-area">
-                            <h3>Your order</h3>
+                            <h3>Su pedido</h3>
                             <div class="your-order-wrap gray-bg-4">
                                 <div class="your-order-info-wrap">
                                     <div class="your-order-info">
                                         <ul>
-                                            <li>Product <span>Total</span></li>
+                                            <li>Producto <span>Total</span></li>
                                         </ul>
                                     </div>
                                     <div class="your-order-middle">
                                         <ul>
-                                            <li>Product Name X 1 <span>$329 </span></li>
-                                            <li>Product Name X 1 <span>$329 </span></li>
+                                            @foreach (Cart::content() as $item)
+
+                                                <li>{{ $item->name }} X {{ $item->qty }}
+                                                    <span>{{ $item->price }}
+                                                        MXN</span>
+                                                </li>
+                                            @endforeach
+
                                         </ul>
                                     </div>
                                     <div class="your-order-info order-subtotal">
                                         <ul>
-                                            <li>Subtotal <span>$329 </span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-info order-shipping">
-                                        <ul>
-                                            <li>Shipping <p>Enter your full address </p>
-                                            </li>
+                                            <li>Subtotal <span>{{ Cart::subtotal() }} MXN </span></li>
                                         </ul>
                                     </div>
                                     <div class="your-order-info order-total">
                                         <ul>
-                                            <li>Total <span>$273.00 </span></li>
+                                            @if (Cart::subtotal() > 2000)
+                                                <li>Costo Envío <span>0 MXN </span>
+                                                </li>
+                                            @else
+                                                <li>Costo Envío <span>200 MXN </span>
+                                                </li>
+                                            @endif
+
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-info order-total">
+                                        <ul>
+                                            @if (Cart::subtotal() > 2000)
+                                                <li>Total <span>{{ Cart::subtotal() }} MXN </span>
+                                                </li>
+                                            @else
+                                                <li>Total <span>{{ Cart::subtotal() + 200 }} MXN </span>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>
@@ -306,7 +241,12 @@
                                 </div>
                             </div>
                             <div class="Place-order btn-hover">
-                                <a href="#">Place Order</a>
+                                <button wire:loading.attr="disabled" wire:target="create_order" wire:loading.remove
+                                    wire:click="create_order">Realizar el pago</button>
+                                <div wire:loading wire:target="create_order"
+                                    wire:loading.class="d-flex align-items-center justify-content-center">
+                                    <x-create-order />
+                                </div>
                             </div>
                         </div>
                     </div>

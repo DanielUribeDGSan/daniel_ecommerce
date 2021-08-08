@@ -102,7 +102,17 @@
         width: 100%;
     }
 }
-
+/* Select */
+.form-control-select {
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    height: 52px;
+    line-height: 52px;
+    color: #000000;
+    line-height: 52px;
+    padding-left: 16px;
+    padding-right: 20px;
+}
 /* Error Page */
 .error .clip .shadow {
     height: 180px; /*Contrall*/
@@ -884,6 +894,9 @@ button:disabled {
     background-color: rgb(78 78 78 / 30%);
     cursor: not-allowed !important;
 }
+.your-order-area .Place-order a:hover {
+    color: #fff;
+}
 /* Centrar imagen */
 .contenedor__img {
     position: relative;
@@ -900,6 +913,7 @@ button:disabled {
     bottom: -9%;
     text-align: center;
 }
+
 /* Animaciones */
 .parpadea {
     animation-name: parpadeo;
@@ -974,7 +988,13 @@ button:disabled {
 }
 
 /* Utilidades */
+.cl-danger {
+    color: #ff6b6b;
+}
 
+.border-error {
+    border: 1px solid #ff6b6b !important;
+}
 .active-a {
     color: #e97730 !important;
 }

@@ -49,7 +49,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.3') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/login.css?ver=1.0.3') }}" />
+
+
     <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.3') }}" />
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

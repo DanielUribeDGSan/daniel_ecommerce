@@ -9,7 +9,7 @@ class Color extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'hex'];
 
     // Relacion muchos a muchos inversa
     public function products()

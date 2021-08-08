@@ -12556,3 +12556,22 @@ textarea {
     text-align: center;
     z-index: 1;
 }
+
+.your-order-area .Place-order button {
+    background-color: #e97730;
+    display: block;
+    cursor: pointer;
+    padding: 16px 50px 17px;
+    text-transform: capitalize;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 1;
+    border: 0px;
+}
+.your-order-area .Place-order button:hover {
+    background-color: #000;
+    color: #fff;
+}

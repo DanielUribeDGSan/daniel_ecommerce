@@ -28,6 +28,7 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
 Route::get('orden/crear', [App\Http\Controllers\OrderController::class, 'order'])->middleware('auth')->name('order');
+Route::get('orden/{orden}/payment', [App\Http\Controllers\OrderController::class, 'orderPayment'])->middleware('auth')->name('orderPayment');
 
 // Route::get('carrito-de-compras', ShoppingCart::class);
 
