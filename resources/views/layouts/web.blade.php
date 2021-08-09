@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/slinky.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.3') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/payment.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.3') }}" />
 
 
@@ -59,7 +60,6 @@
     @livewireStyles
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
 
@@ -77,15 +77,18 @@
             <div class="sidebar-cart-all">
                 <a class="cart-close" href="#"><i class="pe-7s-close"></i></a>
                 <div class="cart-content">
-                    <h3>Carrito de compras</h3>
-                    @livewire('menu-cart')
+                    @if (Route::current()->getName() == 'order')
+                    @else
+                        <h3>Carrito de compras</h3>
+                        @livewire('menu-cart')
 
-                    <div class="cart-btn btn-hover">
-                        <a class="theme-color" href="{{ route('carrito') }}">Ver el carrito de compras</a>
-                    </div>
-                    <div class="checkout-btn btn-hover">
-                        <a class="theme-color" href="checkout.html">Pagar</a>
-                    </div>
+                        <div class="cart-btn btn-hover">
+                            <a class="theme-color" href="{{ route('carrito') }}">Ver el carrito de compras</a>
+                        </div>
+                        <div class="checkout-btn btn-hover">
+                            <a class="theme-color" href="{{ route('order') }}">Crear orden</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

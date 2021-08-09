@@ -11,6 +11,8 @@ use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 
 class CreateOrder extends Component
 {
+    protected $listeners = ['render'];
+
     public $contact, $city, $codePostal, $address, $reference, $phone, $email, $note, $costo = 200;
     public $states, $municipalities = [], $localities = [];
 
@@ -68,9 +70,9 @@ class CreateOrder extends Component
         $order->shipping_cost = $this->costo;
         $order->total = $this->costo + FacadesCart::subtotal();
         $order->content = FacadesCart::content();
-        $order->estado_id = $this->state_id;
-        $order->municipio_id = $this->municipality_id;
-        $order->localidad_id = $this->locality_id;
+        $order->state_id = $this->state_id;
+        $order->municipality_id = $this->municipality_id;
+        $order->locality_id = $this->locality_id;
         $order->address = $this->address;
         $order->referencia = $this->reference;
         $order->save();

@@ -1,4 +1,9 @@
 <div x-data>
+    @if (Cart::count() == 0)
+        @php
+            redirect()->route('inicio');
+        @endphp
+    @endif
     <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
         <div class="container">
             <div class="breadcrumb-content text-center">
@@ -177,66 +182,33 @@
                                     </div>
                                     <div class="your-order-info order-total">
                                         <ul>
-                                            @if (Cart::subtotal() > 2000)
-                                                <li>Costo Envío <span>0 MXN </span>
-                                                </li>
-                                            @else
-                                                <li>Costo Envío <span>200 MXN </span>
-                                                </li>
+                                            @if (floatval(str_replace(',', '', Cart::subtotal())) > 2000)
+                                            <li>Costo Envío <span>0 MXN </span>
+                                            </li>
+                                        @else
+                                            <li>Costo Envío <span>200 MXN </span>
+                                            </li>
                                             @endif
 
                                         </ul>
                                     </div>
                                     <div class="your-order-info order-total">
                                         <ul>
-                                            @if (Cart::subtotal() > 2000)
-                                                <li>Total <span>{{ Cart::subtotal() }} MXN </span>
-                                                </li>
-                                            @else
-                                                <li>Total <span>{{ Cart::subtotal() + 200 }} MXN </span>
-                                                </li>
+                                            @if (floatval(str_replace(',', '', Cart::subtotal())) > 2000)
+                                            <li>Total <span>{{ Cart::subtotal() }} MXN </span>
+                                            </li>
+                                        @else
+                                            <li>Total
+                                                <span>
+                                                    @php
+                                                        setlocale(LC_MONETARY, 'en_US');
+                                                    @endphp
+                                                    {{ str_replace('USD', '', money_format('%i', floatval(str_replace(',', '', Cart::subtotal())) + floatval(200))) }}
+                                                    MXN
+                                                </span>
+                                            </li>
                                             @endif
                                         </ul>
-                                    </div>
-                                </div>
-                                <div class="payment-method">
-                                    <div class="pay-top sin-payment">
-                                        <input id="payment_method_1" class="input-radio" type="radio" value="cheque"
-                                            checked="checked" name="payment_method">
-                                        <label for="payment_method_1"> Direct Bank Transfer </label>
-                                        <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment reference.</p>
-                                        </div>
-                                    </div>
-                                    <div class="pay-top sin-payment">
-                                        <input id="payment-method-2" class="input-radio" type="radio" value="cheque"
-                                            name="payment_method">
-                                        <label for="payment-method-2">Check payments</label>
-                                        <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment reference.</p>
-                                        </div>
-                                    </div>
-                                    <div class="pay-top sin-payment">
-                                        <input id="payment-method-3" class="input-radio" type="radio" value="cheque"
-                                            name="payment_method">
-                                        <label for="payment-method-3">Cash on delivery </label>
-                                        <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment reference.</p>
-                                        </div>
-                                    </div>
-                                    <div class="pay-top sin-payment sin-payment-3">
-                                        <input id="payment-method-4" class="input-radio" type="radio" value="cheque"
-                                            name="payment_method">
-                                        <label for="payment-method-4">PayPal <img alt=""
-                                                src="assets/images/icon-img/payment.png"><a href="#">What is
-                                                PayPal?</a></label>
-                                        <div class="payment-box payment_method_bacs">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment reference.</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,103 @@
+.container__payment {
+    /* height: calc(100vh - 50px) !important; */
+    height: 100vh;
+}
+.content-payment {
+    box-shadow: 0 3px 35px 0 rgb(0 0 0 / 14%);
+    border-radius: 20px;
+}
+.card-payment {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 0px;
+    padding: 1rem;
+}
+.form-control-payment {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    opacity: 1;
+    outline: none;
+    border-radius: 0px;
+}
+.img-orden {
+    width: 3rem;
+}
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.circular--landscape img {
+    width: auto;
+    height: 100%;
+    margin-left: -11px;
+}
+.btn-payment {
+    background-color: #e97730;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.divicion {
+    border-right: 1px solid #ccc;
+}
+.pt-20 {
+    padding-top: 2rem;
+}
+.pb-30 {
+    padding-bottom: 3rem;
+}
+.pr-0 {
+    padding-right: 0px;
+}
+.pl-0 {
+    padding-left: 0px;
+}
+.bg-fondo {
+    background: rgb(240, 240, 240);
+}
+.border-b-primary {
+    border-bottom: 1px solid #e97730;
+    width: auto;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+    .container__payment {
+        height: 100%;
+    }
+    .circular--landscape {
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .circular--landscape img {
+        width: auto;
+        height: 100%;
+        margin-left: -7px;
+        border-radius: 10%;
+    }
+}

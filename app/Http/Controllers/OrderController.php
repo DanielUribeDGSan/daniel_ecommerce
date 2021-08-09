@@ -14,6 +14,7 @@ class OrderController extends Controller
 
     public function orderPayment(Order $orden)
     {
-        return view('orden.orden-payment-page', compact('orden'));
+        $items = json_decode($orden->content);
+        return view('orden.orden-payment-page', compact('orden', 'items'));
     }
 }

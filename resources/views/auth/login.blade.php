@@ -5,6 +5,7 @@
                 <form method="POST" action="{{ route('login') }}" class="sign-in-form">
                     @csrf
                     <h2 class="title">Iniciar sesión</h2>
+                    <x-jet-validation-errors class="mb-4" />
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="email" id="email" placeholder="Correo" name="email" :value="old('email')" required

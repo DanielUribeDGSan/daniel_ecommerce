@@ -1,4 +1,6 @@
 {
+    "The password must be at least 8 characters.": "La contraseña debe tener al menos 8 caracteres.",
+    "Whoops! Something went wrong.": "¡Ups! Algo salió mal.",
     "E-Mail Address": "Correo electrónico",
     "Password": "Contraseña",
     "Remember Me": "Recuérdame",

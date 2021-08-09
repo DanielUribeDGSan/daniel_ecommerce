@@ -123,27 +123,10 @@
                         <div class="grand-total-wrap">
                             <div class="grand-total-content">
                                 <h3>Total <span>{{ Cart::subTotal() }} MXN</span></h3>
-                                <div class="grand-shipping">
-                                    <span>Shipping</span>
-                                    <ul>
-                                        <li><input type="radio" name="shipping" value="info"
-                                                checked="checked"><label>Free
-                                                shipping</label></li>
-                                        <li><input type="radio" name="shipping" value="info"
-                                                checked="checked"><label>Flat
-                                                rate: <span>$100.00</span></label></li>
-                                        <li><input type="radio" name="shipping" value="info"
-                                                checked="checked"><label>Local
-                                                pickup: <span>$120.00</span></label></li>
-                                    </ul>
-                                </div>
 
-                                <div class="grand-total">
-                                    <h4>Total <span>{{ Cart::subTotal() }} MXN</span></h4>
-                                </div>
                             </div>
                             <div class="grand-total-btn btn-hover">
-                                <a class="btn theme-color" href="{{ route('order') }}">Proceder al pago</a>
+                                <a class="btn theme-color" href="{{ route('order') }}">Crear orden</a>
                             </div>
                         </div>
                     </div>
