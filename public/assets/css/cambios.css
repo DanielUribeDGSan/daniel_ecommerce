@@ -890,6 +890,9 @@ hr {
 }
 /* Product */
 /* Botones */
+.mercadopago-button {
+    width: 100%;
+}
 button:disabled {
     background-color: rgb(78 78 78 / 30%);
     cursor: not-allowed !important;
@@ -1008,4 +1011,17 @@ button:disabled {
 }
 .cursor-pointer {
     cursor: pointer;
+}
+.float-left {
+    float: left;
+    margin-right: 5px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 5px;
+}
+
+.divisor-20 {
+    height: 20px;
 }

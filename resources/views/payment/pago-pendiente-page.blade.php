@@ -1,41 +1,4 @@
 <x-web-layout>
-    @php
-        // SDK de Mercado Pago
-        require base_path('/vendor/autoload.php');
-        // Agrega credenciales
-        MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
-        
-        // Crea un objeto de preferencia
-        $preference = new MercadoPago\Preference();
-        
-        // Crea un ítem en la preferencia
-        // foreach ($items as $product) {
-        //     $item = new MercadoPago\Item();
-        //     $item->title = $product->name;
-        //     $item->quantity = $product->qty;
-        //     $item->unit_price = $product->price;
-        
-        //     $products[] = $item;
-        // }
-        $item = new MercadoPago\Item();
-        $item->title = 'Costo total';
-        $item->quantity = 1;
-        $item->unit_price = $orden->total;
-        
-        // $preference->items = $products;
-        $preference = new MercadoPago\Preference();
-        //...
-        
-        $preference->back_urls = [
-            'success' => 'http://127.0.0.1:8000/pago/1/exitoso',
-            'failure' => 'http://www.tu-sitio/failure',
-            'pending' => 'http://www.tu-sitio/pending',
-        ];
-        $preference->auto_return = 'approved';
-        
-        $preference->items = [$item];
-        $preference->save();
-    @endphp
     <div class="container container__payment pt-20 pb-30 h-100">
         <div class="row h-100  content-payment">
             <div class="col-lg-8 col-md-6 col-12  p-0">
@@ -106,17 +69,23 @@
                     <div class="card-body d-flex align-items-center justify-content-center">
                         {{-- <div> --}}
                         <div class="">
-                            <p class="border-b-primary">Total:</p> <span
-                                class="float-right">{{ $orden->total }}</span><br>
+                            <p class="border-b-primary">Pago:</p> <span class="float-right mr-4">Pendiente</span><br>
                             <div class="divisor-20"></div>
                             {{-- <div class="slider-btn btn-hover">
                                 <a href="" class="btn animated d-block">
                                     Pagar <i class="far fa-credit-card"></i>
                                 </a>
                             </div> --}}
-                            <div class="cho-container d-block"></div>
+                            <lottie-player src="{{ asset('json/pago-pendiente.json') }}" background="transparent"
+                                speed="1" style="width: 321px; height: 270px;" loop autoplay></lottie-player>
+                            <p class="mt-3 text-center">Tu pago es esta en proceso, te contactaremos cuando el pago se
+                                haya realizado.</p>
                             <div class="divisor-20"></div>
-                            <x-gif-payment />
+                            <div class="slider-btn btn-hover">
+                                <a href="{{ route('inicio') }}" class="btn animated d-block">
+                                    Regresar al inicio
+                                </a>
+                            </div>
                         </div>
                         {{-- <p>Detalles del pago</p>
                              <form class="mt-3">
@@ -155,54 +124,6 @@
             </div>
         </div>
     </div>
-    <script>
-        var expDate = document.getElementById('exp');
-        expDate.onkeyup = function(e) {
-            if (this.value == this.lastValue) return;
-            var caretPosition = this.selectionStart;
-            var sanitizedValue = this.value.replace(/[^0-9]/gi, '');
-            var parts = [];
 
-            for (var i = 0, len = sanitizedValue.length; i < len; i += 2) {
-                parts.push(sanitizedValue.substring(i, i + 2));
-            }
-            for (var i = caretPosition - 1; i >= 0; i--) {
-                var c = this.value[i];
-                if (c < '0' || c > '9') {
-                    caretPosition--;
-                }
-            }
-            caretPosition += Math.floor(caretPosition / 2);
-
-            this.value = this.lastValue = parts.join('/');
-            this.selectionStart = this.selectionEnd = caretPosition;
-        }
-
-        // Radio button
-        $('.radio-group .radio').click(function() {
-            $(this).parent().find('.radio').removeClass('selected');
-            $(this).addClass('selected');
-        });
-    </script>
-
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-
-    <script>
-        // Agrega credenciales de SDK
-        const mp = new MercadoPago("{{ config('services.mercadopago.key') }}", {
-            locale: 'es-AR'
-        });
-
-        // Inicializa el checkout
-        mp.checkout({
-            preference: {
-                id: '{{ $preference->id }}'
-            },
-            render: {
-                container: '.cho-container', // Indica el nombre de la clase donde se mostrará el botón de pago
-                label: 'Pagar', // Cambia el texto del botón de pago (opcional)
-            }
-        });
-    </script>
 
 </x-web-layout>
