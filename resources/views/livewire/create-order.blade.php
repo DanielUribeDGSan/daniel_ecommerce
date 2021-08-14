@@ -92,15 +92,6 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Pueblo / Ciudad <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" wire:model.defer="city">
-                                        @if ($city == '' && $validate)
-                                            <p class="cl-danger mt-3">La ciudad no puede quedar vacía</p>
-                                        @endif
-                                    </div>
-                                </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="billing-info mb-20">
                                         <label>Código postal <abbr class="required" title="required">*</abbr></label>

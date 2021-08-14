@@ -263,7 +263,7 @@
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.3') }}"></script>
     @include('sweetalert::alert')
-
+    @stack('script')
 
 
 </body>

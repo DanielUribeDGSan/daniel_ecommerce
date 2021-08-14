@@ -19,7 +19,6 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('contact');
-            $table->string('city');
             $table->string('code_postal', 5);
             $table->string('phone', 10);
             $table->string('email');

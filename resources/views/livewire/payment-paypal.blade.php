@@ -1,4 +1,4 @@
-<x-web-layout>
+<div>
     <div class="container container__payment pt-20 pb-30 h-100">
         <div class="row h-100  content-payment">
             <div class="col-lg-8 col-md-6 col-12  p-0">
@@ -69,23 +69,17 @@
                     <div class="card-body d-flex align-items-start justify-content-center">
                         {{-- <div> --}}
                         <div class="">
-                            <p class="border-b-primary">Pago:</p> <span class="float-right mr-4">Exitoso</span><br>
+                            <p class="border-b-primary">Total:</p> <span
+                                class="float-right">{{ $orden->total }}</span><br>
                             <div class="divisor-20"></div>
+                            <div id="paypal-button-container"></div>
                             {{-- <div class="slider-btn btn-hover">
                                 <a href="" class="btn animated d-block">
                                     Pagar <i class="far fa-credit-card"></i>
                                 </a>
                             </div> --}}
-                            <lottie-player src="{{ asset('json/pago-exitoso.json') }}" background="transparent"
-                                speed="1" style="width: 321px; height: 270px;" loop autoplay></lottie-player>
-                            <p class="mt-3 text-center"> Gracias por realizar tu pago, esperemos que disfrutes mucho tu
-                                producto.</p>
                             <div class="divisor-20"></div>
-                            <div class="slider-btn btn-hover">
-                                <a href="{{ route('inicio') }}" class="btn animated d-block">
-                                    Regresar al inicio
-                                </a>
-                            </div>
+                            <x-gif-payment />
                         </div>
                         {{-- <p>Detalles del pago</p>
                              <form class="mt-3">
@@ -124,6 +118,29 @@
             </div>
         </div>
     </div>
-
-
-</x-web-layout>
+    @push('script')
+        <script src="https://www.paypal.com/sdk/js?client-id={{ config('services.paypal.client_id') }}&currency=MXN">
+            // Replace YOUR_CLIENT_ID with your sandbox client ID
+        </script>
+        <script>
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '{{ $orden->total }}'
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // console.log(details);
+                        // alert('Transaction completed by ' + details.payer.name.given_name);
+                        Livewire.emit('payOrder');
+                    });
+                }
+            }).render('#paypal-button-container'); // Display payment options on your web page
+        </script>
+    @endpush
+</div>

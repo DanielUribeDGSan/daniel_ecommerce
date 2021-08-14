@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class WebhooksController extends Controller
 {
-    public function webhooks()
+    public function webhooks(Request $request)
     {
     }
 }

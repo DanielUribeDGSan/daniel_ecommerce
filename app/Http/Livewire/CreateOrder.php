@@ -13,7 +13,7 @@ class CreateOrder extends Component
 {
     protected $listeners = ['render'];
 
-    public $contact, $city, $codePostal, $address, $reference, $phone, $email, $note, $costo = 200;
+    public $contact, $codePostal, $address, $reference, $phone, $email, $note, $costo = 200;
     public $states, $municipalities = [], $localities = [];
 
     public $state_id = "", $municipality_id = "", $locality_id = "";
@@ -24,7 +24,6 @@ class CreateOrder extends Component
         'state_id' => 'required',
         'municipality_id' => 'required',
         'locality_id' => 'required',
-        'city' => 'required',
         'codePostal' => 'required',
         'address' => 'required',
         'reference' => 'required',
@@ -61,7 +60,6 @@ class CreateOrder extends Component
 
         $order->user_id = auth()->user()->id;
         $order->contact = $this->contact;
-        $order->city = $this->city;
         $order->code_postal = $this->codePostal;
         $order->phone = $this->phone;
         $order->email = $this->email;
