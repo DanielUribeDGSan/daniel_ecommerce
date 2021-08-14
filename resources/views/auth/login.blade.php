@@ -24,6 +24,12 @@
                     <a href="{{ route('password.request') }}">
                         <p class="link-password mt-2">¿Olvidaste tu contraseña?</p>
                     </a>
+                    <a class="mt-2 btn-login btn-light w-100 mostrar_movil" href="{{ route('register') }}">
+                        <p class="link-password mt-2">Registrate</p>
+                    </a>
+                    <a class="mt-2 btn-login btn-light w-100 mostrar_movil" href="{{ route('inicio') }}">
+                        <p class="link-password mt-2">Regresar al inicio</p>
+                    </a>
                     <p class="social-text">Or Sign in with social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -89,19 +95,6 @@
                 <lottie-player src="{{ asset('json/login.json') }}" background="transparent" speed="1"
                     style="width: 400px; height: 400px;" loop autoplay></lottie-player>
 
-            </div>
-            <div class="panel right-panel">
-                <div class="content">
-                    <h3>One of us ?</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                        laboriosam ad deleniti.
-                    </p>
-                    <button class="btn transparent" id="sign-in-btn">
-                        Sign in
-                    </button>
-                </div>
-                <img src="img/register.svg" class="image" alt="" />
             </div>
         </div>
     </div>

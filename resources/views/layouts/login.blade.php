@@ -17,7 +17,7 @@
     {{ $slot }}
     @livewireScripts
 
-    <script src="{{ asset('assets/js/login.js') }}"></script>
+    
 </body>
 
 </html>

@@ -29,7 +29,15 @@
                     </div>
 
                     <button type="submit" class="btn solid">Registrarme</button>
+
+                    <a class="mt-3 btn-login btn-light w-100 mostrar_movil" href="{{ route('login') }}">
+                        <p class="link-password mt-2">Iniciar sesión</p>
+                    </a>
+                    <a class="mt-3 btn-login btn-light w-100 mostrar_movil" href="{{ route('inicio') }}">
+                        <p class="link-password mt-2">Regresar al inicio</p>
+                    </a>
                 </form>
+
             </div>
         </div>
 

@@ -276,6 +276,9 @@ a {
 .container.sign-up-mode .right-panel {
     pointer-events: all;
 }
+.mostrar_movil {
+    display: none;
+}
 
 @media (max-width: 870px) {
     .container {
@@ -380,7 +383,31 @@ a {
     }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 760px) {
+    .btn-login {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: #fff;
+        border: none;
+        outline: none;
+        height: 49px;
+        border-radius: 10px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 10px 0;
+        cursor: pointer;
+        border: 1px solid #333;
+        transition: 0.5s;
+    }
+    .mostrar_movil {
+        display: block;
+    }
+    .left-panel {
+        display: none !important;
+    }
     form {
         padding: 0 1.5rem;
     }
@@ -401,7 +428,9 @@ a {
     }
 
     .container.sign-up-mode:before {
-        bottom: 28%;
-        left: 50%;
+        display: none;
+    }
+    .container-login:before {
+        display: none;
     }
 }

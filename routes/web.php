@@ -40,6 +40,9 @@ Route::get('pago/{orden}/pendiente', [App\Http\Controllers\PaymentController::cl
 Route::get('pago/{orden}/rechazado', [App\Http\Controllers\PaymentController::class, 'pagoCancelado'])->middleware('auth')->name('pagoCancelado');
 Route::get('pago/{orden}/exitoso', [App\Http\Controllers\PaymentController::class, 'pagoExitoso'])->middleware('auth')->name('pagoExitoso');
 
+Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->middleware('auth')->name('webhooks');
+
+
 // Route::get('carrito-de-compras', ShoppingCart::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
