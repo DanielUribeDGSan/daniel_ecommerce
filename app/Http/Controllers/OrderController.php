@@ -31,7 +31,7 @@ class OrderController extends Controller
 
     public function ordenes()
     {
-        $ordenes = Order::all();
+        $ordenes = Order::where('user_id', auth()->user()->id)->get();
         return view('ordenes.view-ordenes-page', compact('ordenes'));
     }
 }
