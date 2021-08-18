@@ -49,6 +49,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/payment.css?ver=1.0.3') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/ordenes.css?ver=1.0.3') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.3') }}" />
 
 
@@ -260,6 +261,7 @@
     <script src="{{ asset('assets/js/plugins/slinky.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/ajax-mail.js') }}"></script>
     <script src="{{ asset('assets/js/loading.js') }}"></script>
+    <script src="{{ asset('assets/js/ordenes.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.3') }}"></script>
     @include('sweetalert::alert')

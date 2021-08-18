@@ -162,6 +162,11 @@
                                             <ul>
                                                 @auth
                                                     <li><a href="#">Mi perfil</a></li>
+                                                    <li>
+                                                        <a href="{{ route('ordenes') }}">
+                                                            Ver mis ordenes
+                                                        </a>
+                                                    </li>
                                                     <li><a class="hover__orange"
                                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
                                                             Sesión </a>

@@ -1,5 +1,5 @@
 <div>
-    @if (Route::current()->getName() != 'order' || Route::current()->getName() != 'orderPayment')
+    @if (Route::current()->getName() != 'order' && Route::current()->getName() != 'orderPayment' && Route::current()->getName() != 'viewOrder' && Route::current()->getName() != 'ordenes')
         @if (Cart::count())
             <div class="header-action-style header-action-cart ">
                 <a class="cart-active" href="#"><i class="pe-7s-shopbag cart-nav"></i>

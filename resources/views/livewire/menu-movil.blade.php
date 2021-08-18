@@ -36,7 +36,7 @@
                  </ul>
              </div>
          </div>
-         <div class="language-currency-wrap language-currency-wrap-modify">
+         {{-- <div class="language-currency-wrap language-currency-wrap-modify">
              <div class="currency-wrap border-style">
                  <a class="currency-active" href="#">$ Dollar (US) <i class=" ti-angle-down "></i></a>
                  <div class="currency-dropdown">
@@ -64,6 +64,6 @@
                      </ul>
                  </div>
              </div>
-         </div>
+         </div> --}}
      </div>
  </div>

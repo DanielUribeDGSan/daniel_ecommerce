@@ -177,7 +177,7 @@
                                             <li>Costo Envío <span>0 MXN </span>
                                             </li>
                                         @else
-                                            <li>Costo Envío <span>200 MXN </span>
+                                            <li>Costo Envío <span>{{ $costo }} MXN </span>
                                             </li>
                                             @endif
 
@@ -191,10 +191,7 @@
                                         @else
                                             <li>Total
                                                 <span>
-                                                    @php
-                                                        setlocale(LC_MONETARY, 'en_US');
-                                                    @endphp
-                                                    {{ str_replace('USD', '', money_format('%i', floatval(str_replace(',', '', Cart::subtotal())) + floatval(200))) }}
+                                                    {{ number_format(floatval(str_replace(',', '', Cart::subtotal())) + floatval($costo), 2, '.', ',') }}
                                                     MXN
                                                 </span>
                                             </li>

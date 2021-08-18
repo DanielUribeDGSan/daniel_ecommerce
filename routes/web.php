@@ -31,17 +31,20 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 // Carrito
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
-// Ordenes
-Route::get('orden/crear', [App\Http\Controllers\OrderController::class, 'order'])->middleware('auth')->name('order');
-Route::get('orden/{orden}/payment', [App\Http\Controllers\OrderController::class, 'orderPayment'])->middleware('auth')->name('orderPayment');
+Route::middleware(['auth'])->group(function () {
+    // Ordenes
+    Route::get('orden/crear', [App\Http\Controllers\OrderController::class, 'order'])->name('order');
+    Route::get('orden/{orden}/payment', [App\Http\Controllers\OrderController::class, 'orderPayment'])->name('orderPayment');
+    Route::get('orden/{orden}', [App\Http\Controllers\OrderController::class, 'viewOrder'])->name('viewOrder');
+    Route::get('ordenes', [App\Http\Controllers\OrderController::class, 'ordenes'])->name('ordenes');
 
-//Pagos
-Route::get('pago/{orden}/pendiente', [App\Http\Controllers\PaymentController::class, 'pagoPendiente'])->middleware('auth')->name('pagoPendiente');
-Route::get('pago/{orden}/rechazado', [App\Http\Controllers\PaymentController::class, 'pagoCancelado'])->middleware('auth')->name('pagoCancelado');
-Route::get('pago/{orden}/exitoso', [App\Http\Controllers\PaymentController::class, 'pagoExitoso'])->middleware('auth')->name('pagoExitoso');
+    //Pagos
+    Route::get('pago/{orden}/pendiente', [App\Http\Controllers\PaymentController::class, 'pagoPendiente'])->name('pagoPendiente');
+    Route::get('pago/{orden}/rechazado', [App\Http\Controllers\PaymentController::class, 'pagoCancelado'])->name('pagoCancelado');
+    Route::get('pago/{orden}/exitoso', [App\Http\Controllers\PaymentController::class, 'pagoExitoso'])->name('pagoExitoso');
 
-Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->middleware('auth')->name('webhooks');
-
+    Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->name('webhooks');
+});
 
 // Route::get('carrito-de-compras', ShoppingCart::class);
 

@@ -755,6 +755,25 @@ hr {
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+/* Menu user */
+.language-currency-wrap.language-currency-wrap-modify
+    .currency-wrap
+    .currency-dropdown,
+.language-currency-wrap.language-currency-wrap-modify
+    .currency-wrap
+    .language-dropdown,
+.language-currency-wrap.language-currency-wrap-modify
+    .language-wrap
+    .currency-dropdown,
+.language-currency-wrap.language-currency-wrap-modify
+    .language-wrap
+    .language-dropdown {
+    width: 140px;
+    left: -20px;
+    margin-top: 5px;
+    right: auto;
+}
+
 /* Checkbox Color */
 
 .label-color {

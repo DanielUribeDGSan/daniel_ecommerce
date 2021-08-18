@@ -10,6 +10,8 @@ class PaymentController extends Controller
 {
     public function pagoExitoso(Order $orden, Request $request)
     {
+        $this->authorize('author', $orden);
+
         if ($request->get('payment_id')) {
             $payment_id = $request->get('payment_id');
             $token = config('services.mercadopago.token');
@@ -27,12 +29,16 @@ class PaymentController extends Controller
 
     public function pagoPendiente(Order $orden)
     {
+        $this->authorize('author', $orden);
+
         $items = json_decode($orden->content);
         return view('payment.pago-pendiente-page', compact('orden', 'items'));
     }
 
     public function pagoCancelado(Order $orden)
     {
+        $this->authorize('author', $orden);
+
         $items = json_decode($orden->content);
         return view('payment.pago-cancelado-page', compact('orden', 'items'));
     }
