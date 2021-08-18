@@ -1,7 +1,4 @@
 <x-web-layout>
-    <style>
-
-    </style>
     <div class="container-fluid mt-3 mb-5">
         <div class="container__ordenes">
             <div class="sidebar">
@@ -85,7 +82,7 @@
                                         </div>
                                     </div>
                                 @empty
-
+                                    <x-order-empty />
                                 @endforelse
                             </div>
                         </div>
@@ -121,7 +118,7 @@
                                         </div>
                                     </div>
                                 @empty
-
+                                    <x-order-empty />
                                 @endforelse
                             </div>
                         </div>
@@ -157,7 +154,7 @@
                                         </div>
                                     </div>
                                 @empty
-
+                                    <x-order-empty />
                                 @endforelse
                             </div>
                         </div>
@@ -193,7 +190,7 @@
                                         </div>
                                     </div>
                                 @empty
-
+                                    <x-order-empty />
                                 @endforelse
                             </div>
                         </div>
@@ -229,7 +226,7 @@
                                         </div>
                                     </div>
                                 @empty
-
+                                    <x-order-empty />
                                 @endforelse
                             </div>
                         </div>
