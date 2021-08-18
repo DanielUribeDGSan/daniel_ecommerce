@@ -555,6 +555,7 @@ img {
 @media screen and (max-width: 768px) {
     .container__ordenes {
         flex-direction: column;
+        height: auto;
     }
     .sidebar.collapse {
         display: block !important;
