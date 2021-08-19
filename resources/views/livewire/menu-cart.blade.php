@@ -45,5 +45,11 @@
         <div class="cart-total">
             <h4>Subtotal: <span>{{ Cart::subtotal() }} MXN</span></h4>
         </div>
+        <div class="cart-btn btn-hover">
+            <a class="theme-color" href="{{ route('carrito') }}">Ver el carrito de compras</a>
+        </div>
+        <div class="checkout-btn btn-hover">
+            <a class="theme-color" href="{{ route('order') }}">Crear orden</a>
+        </div>
     @endif
 </div>

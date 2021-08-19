@@ -82,14 +82,7 @@
                     @else
                         <h3>Carrito de compras</h3>
                         @livewire('menu-cart')
-                        @if (Cart::count())
-                            <div class="cart-btn btn-hover">
-                                <a class="theme-color" href="{{ route('carrito') }}">Ver el carrito de compras</a>
-                            </div>
-                            <div class="checkout-btn btn-hover">
-                                <a class="theme-color" href="{{ route('order') }}">Crear orden</a>
-                            </div>
-                        @endif
+
                     @endif
                 </div>
             </div>
