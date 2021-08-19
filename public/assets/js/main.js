@@ -624,5 +624,6 @@
         duration: 1000,
     });
 
+
 })(jQuery);
 

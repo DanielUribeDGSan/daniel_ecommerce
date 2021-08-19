@@ -234,6 +234,11 @@
     <!-- All JS is here -->
     @livewireScripts
 
+    {{-- Alertas --}}
+    <x-cookies-content />
+
+    @livewire('alert-product-pending')
+
     <script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
@@ -256,6 +261,7 @@
     <script src="{{ asset('assets/js/plugins/ajax-mail.js') }}"></script>
     <script src="{{ asset('assets/js/loading.js') }}"></script>
     <script src="{{ asset('assets/js/ordenes.js') }}"></script>
+    <script src="{{ asset('assets/js/alertas.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.4') }}"></script>
     @include('sweetalert::alert')
