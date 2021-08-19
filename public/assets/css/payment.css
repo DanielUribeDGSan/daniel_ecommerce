@@ -51,7 +51,6 @@
 .circular--landscape img {
     width: auto;
     height: 100%;
-    margin-left: -11px;
 }
 .btn-payment {
     background-color: #e97730;

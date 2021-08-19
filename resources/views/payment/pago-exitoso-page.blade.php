@@ -78,6 +78,7 @@
                             </div> --}}
                             <lottie-player src="{{ asset('json/pago-exitoso.json') }}" background="transparent"
                                 speed="1" style="width: 321px; height: 270px;" loop autoplay></lottie-player>
+
                             <p class="mt-3 text-center"> Gracias por realizar tu pago, esperemos que disfrutes mucho tu
                                 producto.</p>
                             <div class="divisor-20"></div>

@@ -120,7 +120,6 @@
     </div>
     @push('script')
         <script src="https://www.paypal.com/sdk/js?client-id={{ config('services.paypal.client_id') }}&currency=MXN">
-            // Replace YOUR_CLIENT_ID with your sandbox client ID
         </script>
         <script>
             paypal.Buttons({

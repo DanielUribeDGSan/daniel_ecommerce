@@ -67,7 +67,9 @@
                                                     </lottie-player>
                                                 </div>
                                                 <div class="main-orden__time">{{ $orden->total }} MXN</div>
-                                                <div class="main-orden__link"><a>Pagar orden</a></div>
+                                                <div class="main-orden__link"><a class="text-white"
+                                                        href="{{ route('orderPayment', $orden) }}">Pagar orden</a>
+                                                </div>
                                                 <div class="orden-img__wrapper">
                                                     <img class="orden-img"
                                                         src="{{ asset('assets/images/ordenes/pendiente.svg') }}" />
@@ -103,7 +105,8 @@
                                                     </lottie-player>
                                                 </div>
                                                 <div class="main-orden__time">{{ $orden->total }} MXN</div>
-                                                <div class="main-orden__link"><a>Ver orden</a></div>
+                                                <div class="main-orden__link"><a class="text-white"
+                                                        href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
                                                     <img class="orden-img"
                                                         src="{{ asset('assets/images/ordenes/recibido.svg') }}" />
@@ -139,7 +142,8 @@
                                                     </lottie-player>
                                                 </div>
                                                 <div class="main-orden__time">{{ $orden->total }} MXN</div>
-                                                <div class="main-orden__link"><a>Ver orden</a></div>
+                                                <div class="main-orden__link"><a class="text-white"
+                                                        href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
                                                     <img class="orden-img"
                                                         src="{{ asset('assets/images/ordenes/enviado.svg') }}" />
@@ -175,7 +179,8 @@
                                                     </lottie-player>
                                                 </div>
                                                 <div class="main-orden__time">{{ $orden->total }} MXN</div>
-                                                <div class="main-orden__link"><a>Ver orden</a></div>
+                                                <div class="main-orden__link"><a class="text-white"
+                                                        href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
                                                     <img class="orden-img"
                                                         src="{{ asset('assets/images/ordenes/entregado.svg') }}" />
@@ -211,7 +216,8 @@
                                                     </lottie-player>
                                                 </div>
                                                 <div class="main-orden__time">{{ $orden->total }} MXN</div>
-                                                <div class="main-orden__link"><a>Ver orden</a></div>
+                                                <div class="main-orden__link"><a class="text-white"
+                                                        href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
                                                     <img class="orden-img"
                                                         src="{{ asset('assets/images/ordenes/anulado.svg') }}" />

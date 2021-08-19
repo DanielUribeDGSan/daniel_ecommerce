@@ -68,15 +68,51 @@
                 <div class="card card-payment h-100">
                     <div class="card-body d-flex align-items-start justify-content-center">
                         {{-- <div> --}}
-                        <div class="">
-                            <p class="border-b-primary">Total:</p> <span
-                                class="float-right">{{ $orden->total }}</span><br>
-                            <div class="divisor-20"></div>
-                            {{-- Btn --}}
+                        @if ($orden->status == 2)
+                            <div class="">
+                                <p class="border-b-primary">Orden:</p> <span class="float-right">Recibida</span><br>
+                                <div class="divisor-20"></div>
+                                {{-- Btn --}}
 
-                            <div class="divisor-20"></div>
-                            <x-gif-payment />
-                        </div>
+                                <div class="divisor-20"></div>
+                                <lottie-player src="{{ asset('json/recibido.json') }}" background="transparent"
+                                    speed="1" style="width: 321px; height: 321px;" loop autoplay></lottie-player>
+                            </div>
+                        @elseif ($orden->status == 3)
+                            <div class="">
+                                <p class="border-b-primary">Orden:</p> <span class="float-right">Enviada</span><br>
+                                <div class="divisor-20"></div>
+                                {{-- Btn --}}
+
+                                <div class="divisor-20"></div>
+                                <lottie-player src="{{ asset('json/enviado.json') }}" background="transparent"
+                                    speed="1" style="width: 321px; height: 321px;" loop autoplay></lottie-player>
+                            </div>
+                        @elseif ($orden->status == 4)
+                            <div class="">
+                                <p class="border-b-primary">Orden:</p> <span class="float-right">Entregada</span><br>
+                                <div class="divisor-20"></div>
+                                {{-- Btn --}}
+
+                                <div class="divisor-20"></div>
+                                <lottie-player src="{{ asset('json/entregado.json') }}" background="transparent"
+                                    speed="1" style="width: 321px; height: 321px;" loop autoplay></lottie-player>
+                            </div>
+                        @elseif ($orden->status == 5)
+                            <div class="">
+                                <p class="border-b-primary">Orden:</p> <span class="float-right">Anulada</span><br>
+                                <div class="divisor-20"></div>
+                                {{-- Btn --}}
+
+                                <div class="divisor-20"></div>
+                                <lottie-player src="{{ asset('json/anulado.json') }}" background="transparent"
+                                    speed="1" style="width: 321px; height: 321px;" loop autoplay></lottie-player>
+                            </div>
+                        @else
+                            <script>
+                                location.href = "{{ route('orderPayment', $orden) }}";
+                            </script>
+                        @endif
                     </div>
                 </div>
             </div>
