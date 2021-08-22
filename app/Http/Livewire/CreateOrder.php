@@ -74,6 +74,9 @@ class CreateOrder extends Component
         $order->address = $this->address;
         $order->referencia = $this->reference;
         $order->save();
+        foreach (FacadesCart::content() as $item) {
+            discount($item);
+        }
         FacadesCart::destroy();
         return redirect()->route('orderPayment', $order);
     }

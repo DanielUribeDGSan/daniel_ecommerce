@@ -1,0 +1,30 @@
+/* Tabla registro productos */
+.circle-image {
+    width: 39px;
+    height: 39px;
+    border-radius: 60px;
+    float: right;
+}
+
+.light.badge-publicado {
+    background-color: #2bc1553b;
+    color: rgb(53, 226, 53);
+}
+.text-publicado {
+    color: rgb(53, 226, 53) !important;
+}
+.light.badge-borrador {
+    background-color: #c6282826;
+    color: rgb(226, 53, 53);
+}
+.text-borrador {
+    color: rgb(226, 53, 53) !important;
+}
+
+/* Modal */
+@media (min-width: 768px) {
+    .modal-dialog {
+        max-width: 700px;
+        margin: 1.75rem auto;
+    }
+}

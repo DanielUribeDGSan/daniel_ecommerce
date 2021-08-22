@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\WebController;
-use App\Http\Livewire\ShoppingCart;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->name('webhooks');
 });
+
+
 
 // Route::get('carrito-de-compras', ShoppingCart::class);
 
