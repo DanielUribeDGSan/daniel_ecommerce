@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class ShowProducts extends Component
 {
+
     public function render()
     {
         $productos = Product::all();

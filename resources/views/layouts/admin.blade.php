@@ -21,11 +21,13 @@
         rel="stylesheet">
 
     <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -294,8 +296,11 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    @livewireScripts
     <!-- Required vendors -->
+
+    @include('sweetalert::alert')
+    @livewireScripts
+
     <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
@@ -315,6 +320,8 @@
 
     <!-- Dashboard 1 -->
     <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
+    @stack('script')
+
     <script>
         function carouselReview() {
             /*  testimonial one function by = owl.carousel.js */
@@ -357,6 +364,8 @@
             }, 1000);
         });
     </script>
+
+
 </body>
 
 </html>

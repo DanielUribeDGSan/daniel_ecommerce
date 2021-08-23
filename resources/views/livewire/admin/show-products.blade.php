@@ -1,4 +1,4 @@
-<div>
+<div x-data>
     <div class="page-titles">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
@@ -12,11 +12,12 @@
                 <div class="card-header">
                     <h4 class="card-title">Productos</h4>
                     <a class="btn btn-primary mb-1 mr-1 float-right" data-toggle="modal"
-                        data-target="#registrarProductoModal">Agregar nuevo producto</a>
+                        data-target="#crearProductoModal">Crear nuevo producto</a>
+
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example5" class="display min-w850">
+                        <table id="example5" class="datatable-add-products talbe-products display min-w850">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -29,12 +30,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @foreach ($productos as $producto)
 
                                     <tr>
-                                        <td><span class="mr-2">#P-{{ $producto->id }}</span> <img class="circle-image"
-                                                src="{{ asset('assets/images/' . $producto->images->first()->url) }}"
-                                                alt="kasa shop"></td>
+                                        <td><span class="mr-2">#P-{{ $producto->id }}</span>
+                                            @isset($producto->images->first()->url)
+                                                <img class="circle-image"
+                                                    src="{{ asset('assets/images/' . $producto->images->first()->url) }}"
+                                                    alt="kasa shop">
+                                            @endisset
+                                        </td>
                                         <td>{{ $producto->name }}</td>
                                         <td>{{ $producto->subcategory->category->name }}</td>
                                         <td>{{ $producto->price }} MXN</td>
@@ -87,12 +93,12 @@
             </div>
         </div>
     </div>
-    {{-- Modal Registrar producto --}}
-    <div class="modal fade" id="registrarProductoModal">
+    {{-- Modal Crear producto --}}
+    <div class="modal fade" id="crearProductoModal">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Agregar producto</h5>
+                    <h5 class="modal-title">Crear producto</h5>
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
                 </div>
                 <div class="modal-body">
