@@ -79,12 +79,29 @@
                                                 </div>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" data-toggle="modal"
-                                                        data-target="#editarProductoModal">Editar producto</a>
+                                                        data-target="#editarProductoModal">Editar
+                                                        producto</a>
                                                     <a class="dropdown-item" href="#">Eliminar producto</a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
+
+                                    <!-- Modal Actualizar producto -->
+                                    <div class="modal fade" id="editarProductoModal">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Editar producto</h5>
+                                                    <button type="button" class="close"
+                                                        data-dismiss="modal"><span>&times;</span></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    @livewire('admin.edit-product',['producto' => $producto])
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endforeach
                             </tbody>
                         </table>
@@ -108,18 +125,4 @@
         </div>
     </div>
 
-    <!-- Modal Actualizar producto -->
-    <div class="modal fade" id="editarProductoModal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Editar producto</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    @livewire('admin.edit-product')
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
