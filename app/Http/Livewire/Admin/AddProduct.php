@@ -71,11 +71,10 @@ class AddProduct extends Component
         }
 
         $product->save();
-        session(['productoCreado' => 'Producto creado']);
 
         $this->emit('message', 'Producto creado');
+        $this->emit('render');
         $this->reset(['category_id', 'subcategory_id', 'brand_id', 'name', 'description', 'price', 'quantity', 'description']);
-        redirect()->route('admin.productos');
     }
 
 

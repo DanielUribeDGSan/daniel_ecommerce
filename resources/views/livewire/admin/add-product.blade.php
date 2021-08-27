@@ -104,20 +104,17 @@
         </div>
     </form>
     @push('script')
-        @if (session()->has('productoCreado'))
-            <script>
+        <script>
+            Livewire.on('message', function(message) {
                 Swal.fire({
                     title: 'Producto creado',
-                    text: "Tu producto se ha creado con éxito",
+                    text: message,
                     icon: 'success',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Aceptar'
                 });
-            </script>
-            @php
-                session()->forget('productoCreado');
-            @endphp
-        @endif
+            });
+        </script>
     @endpush
 </div>

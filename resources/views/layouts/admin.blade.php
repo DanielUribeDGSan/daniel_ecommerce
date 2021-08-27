@@ -319,9 +319,9 @@
 
     <!-- Dashboard 1 -->
     <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
-    @stack('script')
     @include('sweetalert::alert')
     @livewireScripts
+    @stack('script')
     <script>
         function carouselReview() {
             /*  testimonial one function by = owl.carousel.js */

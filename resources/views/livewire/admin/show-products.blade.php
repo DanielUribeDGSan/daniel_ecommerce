@@ -16,8 +16,15 @@
 
                 </div>
                 <div class="card-body">
+                    <div class="input-group search-area d-xl-inline-flex d-none">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><a href="javascript:void(0)"><i
+                                        class="flaticon-381-search-2"></i></a></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search here..." wire:model="search">
+                    </div>
                     <div class="table-responsive">
-                        <table id="example5" class="datatable-add-products talbe-products display min-w850">
+                        <table class="table header-border table-hover verticle-middle">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -86,25 +93,10 @@
                                             </div>
                                         </td>
                                     </tr>
-
-                                    <!-- Modal Actualizar producto -->
-                                    <div class="modal fade" id="editarProductoModal">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Editar producto</h5>
-                                                    <button type="button" class="close"
-                                                        data-dismiss="modal"><span>&times;</span></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    @livewire('admin.edit-product',['producto' => $producto])
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $productos->links() }}
                     </div>
                 </div>
             </div>
