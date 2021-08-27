@@ -61,21 +61,19 @@
                     @endif
                 </div>
             </div>
-            @if ($subcategory_id)
-                @if (!$this->subcategory->color && !$this->subcategory->size)
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label class="text-black font-w600">Cantidad de stock <span
-                                    class="required">*</span></label>
-                            <input type="number" class="form-control" placeholder="Cantidad"
-                                wire:model.defer="quantity">
-                            @if ($errors->has('quantity'))
-                                <span>{{ $errors->first('quantity') }}</span>
-                            @endif
-                        </div>
+
+            @if (!$this->subcategory->color && !$this->subcategory->size)
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="text-black font-w600">Cantidad de stock <span class="required">*</span></label>
+                        <input type="number" class="form-control" placeholder="Cantidad" wire:model.defer="quantity">
+                        @if ($errors->has('quantity'))
+                            <span>{{ $errors->first('quantity') }}</span>
+                        @endif
                     </div>
-                @endif
+                </div>
             @endif
+
         </div>
         <div class="row">
             <div class="col-lg-12">

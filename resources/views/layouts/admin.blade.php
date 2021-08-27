@@ -298,8 +298,7 @@
     ***********************************-->
     <!-- Required vendors -->
 
-    @include('sweetalert::alert')
-    @livewireScripts
+
 
     <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
@@ -321,7 +320,8 @@
     <!-- Dashboard 1 -->
     <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
     @stack('script')
-
+    @include('sweetalert::alert')
+    @livewireScripts
     <script>
         function carouselReview() {
             /*  testimonial one function by = owl.carousel.js */

@@ -28,6 +28,11 @@ class Search extends Component
         $this->search = $this->busqueda;
     }
 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
     public function loadData()
     {
         $this->loading = 1;

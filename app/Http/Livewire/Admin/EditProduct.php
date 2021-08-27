@@ -27,23 +27,23 @@ class EditProduct extends Component
         'price' => 'required',
     ];
 
-    public function updatedCategoryId($value)
-    {
-        $this->subcategories = Subcategory::where('category_id', $value)->get();
-        $this->brands = Brand::whereHas('categories', function (Builder $query) use ($value) {
-            $query->where('category_id', $value);
-        })->get();
-        $this->reset(['subcategory_id', 'brand_id']);
-    }
+    // public function updatedCategoryId($value)
+    // {
+    //     $this->subcategories = Subcategory::where('category_id', $value)->get();
+    //     $this->brands = Brand::whereHas('categories', function (Builder $query) use ($value) {
+    //         $query->where('category_id', $value);
+    //     })->get();
+    //     $this->reset(['subcategory_id', 'brand_id']);
+    // }
 
     // public function updatedSubcategoryId($value)
     // {
     //     $this->subcategory = Subcategory::find($value);
     // }
-    public function getSubcategoryProperty()
-    {
-        return Subcategory::find($this->subcategory_id);
-    }
+    // public function getSubcategoryProperty()
+    // {
+    //     return Subcategory::find($this->subcategory_id);
+    // }
 
     public function save()
     {
@@ -79,10 +79,23 @@ class EditProduct extends Component
         redirect()->route('admin.productos');
     }
 
+    public function getSubcategoryProperty()
+    {
+        return Subcategory::find($this->producto->subcategory_id);
+    }
+
 
     public function mount()
     {
         $this->categories = Category::all();
+        $this->category_id = $this->producto->subcategory->category->id;
+        $this->subcategories = Subcategory::where('category_id', $this->category_id)->get();
+        $this->brands = Brand::whereHas(
+            'categories',
+            function (Builder $query) {
+                $query->where('category_id', $this->category_id);
+            }
+        )->get();
     }
 
     public function render()
