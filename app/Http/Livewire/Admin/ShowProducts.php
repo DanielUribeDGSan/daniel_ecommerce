@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class ShowProducts extends Component
 {
-    public $search;
+    public $search, $id_p;
 
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
@@ -19,6 +19,11 @@ class ShowProducts extends Component
     public function updatingSearch()
     {
         $this->resetPage();
+    }
+
+    public function editarProduct($id_product)
+    {
+        $this->id_p = $id_product;
     }
 
     public function render()

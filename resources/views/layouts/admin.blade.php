@@ -15,6 +15,8 @@
     <link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.4') }}" />
+
     <link href="{{ asset('admin/css/cambios.css') }}" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -56,9 +58,9 @@
         ***********************************-->
         <div class="nav-header">
             <a href="{{ route('admin.inicio') }}" class=" brand-logo">
-                <img class="logo-abbr" src="./images/logo.png" alt="">
-                <img class="logo-compact" src="./images/logo-text.png" alt="">
-                <img class="brand-title" src="./images/logo-text.png" alt="">
+                <img class="logo-abbr" src="{{ asset('admin/images/logo.png') }}" alt="">
+                <img class="logo-compact" src="{{ asset('admin/images/logo-text.png') }}" alt="">
+                <img class="brand-title" src="{{ asset('admin/images/logo-text.png') }}" alt="">
             </a>
 
             <div class="nav-control">
@@ -101,7 +103,8 @@
                                             <li>
                                                 <div class="timeline-panel">
                                                     <div class="media mr-2">
-                                                        <img alt="image" width="50" src="images/avatar/1.jpg">
+                                                        <img alt="image" width="50"
+                                                            src="{{ asset('admin/images/avatar/1.jpg') }}">
                                                     </div>
                                                     <div class="media-body">
                                                         <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -134,7 +137,8 @@
                                             <li>
                                                 <div class="timeline-panel">
                                                     <div class="media mr-2">
-                                                        <img alt="image" width="50" src="images/avatar/1.jpg">
+                                                        <img alt="image" width="50"
+                                                            src="{{ asset('admin/images/avatar/1.jpg') }}">
                                                     </div>
                                                     <div class="media-body">
                                                         <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -173,7 +177,7 @@
 
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
-                                    <img src="images/profile/17.jpg" width="20" alt="" />
+                                    <img src="{{ asset('admin/images/profile/17.jpg') }}" width="20" alt="" />
                                     <div class="header-info">
                                         <span class="text-black"><strong>Peter Parkur</strong></span>
                                         <p class="fs-12 mb-0">Super Admin</p>
@@ -240,7 +244,7 @@
                     </li>
                 </ul>
                 <div class="add-menu-sidebar">
-                    <img src="images/calendar.png" alt="" class="mr-3">
+                    <img src="{{ asset('admin/images/calendar.png') }}" alt="" class="mr-3">
                     <p class="	font-w500 mb-0">Create Workout Plan Now</p>
                 </div>
                 <div class="copyright">

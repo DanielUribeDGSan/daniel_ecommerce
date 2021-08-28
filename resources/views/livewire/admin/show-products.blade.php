@@ -23,11 +23,11 @@
                         </div>
                         <input type="text" class="form-control" placeholder="Search here..." wire:model="search">
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" wire:loading.remove>
                         <table class="table header-border table-hover verticle-middle">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th></th>
                                     <th>Nombre</th>
                                     <th>Categoria</th>
                                     <th>Precio</th>
@@ -38,21 +38,21 @@
                             </thead>
                             <tbody>
 
-                                @foreach ($productos as $producto)
+                                @foreach ($productos as $product)
 
                                     <tr>
-                                        <td><span class="mr-2">#P-{{ $producto->id }}</span>
-                                            @isset($producto->images->first()->url)
+                                        <td>
+                                            @isset($product->images->first()->url)
                                                 <img class="circle-image"
-                                                    src="{{ asset('assets/images/' . $producto->images->first()->url) }}"
+                                                    src="{{ asset('assets/images/' . $product->images->first()->url) }}"
                                                     alt="kasa shop">
                                             @endisset
                                         </td>
-                                        <td>{{ $producto->name }}</td>
-                                        <td>{{ $producto->subcategory->category->name }}</td>
-                                        <td>{{ $producto->price }} MXN</td>
+                                        <td>{{ $product->name }}</td>
+                                        <td>{{ $product->subcategory->category->name }}</td>
+                                        <td>{{ $product->price }} MXN</td>
                                         <td>
-                                            @switch($producto->status)
+                                            @switch($product->status)
                                                 @case(1)
                                                     <span class="badge light badge-borrador">
                                                         <i class="fa fa-circle text-borrador mr-1"></i>
@@ -70,7 +70,7 @@
 
                                             @endswitch
                                         </td>
-                                        <td>{{ $producto->quantity }}</td>
+                                        <td>{{ $product->quantity }}</td>
                                         <td>
                                             <div class="dropdown ml-auto text-right">
                                                 <div class="btn-link" data-toggle="dropdown">
@@ -85,8 +85,9 @@
                                                     </svg>
                                                 </div>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" data-toggle="modal"
-                                                        data-target="#editarProductoModal">Editar
+                                                    <a class="dropdown-item" href="
+                                                        {{ route('admin.products.edit', $product) }}"
+                                                        target="__blank">Editar
                                                         producto</a>
                                                     <a class="dropdown-item" href="#">Eliminar producto</a>
                                                 </div>
@@ -97,6 +98,9 @@
                             </tbody>
                         </table>
                         {{ $productos->links() }}
+                    </div>
+                    <div class="w-100" wire:loading>
+                        <x-loading-table />
                     </div>
                 </div>
             </div>
@@ -116,5 +120,6 @@
             </div>
         </div>
     </div>
+
 
 </div>

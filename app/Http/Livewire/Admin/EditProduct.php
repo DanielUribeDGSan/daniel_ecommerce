@@ -12,94 +12,84 @@ use Illuminate\Support\Str;
 
 class EditProduct extends Component
 {
-    public $producto;
-
-    public $categories, $subcategories = [], $brands = [];
-    public $category_id = "", $subcategory_id = "", $brand_id = "";
-    public $name, $description, $price, $quantity;
-
+    public $product, $categories, $subcategories, $brands;
+    public $description;
+    public $category_id;
 
     protected $rules = [
         'category_id' => 'required',
-        'subcategory_id' => 'required',
-        'name' => 'required',
-        'brand_id' => 'required',
-        'price' => 'required',
+        'product.subcategory_id' => 'required',
+        'product.name' => 'required|unique:products',
+        'product.brand_id' => 'required',
+        'product.price' => 'required',
+        'product.quantity' => 'numeric',
     ];
 
-    // public function updatedCategoryId($value)
-    // {
-    //     $this->subcategories = Subcategory::where('category_id', $value)->get();
-    //     $this->brands = Brand::whereHas('categories', function (Builder $query) use ($value) {
-    //         $query->where('category_id', $value);
-    //     })->get();
-    //     $this->reset(['subcategory_id', 'brand_id']);
-    // }
+    public function mount(Product $product)
+    {
+        $this->description = $product->description;
+
+        $this->product = $product;
+
+        $this->categories = Category::all();
+
+        $this->category_id = $product->subcategory->category->id;
+
+        $this->subcategories = Subcategory::where('category_id', $this->category_id)->get();
+
+        $this->slug = $this->product->slug;
+
+        $this->brands = Brand::whereHas('categories', function (Builder $query) {
+            $query->where('category_id', $this->category_id);
+        })->get();
+    }
+
+
+    public function updatedCategoryId($value)
+    {
+        $this->subcategories = Subcategory::where('category_id', $value)->get();
+        $this->brands = Brand::whereHas('categories', function (Builder $query) use ($value) {
+            $query->where('category_id', $value);
+        })->get();
+        $this->product->subcategory_id = "";
+        $this->product->brand_id = "";
+    }
 
     // public function updatedSubcategoryId($value)
     // {
     //     $this->subcategory = Subcategory::find($value);
-    // }
-    // public function getSubcategoryProperty()
-    // {
-    //     return Subcategory::find($this->subcategory_id);
     // }
 
     public function save()
     {
         $rules = $this->rules;
 
-        if ($this->subcategory_id) {
+        $rules['product.name'] = 'required|unique:products,name,' . $this->product->id;
+
+        if ($this->product->subcategory_id) {
             if (!$this->subcategory->color && !$this->subcategory->size) {
-                $rules['quantity'] = 'required';
+                $rules['product.quantity'] = 'required|numeric';
             }
         }
 
         $this->validate($rules);
 
-        $product = new Product();
 
-        $product->name = $this->name;
-        $product->slug = Str::slug($this->name);
-        $product->description = $this->description;
-        $product->price = $this->price;
-        $product->subcategory_id = $this->subcategory_id;
-        $product->brand_id = $this->brand_id;
-        if ($this->subcategory_id) {
-            if (!$this->subcategory->color && !$this->subcategory->size) {
-                $product->quantity = $this->quantity;
-            }
-        }
+        $this->product->description = $this->description;
+        $this->product->slug = Str::slug($this->product->name);
 
-        $product->save();
-        session(['productoCreado' => 'Producto creado']);
-
-        $this->emit('message', 'Producto creado');
-        $this->reset(['category_id', 'subcategory_id', 'brand_id', 'name', 'description', 'price', 'quantity', 'description']);
-        redirect()->route('admin.productos');
+        $this->product->save();
+        $this->emit('messageUpdate', 'Producto actualizado');
+        $this->emit('render');
     }
 
     public function getSubcategoryProperty()
     {
-        return Subcategory::find($this->producto->subcategory_id);
-    }
-
-
-    public function mount()
-    {
-        $this->categories = Category::all();
-        $this->category_id = $this->producto->subcategory->category->id;
-        $this->subcategories = Subcategory::where('category_id', $this->category_id)->get();
-        $this->brands = Brand::whereHas(
-            'categories',
-            function (Builder $query) {
-                $query->where('category_id', $this->category_id);
-            }
-        )->get();
+        return Subcategory::find($this->product->subcategory_id);
     }
 
     public function render()
     {
-        return view('livewire.admin.edit-product');
+        return view('livewire.admin.edit-product')->layout('layouts.admin');
     }
 }

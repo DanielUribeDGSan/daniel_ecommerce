@@ -21,7 +21,7 @@ class AddProduct extends Component
     protected $rules = [
         'category_id' => 'required',
         'subcategory_id' => 'required',
-        'name' => 'required',
+        'name' => 'required|unique:products',
         'brand_id' => 'required',
         'price' => 'required',
     ];

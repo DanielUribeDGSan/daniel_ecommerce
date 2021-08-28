@@ -24,6 +24,9 @@ class ContentFilter extends Component
     public $product_clean = 0;
     public $loading = 0;
 
+    public $price_max = 1000;
+    public $price_min = 10;
+
 
     public function limpiar()
     {
@@ -100,7 +103,12 @@ class ContentFilter extends Component
             });
         }
 
-        $products = $productsQuery->paginate(12);
+        if ($this->price_max || $this->price_min) {
+            $productsQuery = Product::where('price', ">=", $this->price_min)
+                ->where('price', "<=", $this->price_max);
+        }
+
+        $products = $productsQuery->where('status', 2)->paginate(12);
         return view('livewire.content-filter', compact('products'));
     }
 }
