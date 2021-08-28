@@ -19,10 +19,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
-
-    RewriteCond %{HTTP_HOST} ^www.tudominio.com$ [NC]
-    RewriteRule ^(.*)$ https://tudominio.com/ [R=301,L]
+    
 
 </IfModule>
