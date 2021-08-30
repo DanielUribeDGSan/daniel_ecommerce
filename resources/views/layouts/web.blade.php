@@ -72,7 +72,7 @@
 
         <x-preload />
 
-        @livewire('menu-pc')
+        @livewire('menu-pc', key('menu-pc1'))
         <!-- mini cart start -->
         <div class="sidebar-cart-active">
             <div class="sidebar-cart-all">
@@ -81,7 +81,7 @@
                     @if (Route::current()->getName() == 'order')
                     @else
                         <h3>Carrito de compras</h3>
-                        @livewire('menu-cart')
+                        @livewire('menu-cart', key('menu-cart1'))
 
                     @endif
                 </div>
@@ -229,7 +229,7 @@
         </div>
         <!-- Product Modal end -->
         <!-- Mobile Menu start -->
-        @livewire('menu-movil')
+        @livewire('menu-movil', key('menu-movil1'))
     </div>
     <!-- All JS is here -->
     @livewireScripts
@@ -237,7 +237,7 @@
     {{-- Alertas --}}
     <x-cookies-content />
 
-    @livewire('alert-product-pending')
+    @livewire('alert-product-pending', key('alerta-product1'))
 
     <script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/popper.min.js') }}"></script>
