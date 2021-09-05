@@ -62,7 +62,8 @@
                                </div>
                                <div class="col-lg-6">
                                    <div class="form-group">
-                                       <label class="text-black font-w600">Marca <span class="required">*</span></label>
+                                       <label class="text-black font-w600">Marca <span
+                                               class="required">*</span></label>
                                        <select class="form-control default-select" tabindex="-98"
                                            wire:model="product.brand_id">
                                            <option selected disabled value="">Seleccione una marca</option>
@@ -77,7 +78,8 @@
                                </div>
                                <div class="col-lg-6">
                                    <div class="form-group">
-                                       <label class="text-black font-w600">Precio<span class="required">*</span></label>
+                                       <label class="text-black font-w600">Precio<span
+                                               class="required">*</span></label>
                                        <input type="number" class="form-control" placeholder="Precio"
                                            wire:model.defer="product.price" step=".01">
                                        @if ($errors->has('product.price'))
@@ -106,7 +108,7 @@
                                    <div class="form-group" wire:ignore>
                                        <label class="text-black font-w600">Descripnción</label>
                                        <textarea rows="8" class="form-control" placeholder="descripción" rows="4"
-                                           wire:model="description" x-data x-init="ClassicEditor.create($refs.miEditor)
+                                           wire:model.defer="description" x-data x-init="ClassicEditor.create($refs.miEditor)
                         .then(function(editor){
                             editor.model.document.on('change:data', () => {
                                 @this.set('description', editor.getData())
@@ -119,9 +121,9 @@
                                </div>
                                <div class="col-lg-12">
                                    <div class="form-group mb-0">
-                                       <button type="submit" class="submit btn btn-primary" wire:loading.attr="disabled"
-                                           wire:loading.remove>Editar producto</button>
-                                       <div wire:loading
+                                       <button type="submit" class="submit btn btn-primary"
+                                           wire:loading.attr="disabled">Editar producto</button>
+                                       <div wire:loading wire:target="save"
                                            wire:loading.class="d-flex align-items-center justify-content-center">
                                            <x-loading />
                                        </div>

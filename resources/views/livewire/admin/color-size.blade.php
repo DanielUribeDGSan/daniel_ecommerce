@@ -1,6 +1,5 @@
 <div>
-    <hr />
-    <form class="comment-form mt-5" wire:submit.prevent="save">
+    <form class="comment-form mt-2" wire:submit.prevent="save">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
@@ -42,7 +41,7 @@
         </div>
     </form>
 
-    @if ($product_colors->count())
+    @if ($size_colors->count())
         <div class="table-responsive">
             <table class="table header-border table-hover verticle-middle">
                 <thead>
@@ -53,10 +52,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($product_colors as $product_color)
-                        <tr wire:key="product_color-{{ $product_color->pivot->id }}">
-                            <td>{{ $colors->find($product_color->pivot->color_id)->name }}</td>
-                            <td>{{ $product_color->pivot->quantity }}</td>
+                    @foreach ($size_colors as $size_color)
+                        <tr wire:key="size-color-pivot-{{ $size_color->pivot->id }}">
+                            <td>{{ $colors->find($size_color->pivot->color_id)->name }}
+                            </td>
+                            <td>{{ $size_color->pivot->quantity }}</td>
                             <td>
                                 <div class="dropdown ml-auto text-right">
                                     <div class="btn-link" data-toggle="dropdown">
@@ -71,9 +71,9 @@
                                     </div>
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <a class="dropdown-item" data-toggle="modal" data-target="#EditarColorModal"
-                                            wire:click="edit({{ $product_color->pivot->id }})">Editar color</a>
+                                            wire:click="edit({{ $size_color->pivot->id }})">Editar color</a>
                                         <a class="dropdown-item"
-                                            wire:click="$emit('deleteColor',{{ $product_color->pivot->id }})">Eliminar
+                                            wire:click="$emit('deleteColorSize',{{ $size_color->pivot->id }})">Eliminar
                                             color</a>
                                     </div>
                                 </div>
@@ -85,6 +85,8 @@
 
         </div>
     @endif
+    <hr />
+
     {{-- Modal Crear producto --}}
     <div class="modal fade" id="EditarColorModal" wire:ignore>
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -146,7 +148,7 @@
     @push('script')
 
         <script>
-            Livewire.on('messageColor', function(message) {
+            Livewire.on('messageColorSize', function(message) {
                 Swal.fire({
                     title: 'Color agregado',
                     text: message,
@@ -159,7 +161,7 @@
         </script>
 
         <script>
-            Livewire.on('updateColor', function(message) {
+            Livewire.on('updateColorSize', function(message) {
                 Swal.fire({
                     title: 'Color actualizado',
                     text: message,
@@ -174,7 +176,7 @@
         </script>
 
         <script>
-            Livewire.on('deleteColor', function(id) {
+            Livewire.on('deleteColorSize', function(id) {
                 Swal.fire({
                     title: '¿Está seguro(a)?',
                     text: "No podrás revertir esto.",
@@ -187,11 +189,18 @@
                     if (result.isConfirmed) {
                         Livewire.emit('delete', id);
                         Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
                             title: 'Color elimado',
-                            showConfirmButton: false,
-                            timer: 1500
+                            text: "",
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Aceptar',
+                            allowOutsideClick: false
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.reload();
+                            }
                         })
                     }
                 })

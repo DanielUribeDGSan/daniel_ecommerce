@@ -4,12 +4,12 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Color;
 use Livewire\Component;
-use App\Models\ColorProduct as Pivot;
+use App\Models\ColorSize as Pivot;
 
-class ColorProduct extends Component
+class ColorSize extends Component
 {
 
-    public $product, $colors, $color_id = "", $quantity;
+    public $size, $colors, $color_id = "", $quantity;
 
     public $pivot, $pivot_color_id, $pivot_quantity;
 
@@ -27,15 +27,14 @@ class ColorProduct extends Component
         $this->validate();
 
         $pivot = Pivot::where('color_id', $this->color_id)
-            ->where('product_id', $this->product->id)
+            ->where('size_id', $this->size->id)
             ->first();
 
         if ($pivot) {
             $pivot->quantity = $pivot->quantity + $this->quantity;
             $pivot->save();
         } else {
-
-            $this->product->colors()->attach([
+            $this->size->colors()->attach([
                 $this->color_id => [
                     'quantity' => $this->quantity
                 ]
@@ -44,16 +43,15 @@ class ColorProduct extends Component
 
         $this->reset(['color_id', 'quantity']);
 
-        $this->emit('messageColor', '');
+        $this->emit('messageColorSize', '');
 
-        $this->product = $this->product->fresh();
+        $this->size = $this->size->fresh();
     }
 
 
     public function edit(Pivot $pivot)
     {
         $this->pivot = $pivot;
-
         $this->pivot_color_id = $pivot->color_id;
         $this->pivot_quantity = $pivot->quantity;
     }
@@ -67,19 +65,22 @@ class ColorProduct extends Component
 
         $this->pivot->save();
 
-        $this->emit('updateColor', '');
-        $this->product = $this->product->fresh();
+        $this->emit('updateColorSize', '');
+
+        $this->size = $this->size->fresh();
     }
 
     public function delete(Pivot $pivot)
     {
         $pivot->delete();
-        $this->product = $this->product->fresh();
+
+        $this->size = $this->size->fresh();
     }
 
     public function render()
     {
-        $product_colors = $this->product->colors;
-        return view('livewire.admin.color-product', compact('product_colors'));
+        $size_colors = $this->size->colors;
+
+        return view('livewire.admin.color-size', compact('size_colors'));
     }
 }

@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="wrapper">
-                <div class="main-container">
+                <div class="main-container w-100">
                     <div class="pendientes">
                         <div class="main-header mt-10 anim" style="--delay: 0s">Ordenes pendientes</div>
                         <div class="main-ordenes">
@@ -76,7 +76,8 @@
                                                 </div>
                                                 <div class="orden-detail">
                                                     <div class="orden-name">Pendiente</div>
-                                                    <div class="orden-info">{{ $orden->created_at->format('d/m/y') }}
+                                                    <div class="orden-info">
+                                                        {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>
                                                     </div>
                                                 </div>
@@ -113,7 +114,8 @@
                                                 </div>
                                                 <div class="orden-detail">
                                                     <div class="orden-name">Recibido</div>
-                                                    <div class="orden-info">{{ $orden->created_at->format('d/m/y') }}
+                                                    <div class="orden-info">
+                                                        {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>
                                                     </div>
                                                 </div>
@@ -150,7 +152,8 @@
                                                 </div>
                                                 <div class="orden-detail">
                                                     <div class="orden-name">Enviado</div>
-                                                    <div class="orden-info">{{ $orden->created_at->format('d/m/y') }}
+                                                    <div class="orden-info">
+                                                        {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>
                                                     </div>
                                                 </div>
@@ -187,7 +190,8 @@
                                                 </div>
                                                 <div class="orden-detail">
                                                     <div class="orden-name">Entregado</div>
-                                                    <div class="orden-info">{{ $orden->created_at->format('d/m/y') }}
+                                                    <div class="orden-info">
+                                                        {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>
                                                     </div>
                                                 </div>
@@ -224,7 +228,8 @@
                                                 </div>
                                                 <div class="orden-detail">
                                                     <div class="orden-name">Anulado</div>
-                                                    <div class="orden-info">{{ $orden->created_at->format('d/m/y') }}
+                                                    <div class="orden-info">
+                                                        {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>
                                                     </div>
                                                 </div>

@@ -55,7 +55,8 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label class="text-black font-w600">Precio<span class="required">*</span></label>
-                    <input type="number" class="form-control" placeholder="Precio" wire:model.defer="price" step=".01">
+                    <input type="number" class="form-control" placeholder="Precio" wire:model.defer="price"
+                        step=".01">
                     @if ($errors->has('price'))
                         <span>{{ $errors->first('price') }}</span>
                     @endif
@@ -81,7 +82,8 @@
             <div class="col-lg-12">
                 <div class="form-group" wire:ignore>
                     <label class="text-black font-w600">Descripnción</label>
-                    <textarea rows="8" class="form-control" placeholder="descripción" wire:model="description" x-init="ClassicEditor.create($refs.miEditor)
+                    <textarea rows="8" class="form-control" placeholder="descripción" wire:model.defer="description"
+                        x-init="ClassicEditor.create($refs.miEditor)
                 .then(function(editor){
                     editor.model.document.on('change:data', () => {
                         @this.set('description', editor.getData())
