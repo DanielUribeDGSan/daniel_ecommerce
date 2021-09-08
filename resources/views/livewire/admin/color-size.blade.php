@@ -1,5 +1,5 @@
 <div>
-    <form class="comment-form mt-2" wire:submit.prevent="save">
+    <form class="comment-form mt-2" wire:submit.prevent="saveColorSize">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
@@ -32,7 +32,7 @@
                 <div class="form-group mb-0">
                     <button type="submit" class="submit btn btn-primary" wire:loading.attr="disabled"
                         wire:loading.remove>Agregar</button>
-                    <div wire:loading wire:target="save"
+                    <div wire:loading wire:target="saveColorSize"
                         wire:loading.class="d-flex align-items-center justify-content-center">
                         <x-loading />
                     </div>
@@ -70,7 +70,7 @@
                                         </svg>
                                     </div>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#EditarColorModal"
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#EditarColorModal2"
                                             wire:click="edit({{ $size_color->pivot->id }})">Editar color</a>
                                         <a class="dropdown-item"
                                             wire:click="$emit('deleteColorSize',{{ $size_color->pivot->id }})">Eliminar
@@ -88,7 +88,7 @@
     <hr />
 
     {{-- Modal Crear producto --}}
-    <div class="modal fade" id="EditarColorModal" wire:ignore>
+    <div class="modal fade" id="EditarColorModal2" wire:ignore>
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -145,66 +145,4 @@
         </div>
     </div>
 
-    @push('script')
-
-        <script>
-            Livewire.on('messageColorSize', function(message) {
-                Swal.fire({
-                    title: 'Color agregado',
-                    text: message,
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                });
-            });
-        </script>
-
-        <script>
-            Livewire.on('updateColorSize', function(message) {
-                Swal.fire({
-                    title: 'Color actualizado',
-                    text: message,
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                });
-                $('#EditarColorModal').modal('hide')
-
-            });
-        </script>
-
-        <script>
-            Livewire.on('deleteColorSize', function(id) {
-                Swal.fire({
-                    title: '¿Está seguro(a)?',
-                    text: "No podrás revertir esto.",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sí, bórralo.'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Livewire.emit('delete', id);
-                        Swal.fire({
-                            title: 'Color elimado',
-                            text: "",
-                            icon: 'success',
-                            showCancelButton: false,
-                            confirmButtonColor: '#3085d6',
-                            cancelButtonColor: '#d33',
-                            confirmButtonText: 'Aceptar',
-                            allowOutsideClick: false
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                location.reload();
-                            }
-                        })
-                    }
-                })
-            })
-        </script>
-    @endpush
 </div>

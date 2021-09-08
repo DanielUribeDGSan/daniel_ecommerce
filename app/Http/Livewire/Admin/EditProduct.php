@@ -4,11 +4,13 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use File;
 
 class EditProduct extends Component
 {
@@ -24,6 +26,8 @@ class EditProduct extends Component
         'product.price' => 'required',
         'product.quantity' => 'numeric',
     ];
+
+    protected $listeners = ['refreshImage', 'delete'];
 
     public function mount(Product $product)
     {
@@ -86,6 +90,32 @@ class EditProduct extends Component
     public function getSubcategoryProperty()
     {
         return Subcategory::find($this->product->subcategory_id);
+    }
+
+    public function deleteImage(Image $image)
+    {
+        $ruta = public_path('assets/images/');
+        File::delete($ruta . $image->url);
+        $image->delete();
+        $this->product = $this->product->fresh();
+    }
+
+    public function refreshImage()
+    {
+        $this->product = $this->product->fresh();
+    }
+
+    public function delete()
+    {
+        $images = $this->product->images;
+        $ruta = public_path('assets/images/');
+
+        foreach ($images as $image) {
+            File::delete($ruta . $image->url);
+            $image->delete();
+        }
+        $this->product->delete();
+        return redirect()->route('admin.productos');
     }
 
     public function render()

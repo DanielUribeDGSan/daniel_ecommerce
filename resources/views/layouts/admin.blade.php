@@ -8,6 +8,18 @@
     <title>Gymove - Fitness Bootstrap Admin Dashboard</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/images/favicon.png') }}">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    {{-- Dropzone --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css"
+        integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Datatable -->
     <link href="{{ asset('admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
@@ -18,17 +30,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.4') }}" />
 
     <link href="{{ asset('admin/css/cambios.css') }}" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+
+    @livewireStyles
 
     <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    @livewireStyles
+
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 </head>
 
@@ -65,7 +78,8 @@
 
             <div class="nav-control">
                 <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                    <span class="line"></span><span class="line"></span><span
+                        class="line"></span>
                 </div>
             </div>
         </div>
@@ -176,7 +190,8 @@
                             </li>
 
                             <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
+                                <a class="nav-link" href="javascript:void(0)" role="button"
+                                    data-toggle="dropdown">
                                     <img src="{{ asset('admin/images/profile/17.jpg') }}" width="20" alt="" />
                                     <div class="header-info">
                                         <span class="text-black"><strong>Peter Parkur</strong></span>
@@ -231,15 +246,22 @@
         <div class="deznav">
             <div class="deznav-scroll">
                 <ul class="metismenu" id="menu">
-
-                    <li><a href="{{ route('admin.inicio') }}" class="ai-icon" aria-expanded="false">
+                    <li>
+                        <a href="{{ route('admin.inicio') }}" class="ai-icon" aria-expanded="false">
                             <i class="flaticon-381-settings-2"></i>
                             <span class="nav-text">Inicio</span>
                         </a>
                     </li>
-                    <li><a href="{{ route('admin.productos') }}" class="ai-icon" aria-expanded="false">
+                    <li>
+                        <a href="{{ route('admin.productos') }}" class="ai-icon" aria-expanded="false">
                             <i class="flaticon-381-settings-2"></i>
                             <span class="nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.category') }}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-381-settings-2"></i>
+                            <span class="nav-text">Categorías</span>
                         </a>
                     </li>
                 </ul>
@@ -323,6 +345,11 @@
 
     <!-- Dashboard 1 -->
     <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
+    {{-- Dropzone --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"
+        integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @include('sweetalert::alert')
     @livewireScripts
     @stack('script')

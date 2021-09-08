@@ -22,7 +22,7 @@ class ColorSize extends Component
         $this->colors = Color::all();
     }
 
-    public function save()
+    public function saveColorSize()
     {
         $this->validate();
 

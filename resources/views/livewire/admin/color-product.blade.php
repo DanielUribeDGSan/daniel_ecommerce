@@ -70,7 +70,7 @@
                                         </svg>
                                     </div>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#EditarColorModal"
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#EditarColorModal1"
                                             wire:click="edit({{ $product_color->pivot->id }})">Editar color</a>
                                         <a class="dropdown-item"
                                             wire:click="$emit('deleteColor',{{ $product_color->pivot->id }})">Eliminar
@@ -86,7 +86,7 @@
         </div>
     @endif
     {{-- Modal Crear producto --}}
-    <div class="modal fade" id="EditarColorModal" wire:ignore>
+    <div class="modal fade" id="EditarColorModal1" wire:ignore>
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -143,59 +143,4 @@
         </div>
     </div>
 
-    @push('script')
-
-        <script>
-            Livewire.on('messageColor', function(message) {
-                Swal.fire({
-                    title: 'Color agregado',
-                    text: message,
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                });
-            });
-        </script>
-
-        <script>
-            Livewire.on('updateColor', function(message) {
-                Swal.fire({
-                    title: 'Color actualizado',
-                    text: message,
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                });
-                $('#EditarColorModal').modal('hide')
-
-            });
-        </script>
-
-        <script>
-            Livewire.on('deleteColor', function(id) {
-                Swal.fire({
-                    title: '¿Está seguro(a)?',
-                    text: "No podrás revertir esto.",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sí, bórralo.'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Livewire.emit('delete', id);
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Color elimado',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
-                })
-            })
-        </script>
-    @endpush
 </div>

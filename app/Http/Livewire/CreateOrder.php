@@ -33,18 +33,18 @@ class CreateOrder extends Component
 
     public function mount()
     {
-        $this->states = State::all();
+        $this->states = State::orderByRaw('nombre ASC')->get();
     }
 
     public function updatedStateId($value)
     {
-        $this->municipalities = Municipality::where('estado_id', $value)->get();
+        $this->municipalities = Municipality::where('estado_id', $value)->orderByRaw('nombre ASC')->get();
         $this->reset(['municipality_id', 'locality_id']);
     }
 
     public function updatedMunicipalityId($value)
     {
-        $this->localities = Locality::where('municipio_id', $value)->get();
+        $this->localities = Locality::where('municipio_id', $value)->orderByRaw('nombre ASC')->get();
         $this->reset('locality_id');
     }
 

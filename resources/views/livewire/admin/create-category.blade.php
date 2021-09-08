@@ -2,7 +2,7 @@
     <div class="page-titles">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Tabla</a></li>
-            <li class="breadcrumb-item active"><a href="javascript:void(0)">Productos</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Categorías</a></li>
         </ol>
     </div>
     <!-- row -->
@@ -10,9 +10,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Productos</h4>
+                    <h4 class="card-title">Categorias</h4>
                     <a class="btn btn-primary mb-1 mr-1 float-right" data-toggle="modal"
-                        data-target="#crearProductoModal">Crear nuevo producto</a>
+                        data-target="#crearProductoModal">Crear nueva categoría</a>
 
                 </div>
                 <div class="card-body">
@@ -27,48 +27,17 @@
                         <table class="table header-border table-hover verticle-middle">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Nombre</th>
-                                    <th>Categoria</th>
-                                    <th>Precio</th>
-                                    <th>Estado</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
 
-                                @foreach ($productos as $product)
+                                @foreach ($categories as $category)
 
                                     <tr>
-                                        <td>
-                                            @isset($product->images->first()->url)
-                                                <img class="circle-image"
-                                                    src="{{ asset('assets/images/' . $product->images->first()->url) }}"
-                                                    alt="kasa shop">
-                                            @endisset
-                                        </td>
-                                        <td>{{ $product->name }}</td>
-                                        <td>{{ $product->subcategory->category->name }}</td>
-                                        <td>{{ $product->price }} MXN</td>
-                                        <td>
-                                            @switch($product->status)
-                                                @case(1)
-                                                    <span class="badge light badge-borrador">
-                                                        <i class="fa fa-circle text-borrador mr-1"></i>
-                                                        Borrador
-                                                    </span>
-                                                @break
-                                                @case(2)
-                                                    <span class="badge light badge-publicado">
-                                                        <i class="fa fa-circle text-publicado mr-1"></i>
-                                                        Publicado
-                                                    </span>
-                                                @break
 
-                                                @default
-
-                                            @endswitch
-                                        </td>
+                                        <td>{{ $category->name }}</td>
                                         <td>
                                             <div class="dropdown ml-auto text-right">
                                                 <div class="btn-link" data-toggle="dropdown">
@@ -84,7 +53,7 @@
                                                 </div>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="
-                                                        {{ route('admin.products.edit', $product) }}"
+                                                        {{ route('admin.products.edit', $category) }}"
                                                         target="__blank">Editar
                                                         producto</a>
                                                 </div>
@@ -94,7 +63,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $productos->links() }}
+                        {{ $categories->links() }}
                     </div>
                     <div class="w-100" wire:loading>
                         <x-loading-table />
@@ -112,7 +81,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    @livewire('admin.add-product')
+                    @livewire('admin.add-category')
                 </div>
             </div>
         </div>

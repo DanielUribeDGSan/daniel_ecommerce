@@ -22,17 +22,27 @@ class SizeProduct extends Component
         $this->colors = Color::all();
     }
 
-    public function save()
+    public function saveSize()
     {
         $this->validate();
-        $this->product->sizes()->create([
-            'name' => $this->talla
-        ]);
 
-        $this->product = $this->product->fresh();
-        $this->reset(['talla']);
+        $size = Size::where('product_id', $this->product->id)
+            ->where('name', $this->talla)
+            ->first();
 
-        $this->emit('messageSise', '');
+        if ($size) {
+            $this->emit('errorSize', 'Esa talla ya existe');
+        } else {
+
+            $this->product->sizes()->create([
+                'name' => $this->talla
+            ]);
+
+            $this->reset(['talla']);
+            $this->product = $this->product->fresh();
+
+            $this->emit('messageSise', '');
+        }
     }
 
     public function edit(Size $size)

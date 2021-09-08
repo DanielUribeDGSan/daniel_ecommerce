@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Product;
+use App\Models\Category;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ShowProducts extends Component
+
+class CreateCategory extends Component
 {
     public $search;
 
@@ -20,10 +21,10 @@ class ShowProducts extends Component
         $this->resetPage();
     }
 
-
     public function render()
     {
-        $productos = Product::where('name', 'like', '%' . $this->search . '%')->orderByRaw('created_at DESC')->paginate(10);
-        return view('livewire.admin.show-products', compact('productos'))->layout('layouts.admin');
+        $categories = Category::where('name', 'like', '%' . $this->search . '%')->orderByRaw('name ASC')->paginate(10);
+
+        return view('livewire.admin.create-category', compact(('categories')))->layout('layouts.admin');
     }
 }

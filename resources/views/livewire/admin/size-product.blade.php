@@ -1,6 +1,6 @@
 <div>
     <hr />
-    <form class="comment-form mt-5" wire:submit.prevent="save">
+    <form class="comment-form mt-5" wire:submit.prevent="saveSize">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
@@ -18,7 +18,7 @@
                 <div class="form-group mb-0">
                     <button type="submit" class="submit btn btn-primary" wire:loading.attr="disabled"
                         wire:loading.remove>Agregar</button>
-                    <div wire:loading wire:target="save"
+                    <div wire:loading wire:target="saveSize"
                         wire:loading.class="d-flex align-items-center justify-content-center">
                         <x-loading />
                     </div>
@@ -114,59 +114,5 @@
         </div>
     </div>
 
-    @push('script')
 
-        <script>
-            Livewire.on('messageSise', function(message) {
-                Swal.fire({
-                    title: 'Talla agregada',
-                    text: message,
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                });
-            });
-        </script>
-
-        <script>
-            Livewire.on('SizeUpdate', function(message) {
-                Swal.fire({
-                    title: 'Talla actualizada',
-                    text: message,
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                });
-                $('#EditarSizeModal').modal('hide')
-
-            });
-        </script>
-
-        <script>
-            Livewire.on('deleteSize', function(id) {
-                Swal.fire({
-                    title: '¿Está seguro(a)?',
-                    text: "No podrás revertir esto.",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sí, bórralo.'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Livewire.emit('delete', id);
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Talla elimada',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
-                })
-            })
-        </script>
-    @endpush
 </div>
