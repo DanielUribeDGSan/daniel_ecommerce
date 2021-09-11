@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\WebController::class, 'inicio'])->name('inicio');
 
 // Categorias
-Route::get('categorias/{category}', [App\Http\Controllers\CategoryController::class, 'categoria'])->name('categoria');
+Route::get('categorias/{category}/{subcategory?}', [App\Http\Controllers\CategoryController::class, 'categoria'])->name('categoria');
 
 // Productos
 Route::get('productos/{product}', [App\Http\Controllers\ProductController::class, 'producto'])->name('producto');

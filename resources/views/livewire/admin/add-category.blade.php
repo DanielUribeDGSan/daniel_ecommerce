@@ -5,8 +5,8 @@
                 <div class="form-group">
                     <label class="text-black font-w600">Nombre <span class="required">*</span></label>
                     <input type="text" class="form-control" placeholder="Nombre" wire:model.defer="createForm.name">
-                    @if ($errors->has('name'))
-                        <span>{{ $errors->first('name') }}</span>
+                    @if ($errors->has('createForm.name'))
+                        <span>{{ $errors->first('createForm.name') }}</span>
                     @endif
                 </div>
             </div>
@@ -26,14 +26,18 @@
                             </div>
                         @endforeach
                     </div>
+                    @if ($errors->has('createForm.brands'))
+                        <span>{{ $errors->first('createForm.brands') }}</span>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <label class="text-black font-w600">Imagen <span class="required">*</span></label>
-                    <input type="file" class="form-control" wire:model.defer="file">
-                    @if ($errors->has('name'))
-                        <span>{{ $errors->first('name') }}</span>
+                    <input accept="image/*" type="file" class="form-control" id="{{ $image_rand }}"
+                        wire:model="createForm.image">
+                    @if ($errors->has('createForm.image'))
+                        <span>{{ $errors->first('createForm.image') }}</span>
                     @endif
                 </div>
             </div>
@@ -50,15 +54,17 @@
     </form>
     @push('script')
         <script>
-            Livewire.on('addCategory', function(message) {
+            Livewire.on('newCategory', function() {
                 Swal.fire({
-                    title: 'Producto creado',
-                    text: message,
+                    title: 'Categoría creada',
+                    text: '',
                     icon: 'success',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Aceptar'
                 });
+                $('#crearCategoriaModal').modal('hide');
+
             });
         </script>
     @endpush

@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Product;
+use App\Models\Subcategory;
 use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
@@ -14,6 +16,8 @@ class ContentFilter extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
+    protected $queryString = ['subcategoria', 'marca', 'price_max', 'price_min'];
+
     public $category, $subcategoria, $marca;
     public $options = [];
     public $colorArr = [];
@@ -23,14 +27,20 @@ class ContentFilter extends Component
     public $qty = 1;
     public $product_clean = 0;
     public $loading = 0;
+    public $subcategoryQuery;
 
     public $price_max = 1000;
     public $price_min = 10;
 
 
+
     public function limpiar()
     {
         $this->reset(['subcategoria', 'marca']);
+        $this->price_max = 1000;
+        $this->price_min = 10;
+        $this->emit('limpiarPrecio');
+        $this->emit('limpiarPrecio2');
     }
 
     public function loadData()
@@ -87,13 +97,23 @@ class ContentFilter extends Component
 
     public function render()
     {
+
         $productsQuery = Product::query()->whereHas('subcategory.category', function (Builder $query) {
             $query->where('id', $this->category->id);
         });
 
-        if ($this->subcategoria) {
+
+        if (isset($this->subcategoryQuery->slug) && !$this->subcategoria) {
             $productsQuery = $productsQuery->whereHas('subcategory', function (Builder $query) {
-                $query->where('name', $this->subcategoria);
+                $query->where('slug', $this->subcategoryQuery->slug);
+            });
+        }
+
+        if ($this->subcategoria) {
+            $this->reset(['subcategoryQuery']);
+
+            $productsQuery = $productsQuery->whereHas('subcategory', function (Builder $query) {
+                $query->where('slug', $this->subcategoria);
             });
         }
 
@@ -104,11 +124,12 @@ class ContentFilter extends Component
         }
 
         if ($this->price_max || $this->price_min) {
-            $productsQuery = Product::where('price', ">=", $this->price_min)
+            $productsQuery =  $productsQuery->where('price', ">=", $this->price_min)
                 ->where('price', "<=", $this->price_max);
         }
 
         $products = $productsQuery->where('status', 2)->paginate(12);
+
         return view('livewire.content-filter', compact('products'));
     }
 }

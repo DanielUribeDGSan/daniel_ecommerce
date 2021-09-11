@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
+
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Livewire\Admin\CreateCategory;
 use App\Http\Livewire\Admin\EditProduct;
 use App\Http\Livewire\Admin\Home;
+use App\Http\Livewire\Admin\ShowCategory;
+use App\Http\Livewire\Admin\ShowEditCategory;
 use App\Http\Livewire\Admin\ShowProducts;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,5 @@ Route::get('productos/{product}/edit', EditProduct::class)->name('admin.products
 Route::post('productos/{product}/files', [ProductController::class, 'files'])->name('admin.products.files');
 
 // Route::get('categorias', [CategoryController::class, 'category'])->name('admin.category');
-Route::get('categorias', CreateCategory::class)->name('admin.category');
+Route::get('categorias', ShowEditCategory::class)->name('admin.category');
+Route::get('categorias/{category}', ShowCategory::class)->name('admin.category.show');
