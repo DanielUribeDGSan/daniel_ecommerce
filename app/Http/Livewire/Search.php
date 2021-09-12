@@ -12,6 +12,7 @@ class Search extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
+    protected $queryString = ['search'];
 
     public $search, $busqueda;
     public $options = [];

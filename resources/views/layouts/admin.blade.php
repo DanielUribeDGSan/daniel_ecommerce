@@ -264,6 +264,12 @@
                             <span class="nav-text">Categorías</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.marca') }}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-381-settings-2"></i>
+                            <span class="nav-text">Marcas</span>
+                        </a>
+                    </li>
                 </ul>
                 <div class="add-menu-sidebar">
                     <img src="{{ asset('admin/images/calendar.png') }}" alt="" class="mr-3">

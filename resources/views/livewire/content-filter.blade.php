@@ -172,7 +172,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="                                                    shop-bottom-area">
+                <div class="                                                         shop-bottom-area">
                                 <div class="tab-content jump">
                                     @if ($products->count())
                                         <div id="shop-1" class="tab-pane active" wire:loading.remove>
@@ -498,15 +498,10 @@
                                     <ul>
                                         @foreach ($category->subcategories as $subcategory)
 
-                                            @if ($subcategoryQuery)
-                                                <li><a class="{{ $subcategoryQuery->slug == $subcategory->slug ? 'active-a' : '' }}"
-                                                        wire:click="$set('subcategoria','{{ $subcategory->slug }}')">{{ $subcategory->name }}
-                                                    </a></li>
-                                            @else
-                                                <li><a class="{{ $subcategoria == $subcategory->slug ? 'active-a' : '' }}"
-                                                        wire:click="$set('subcategoria','{{ $subcategory->slug }}')">{{ $subcategory->name }}
-                                                    </a></li>
-                                            @endif
+                                            <li><a class="{{ $subcategoria == $subcategory->slug ? 'active-a' : '' }}"
+                                                    wire:click="$set('subcategoria','{{ $subcategory->slug }}')">{{ $subcategory->name }}
+                                                </a></li>
+
                                         @endforeach
                                     </ul>
                                 </div>

@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function categoria(Category $category, Subcategory $subcategory)
+    public function categoria(Category $category)
     {
-        return view('categorias.categoria-page', compact('category', 'subcategory'));
+        return view('categorias.categoria-page', compact('category'));
     }
 }
