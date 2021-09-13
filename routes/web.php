@@ -30,6 +30,7 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 // Carrito
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
+
 Route::middleware(['auth'])->group(function () {
     // Ordenes
     Route::get('orden/crear', [App\Http\Controllers\OrderController::class, 'order'])->name('order');
