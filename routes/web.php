@@ -30,6 +30,8 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 // Carrito
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
+Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->name('webhooks');
+
 Route::middleware(['auth'])->group(function () {
     // Ordenes
     Route::get('orden/crear', [App\Http\Controllers\OrderController::class, 'order'])->name('order');
@@ -41,8 +43,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('pago/{orden}/pendiente', [App\Http\Controllers\PaymentController::class, 'pagoPendiente'])->name('pagoPendiente');
     Route::get('pago/{orden}/rechazado', [App\Http\Controllers\PaymentController::class, 'pagoCancelado'])->name('pagoCancelado');
     Route::get('pago/{orden}/exitoso', [App\Http\Controllers\PaymentController::class, 'pagoExitoso'])->name('pagoExitoso');
-
-    Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->name('webhooks');
 });
 
 
