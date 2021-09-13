@@ -30,6 +30,7 @@ Route::get('busqueda', [App\Http\Controllers\SearchController::class, 'busqueda'
 // Carrito
 Route::get('carrito-de-compras', [App\Http\Controllers\ShoppingCartController::class, 'carrito'])->name('carrito');
 
+Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->name('webhooks');
 
 Route::middleware(['auth'])->group(function () {
     // Ordenes

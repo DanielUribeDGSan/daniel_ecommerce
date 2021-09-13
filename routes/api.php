@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Http;
 |
 */
 
-Route::post('webhooks', 'App\Http\Controllers\WebhooksController@webhooks');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
