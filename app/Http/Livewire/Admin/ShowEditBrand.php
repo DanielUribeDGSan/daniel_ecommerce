@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Brand;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Illuminate\Support\Str;
+
 
 class ShowEditBrand extends Component
 {

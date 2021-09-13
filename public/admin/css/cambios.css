@@ -109,3 +109,29 @@
         width: 100%;
     }
 }
+
+/* Orders */
+.plan-list .list-row .play-button {
+    margin-left: 0;
+    margin-right: 10px !important;
+    float: right;
+}
+
+.content-list:hover i,
+.content-list:hover .total {
+    color: #fff !important;
+}
+
+.content-list:hover {
+    /* background: #bbbbbb !important; */
+    background: #bbbbbb !important;
+}
+
+.bgl-primary {
+    background: #e8e8e8 !important;
+    border-color: #e8e8e8 !important;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}

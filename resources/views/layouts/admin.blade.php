@@ -13,6 +13,11 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
 
+    <!-- All CSS is here
+    ============================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     {{-- Dropzone --}}
@@ -268,6 +273,12 @@
                         <a href="{{ route('admin.marca') }}" class="ai-icon" aria-expanded="false">
                             <i class="flaticon-381-settings-2"></i>
                             <span class="nav-text">Marcas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.orders') }}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-381-settings-2"></i>
+                            <span class="nav-text">Ordenes</span>
                         </a>
                     </li>
                 </ul>
