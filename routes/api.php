@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/webhooks', function (Request $request) {
+Route::middleware('auth:sanctum')->post('/webhooks', function (Request $request) {
     $payment_id = $request->get('payment_id');
     $token = config('services.mercadopago.token');
     $reponse = Http::get('https://api.mercadopago.com/v1/payments/' . $payment_id . '?access_token=' . $token);
