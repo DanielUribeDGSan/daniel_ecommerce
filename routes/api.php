@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('webhooks', [App\Http\Controllers\WebhooksController::class, 'webhooks'])->name('webhooks');
+Route::get('/webhooks', function (Request $request) {
+    $payment_id = $request->get('payment_id');
+    $token = config('services.mercadopago.token');
+    $reponse = Http::get('https://api.mercadopago.com/v1/payments/' . $payment_id . '?access_token=' . $token);
+    $reponse = json_decode($reponse);
+    $status = $reponse->status;
+
+    dd($reponse);
+    if ($status == 'approved') {
+        // $orden->status = 2;
+        // $orden->save();
+    }
+});
