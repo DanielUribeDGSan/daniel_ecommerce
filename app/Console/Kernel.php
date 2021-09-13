@@ -27,18 +27,22 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->call(function () {
+
             $hora = now()->subMinute(10);
 
-            $ordenes = Order::where('status', 1)->whereTime('created_at', '<=', $hora)->get();
+            $orders = Order::where('status', 1)->whereTime('created_at', '<=', $hora)->get();
 
-            foreach ($ordenes as $orden) {
+            foreach ($orders as $order) {
 
-                $items = json_decode($orden->content);
+                $items = json_decode($order->content);
+
                 foreach ($items as $item) {
                     increase($item);
                 }
-                $orden->status = 5;
-                $orden->save();
+
+                $order->status = 5;
+
+                $order->save();
             }
         })->everyMinute();
     }

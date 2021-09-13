@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="recibidas">
-                        <div class="main-header mt-10 anim" style="--delay: 0s">Ordenes recibidas</div>
+                        <div class="main-header mt-10 anim" style="--delay: 0s">Ordenes pagadas</div>
                         <div class="main-ordens">
                             <div class="row">
                                 @forelse ($ordenes->where('status',2) as $orden)
