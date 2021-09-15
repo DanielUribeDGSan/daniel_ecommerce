@@ -19,8 +19,8 @@ class PaymentController extends Controller
 
         if ($request->get('payment_id')) {
             $payment_id = $request->get('payment_id');
-            $token = config('services.mercadopago.token');
-            $reponse = Http::get('https://api.mercadopago.com/v1/payments/' . $payment_id . '?access_token=' . $token);
+
+            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=APP_USR-7260790674054640-081218-df6bacdd5688965f92aca54c2782d7ef-806649757");
             $reponse = json_decode($reponse);
             $status = $reponse->status;
             if ($status == 'approved') {
