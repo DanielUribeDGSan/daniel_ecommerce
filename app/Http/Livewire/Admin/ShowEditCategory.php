@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
-
+use Illuminate\Support\Str;
 
 class ShowEditCategory extends Component
 {
@@ -75,7 +75,16 @@ class ShowEditCategory extends Component
             Storage::delete($this->editForm['image']);
             $this->editForm['image'] = $this->editImage->store('categories');
         }
+        $this->editForm['slug'] = $this->editForm['slug'];
+
         $this->category->update($this->editForm);
+
+        $this->category->update(
+            [
+                'name' => $this->editForm['name'],
+                'slug' => Str::slug($this->editForm['name']),
+            ]
+        );
         $this->category->brands()->sync($this->editForm['brands']);
         $this->emit('messageUpdateCategory');
         $this->emit('render');

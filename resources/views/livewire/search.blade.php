@@ -1,9 +1,9 @@
-<div class="">
-    <div class="product-area pb-60">
+<div>
+    <div class=" product-area pb-60">
         <div class="container">
             <div class="search-wrap-1 search-wrap-3 mt-5 mb-2">
-                <div class="">
-                    <div class="form-search">
+                <div>
+                    <div class=" form-search">
                         <input wire:model="search" placeholder="Buscar productos" type="text"
                             value="{{ $busqueda }}">
                         <button class="button-search" type="button"><i class="pe-7s-search"></i></button>
@@ -25,7 +25,7 @@
                     @endif
                     @if ($products->count())
 
-                        <div wire:init="loadData" class="row" wire:loading.remove>
+                        <div wire:init="loadData" class="row" wire:loading.remove wire:target="search">
                             @if ($loading == 1)
                                 @forelse ($products as $product)
                                     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
@@ -122,14 +122,15 @@
                                 });
                             </script>
                         </div>
-                        <div class="w-100" wire:loading>
+                        <div class="w-100" wire:loading wire:target="search">
                             <x-loading-products />
                         </div>
                     @else
-                        <div class="" wire:loading.remove>
+                        <div wire:loading.remove>
                             <x-empty-search />
                         </div>
-                        <div class="w-100" wire:loading>
+                        <div class="
+                    w-100" wire:loading wire:target="search">
                             <x-loading-products />
                         </div>
                     @endif

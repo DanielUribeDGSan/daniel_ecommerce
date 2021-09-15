@@ -62,28 +62,74 @@
                                         <ul class="mega-menu-style mega-menu-mrg-1">
                                             <li>
                                                 <ul>
-                                                    <div
-                                                        class="row w-100 d-flex align-items-center justify-content-between">
+                                                    <div class="row w-100 d-flex align-items-center ">
+
                                                         @if (count($categories))
                                                             @foreach ($categories as $category)
-                                                                <div class="col-auto mt-2 mr-auto ml-auto overflow-auto"
-                                                                    style="height: 300px">
-                                                                    <li>
-                                                                        <div class="mb-3"
-                                                                            style="width: 150px; height: 100px;background-image: url('{{ asset('assets/images/categories/' . $category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
-                                                                        </div>
-                                                                        <a class="dropdown-title"
-                                                                            href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
-                                                                        <ul>
-                                                                            @foreach ($category->subcategories as $subcategory)
-                                                                                <li><a
-                                                                                        href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
-                                                                                </li>
-                                                                            @endforeach
+                                                                @if ($category->products()->where('status', 2)->get()->count())
 
-                                                                        </ul>
-                                                                    </li>
-                                                                </div>
+                                                                    @if ($category->products()->where('status', 2)->get()->count() == 4)
+                                                                        <div class="col-lg-3 mt-2 mr-auto ml-auto d-flex justify-content-center"
+                                                                            style="min-height: 300px">
+                                                                            <li>
+                                                                                <div class="mb-3"
+                                                                                    style="width: 150px; height: 100px;background-image: url('{{ Storage::url($category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                                                                </div>
+                                                                                <a class="dropdown-title"
+                                                                                    href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
+                                                                                <ul>
+                                                                                    @foreach ($category->subcategories as $subcategory)
+                                                                                        <li><a
+                                                                                                href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
+                                                                                        </li>
+                                                                                    @endforeach
+
+                                                                                </ul>
+                                                                            </li>
+                                                                        </div>
+                                                                    @elseif ($category->products()->where('status',
+                                                                        2)->get()->count() > 4)
+                                                                        <div class="col-auto mt-2 mr-auto ml-auto d-flex justify-content-center"
+                                                                            style="min-height: 300px">
+                                                                            <li>
+                                                                                <div class="mb-3"
+                                                                                    style="width: 150px; height: 100px;background-image: url('{{ Storage::url($category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                                                                </div>
+                                                                                <a class="dropdown-title"
+                                                                                    href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
+                                                                                <ul>
+                                                                                    @foreach ($category->subcategories as $subcategory)
+                                                                                        <li><a
+                                                                                                href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
+                                                                                        </li>
+                                                                                    @endforeach
+
+                                                                                </ul>
+                                                                            </li>
+                                                                        </div>
+                                                                    @else
+                                                                        <div class="col-auto mt-2 mr-auto ml-auto d-flex justify-content-center"
+                                                                            style="min-height: 300px">
+                                                                            <li>
+                                                                                <div class="mb-3"
+                                                                                    style="width: 150px; height: 100px;background-image: url('{{ Storage::url($category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                                                                </div>
+                                                                                <a class="dropdown-title"
+                                                                                    href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
+                                                                                <ul>
+                                                                                    @foreach ($category->subcategories as $subcategory)
+                                                                                        <li><a
+                                                                                                href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
+                                                                                        </li>
+                                                                                    @endforeach
+
+                                                                                </ul>
+                                                                            </li>
+                                                                        </div>
+
+                                                                    @endif
+
+                                                                @endif
                                                             @endforeach
                                                         @else
                                                             <x-loading-products />
@@ -161,7 +207,7 @@
                                         <div class="currency-dropdown">
                                             <ul>
                                                 @auth
-                                                    <li><a href="#">Mi perfil</a></li>
+                                                    <li><a href="{{ route('perfil') }}">Mi perfil</a></li>
                                                     <li>
                                                         <a href="{{ route('ordenes') }}">
                                                             Ver mis ordenes

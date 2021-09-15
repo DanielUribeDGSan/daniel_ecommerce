@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -17,11 +18,12 @@ class OrdenEnviada extends Mailable
      *
      * @return void
      */
-    public $order;
+    public $order, $user;
 
-    public function __construct(Order $order)
+    public function __construct(User $user, Order $orden)
     {
-        $this->order = $order;
+        $this->user = $user;
+        $this->orden = $orden;
     }
 
     /**

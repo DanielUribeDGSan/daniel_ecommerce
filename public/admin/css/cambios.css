@@ -135,3 +135,14 @@
 .overflow-x-hidden {
     overflow-x: hidden;
 }
+
+/* Colors */
+.asColorPicker-wrap {
+    width: 100%;
+}
+.asColorPicker-dropdown {
+    top: inherit !important;
+    bottom: 50% !important;
+    right: 10px !important;
+    left: inherit !important;
+}

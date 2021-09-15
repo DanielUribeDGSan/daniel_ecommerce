@@ -9,7 +9,7 @@ class Size extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'product_id'];
+    protected $fillable = ['name', 'product_id', 'id'];
 
     // Relacion 1 a muchos inversa
     public function product()

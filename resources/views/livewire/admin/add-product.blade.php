@@ -116,6 +116,8 @@
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Aceptar'
                 });
+                $('#crearProductoModal').modal('hide');
+
             });
         </script>
     @endpush

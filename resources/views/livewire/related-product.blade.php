@@ -8,8 +8,8 @@
                 <x-product-no-disponible />
             @endif
             <div class="swiper-wrapper">
-                @if (count($products))
-                    @foreach ($products as $product)
+                @forelse ($products as $product)
+                    @if (count($products))
                         <div class="swiper-slide">
                             <div class="product-wrap">
                                 <div class="product-img img-zoom mb-25">
@@ -47,11 +47,14 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @else
+                        <x-loading-products />
+                    @endif
+                @empty
+                    <h1>No hay</h1>
+                @endforelse
 
-                @else
-                    <x-loading-products />
-                @endif
+
                 <script>
                     $('.cart-btn').on('click', function() {
                         $(".img__cart").removeClass("img__none");

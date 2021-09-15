@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.4') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/payment.css?ver=1.0.4') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/ordenes.css?ver=1.0.4') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/profile.css?ver=1.0.4') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.4') }}" />
 
 

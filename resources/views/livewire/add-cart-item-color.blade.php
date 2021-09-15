@@ -10,7 +10,7 @@
                 value="{{ $color->id }}">
             <label wire:click="changeColorId({{ $color->id }})" class="label-color cursor-pointer"
                 for="color{{ $color->id }}"
-                style="background-color: #ff686b;border: calc(22px * 0.125) solid #ff686b">
+                style="background-color: {{ $color->hex }};border: calc(22px * 0.125) solid {{ $color->hex }}">
                 <div class="tick"></div>
             </label>
         @endforeach
@@ -27,8 +27,9 @@
         <div class="single-product-cart btn-hover" wire:loading.remove>
             <img class=" img__cart img__none img-float"
                 src="{{ asset('assets/images/' . $product->images->first()->url) }}" alt="kasa" width="50">
-            <button class="cart-btn" x-bind:disabled="!$wire.quantity" wire:click="addItem" wire:loading.attr="disabled"
-                wire:target="addItem" x-bind:disabled="$wire.qty > $wire.quantity">Agregar al carrito</button>
+            <button class="cart-btn" x-bind:disabled="!$wire.quantity" wire:click="addItem"
+                wire:loading.attr="disabled" wire:target="addItem" x-bind:disabled="$wire.qty > $wire.quantity">Agregar
+                al carrito</button>
         </div>
         <div wire:loading>
             <x-loading-cart />

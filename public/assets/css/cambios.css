@@ -663,6 +663,9 @@ hr {
 .product-slider-active-1.swiper-container {
     padding: 90px 0 90px 0;
 }
+.img__cart {
+    border-radius: 50%;
+}
 @media only screen and (max-width: 1024px) and (min-height: 1366px) {
     .content__product__detail {
         width: 100%;
@@ -1283,7 +1286,7 @@ button:disabled {
 .border-error {
     border: 1px solid #ff6b6b !important;
 }
-.border-0{
+.border-0 {
     border: 0px;
 }
 .active-a {

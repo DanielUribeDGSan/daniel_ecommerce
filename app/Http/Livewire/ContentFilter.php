@@ -9,7 +9,7 @@ use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
-
+use App\Models\ColorSize as Pivot;
 
 class ContentFilter extends Component
 {
@@ -29,7 +29,7 @@ class ContentFilter extends Component
     public $loading = 0;
 
 
-    public $price_max = 1000;
+    public $price_max = 10000;
     public $price_min = 10;
 
 
@@ -55,13 +55,11 @@ class ContentFilter extends Component
         $this->size = $product->sizes->first();
 
         if (isset($this->size)) {
-
-            $this->colorSize = $this->size->colors->find($this->size->id);
             $this->options['size'] = $this->size->name;
             $this->options['size_id'] = $this->size->id;
-            $this->options['color'] = $this->colorSize->name;
-            $this->options['color_id'] = $this->colorSize->id;
-            $this->quantity = qty_available($product->id, $this->colorSize->id, $this->size->id);
+            $this->options['color'] = $this->size->colors->first()->name;
+            $this->options['color_id'] = $this->size->colors->first()->id;
+            $this->quantity = qty_available($product->id, $this->size->colors->first()->id, $this->size->id);
         } else if (isset($this->colorArr->name)) {
             $this->options = [
                 'size_id' => null

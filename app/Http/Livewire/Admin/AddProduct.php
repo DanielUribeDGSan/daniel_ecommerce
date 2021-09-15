@@ -74,7 +74,8 @@ class AddProduct extends Component
 
         $this->emit('message', 'Producto creado');
         $this->emit('render');
-        $this->reset(['category_id', 'subcategory_id', 'brand_id', 'name', 'description', 'price', 'quantity', 'description']);
+        $this->reset(['category_id', 'subcategory_id', 'brand_id', 'name', 'description', 'price', 'quantity']);
+        $this->description = "";
     }
 
 

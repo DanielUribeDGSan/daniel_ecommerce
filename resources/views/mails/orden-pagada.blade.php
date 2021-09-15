@@ -9,7 +9,7 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>Kasa shop orden pagada</title>
+    <title>Orden pagada</title>
     <!--[if (mso 16)]>
     <style type="text/css">
     a {text-decoration: none;}
@@ -366,7 +366,8 @@
                                                                             src="https://rqnfof.stripocdn.email/content/guids/CABINET_b3056d1b2fa47e66a19d1bd35ec4c45b/images/11001631515486012.png"
                                                                             alt
                                                                             style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                            class="adapt-img" width="72"></a></td>
+                                                                            class="adapt-img" width="72"></a>
+                                                                </td>
                                                             </tr>
                                                         </table>
                                                     </td>
@@ -432,45 +433,6 @@
                                     cellspacing="0"
                                     style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
                                     <tr style="border-collapse:collapse">
-                                        <td align="left" style="padding:0;Margin:0;background-position:center top">
-                                            <table cellpadding="0" cellspacing="0" width="100%"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr style="border-collapse:collapse">
-                                                    <td align="center" valign="top"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;position:relative"><a
-                                                                        target="_blank"
-                                                                        href="https://daniel-ecommerce-2021.herokuapp.com/"
-                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#E97730;font-size:14px"><img
-                                                                            class="adapt-img"
-                                                                            src="https://rqnfof.stripocdn.email/content/guids/bannerImgGuid/images/7911631516571424.png"
-                                                                            alt title width="100%"
-                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                    <table cellpadding="0" cellspacing="0" class="es-content" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
-                        <tr style="border-collapse:collapse">
-                            <td align="center" style="padding:0;Margin:0">
-                                <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0"
-                                    cellspacing="0"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
-                                    <tr style="border-collapse:collapse">
                                         <td align="left"
                                             style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px;background-position:center top">
                                             <table cellpadding="0" cellspacing="0" width="100%"
@@ -485,7 +447,7 @@
                                                                 <td align="center" style="padding:0;Margin:0">
                                                                     <h2
                                                                         style="Margin:0;line-height:31px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:26px;font-style:normal;font-weight:bold;color:#e97730">
-                                                                        Your order is on its way</h2>
+                                                                        Su compra se ha realizado correctamente</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -493,10 +455,9 @@
                                                                     style="padding:0;Margin:0;padding-top:10px">
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        Delivery of healthy food is the best solution
-                                                                        for business people. Who wants to eat
-                                                                        right, look healthy and work productively all
-                                                                        day.</p>
+                                                                        Le mandaremos un correo electrónico a su correo
+                                                                        de su cuanta, cuando la orden vaya en camino o
+                                                                        haya sido entregada.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -535,7 +496,7 @@
                                                                     style="Margin:0;padding-bottom:10px;padding-top:20px;padding-left:20px;padding-right:20px">
                                                                     <h4
                                                                         style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;color:#e97730">
-                                                                        SUMMARY:</h4>
+                                                                        Orden:</h4>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -551,24 +512,25 @@
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
                                                                                 Order #:</td>
                                                                             <td style="padding:0;Margin:0"><strong><span
-                                                                                        style="font-size:14px;line-height:21px">9844523</span></strong>
+                                                                                        style="font-size:14px;line-height:21px">{{ $orden->id }}</span></strong>
                                                                             </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                                Order Date:</td>
+                                                                                Fecha:</td>
                                                                             <td style="padding:0;Margin:0"><strong><span
-                                                                                        style="font-size:14px;line-height:21px">May&nbsp;21,
-                                                                                        2019</span></strong>
+                                                                                        style="font-size:14px;line-height:21px">
+                                                                                        {{ $orden->created_at->format('d/m/y') }}</span></strong>
                                                                             </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                                Order Total:</td>
+                                                                                Total:</td>
                                                                             <td style="padding:0;Margin:0"><strong><span
-                                                                                        style="font-size:14px;line-height:21px">$22.00</span></strong>
+                                                                                        style="font-size:14px;line-height:21px">{{ number_format($orden->total, 2, '.', ',') }}
+                                                                                        MXN</span></strong>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -596,7 +558,7 @@
                                                                     style="Margin:0;padding-bottom:10px;padding-top:20px;padding-left:20px;padding-right:20px">
                                                                     <h4
                                                                         style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;color:#e97730">
-                                                                        SHIPPING ADDRESS:</h4>
+                                                                        Dirección:</h4>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -604,13 +566,15 @@
                                                                     style="padding:0;Margin:0;padding-bottom:20px;padding-left:20px;padding-right:20px">
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        Andry Petrin</p>
+                                                                        {{ $orden->address }}</p>
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        78 Somewhere St</p>
+                                                                        {{ $orden->referencia }}</p>
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        Somewhere, Canada 99743</p>
+                                                                        {{ $orden->state->nombre }},
+                                                                        {{ $orden->municipality->nombre }},
+                                                                        {{ $orden->locality->nombre }}.</p>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -631,169 +595,83 @@
                                 <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0"
                                     cellspacing="0"
                                     style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
-                                    <tr style="border-collapse:collapse">
-                                        <td align="left"
-                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-position:center top">
-                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:154px" valign="top"><![endif]-->
-                                            <table cellpadding="0" cellspacing="0" class="es-left" align="left"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                                <tr style="border-collapse:collapse">
-                                                    <td class="es-m-p20b" align="left"
-                                                        style="padding:0;Margin:0;width:154px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-position:left top"
-                                                            role="presentation">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;font-size:0"><a
-                                                                        target="_blank"
-                                                                        href="https://daniel-ecommerce-2021.herokuapp.com/"
-                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#E97730;font-size:14px"><img
-                                                                            class="adapt-img"
-                                                                            src="https://rqnfof.stripocdn.email/content/guids/CABINET_dd455c10d72807d01fd51bb3bfe702d1/images/17351558530118413.jpg"
-                                                                            alt
-                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                            width="154"></a></td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:386px" valign="top"><![endif]-->
-                                            <table cellpadding="0" cellspacing="0" class="es-right" align="right"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
-                                                <tr style="border-collapse:collapse">
-                                                    <td align="left" style="padding:0;Margin:0;width:386px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left" class="es-m-txt-l"
-                                                                    style="padding:0;Margin:0;padding-top:10px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
-                                                                        <strong>Sports Menu</strong>
-                                                                    </h3>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;padding-top:5px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        For those with active life style</p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        and intensive gym trainings</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left" class="es-m-txt-l"
-                                                                    style="padding:0;Margin:0;padding-top:10px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
-                                                                        <strong><span
-                                                                                style="color:#000000">Qty:</span>&nbsp;1</strong>
-                                                                    </h3>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left" class="es-m-txt-l"
-                                                                    style="padding:0;Margin:0;padding-top:10px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
-                                                                        <strong><span
-                                                                                style="color:#000000">Price:</span>&nbsp;$12.00</strong>
-                                                                    </h3>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!--[if mso]></td></tr></table><![endif]-->
-                                        </td>
-                                    </tr>
-                                    <tr style="border-collapse:collapse">
-                                        <td align="left"
-                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-position:center top">
-                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:154px" valign="top"><![endif]-->
-                                            <table cellpadding="0" cellspacing="0" class="es-left" align="left"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                                <tr style="border-collapse:collapse">
-                                                    <td class="es-m-p20b" align="left"
-                                                        style="padding:0;Margin:0;width:154px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-position:left top"
-                                                            role="presentation">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;font-size:0"><a
-                                                                        target="_blank"
-                                                                        href="https://daniel-ecommerce-2021.herokuapp.com/"
-                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#E97730;font-size:14px"><img
-                                                                            class="adapt-img"
-                                                                            src="https://rqnfof.stripocdn.email/content/guids/CABINET_dd455c10d72807d01fd51bb3bfe702d1/images/56911558530799759.jpg"
-                                                                            alt
-                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                            width="154"></a></td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:386px" valign="top"><![endif]-->
-                                            <table cellpadding="0" cellspacing="0" class="es-right" align="right"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
-                                                <tr style="border-collapse:collapse">
-                                                    <td align="left" style="padding:0;Margin:0;width:386px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left" class="es-m-txt-l"
-                                                                    style="padding:0;Margin:0;padding-top:10px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
-                                                                        <strong>Smart Lunch</strong>
-                                                                    </h3>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;padding-top:5px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
-                                                                        Healthy food in your office</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left" class="es-m-txt-l"
-                                                                    style="padding:0;Margin:0;padding-top:10px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
-                                                                        <strong><span
-                                                                                style="color:#000000">Qty:</span>&nbsp;1</strong>
-                                                                    </h3>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="left" class="es-m-txt-l"
-                                                                    style="padding:0;Margin:0;padding-top:10px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
-                                                                        <strong><span
-                                                                                style="color:#000000">Price:</span>&nbsp;$10.00</strong>
-                                                                    </h3>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!--[if mso]></td></tr></table><![endif]-->
-                                        </td>
-                                    </tr>
+                                    @foreach ($items as $item)
+                                        <tr style="border-collapse:collapse">
+                                            <td align="left"
+                                                style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;background-position:center top">
+                                                <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:154px" valign="top"><![endif]-->
+                                                <table cellpadding="0" cellspacing="0" class="es-left"
+                                                    align="left"
+                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                    <tr style="border-collapse:collapse">
+                                                        <td class="es-m-p20b" align="left"
+                                                            style="padding:0;Margin:0;width:154px">
+                                                            <table cellpadding="0" cellspacing="0" width="100%"
+                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-position:left top"
+                                                                role="presentation">
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td align="center"
+                                                                        style="padding:0;Margin:0;font-size:0"><a
+                                                                            target="_blank"
+                                                                            href="https://daniel-ecommerce-2021.herokuapp.com/"
+                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#E97730;font-size:14px"><img
+                                                                                class="adapt-img"
+                                                                                src="{{ $item->options->image }}" alt
+                                                                                style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                width="154"></a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if mso]></td><td style="width:20px"></td><td style="width:386px" valign="top"><![endif]-->
+                                                <table cellpadding="0" cellspacing="0" class="es-right"
+                                                    align="right"
+                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                                                    <tr style="border-collapse:collapse">
+                                                        <td align="left" style="padding:0;Margin:0;width:386px">
+                                                            <table cellpadding="0" cellspacing="0" width="100%"
+                                                                role="presentation"
+                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td align="left" class="es-m-txt-l"
+                                                                        style="padding:0;Margin:0;padding-top:10px">
+                                                                        <h3
+                                                                            style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
+                                                                            <strong>{{ $item->name }}</strong>
+                                                                        </h3>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td align="left" class="es-m-txt-l"
+                                                                        style="padding:0;Margin:0;padding-top:10px">
+                                                                        <h3
+                                                                            style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
+                                                                            <strong><span
+                                                                                    style="color:#000000">Cantidad:</span>&nbsp;{{ $item->qty }}</strong>
+                                                                        </h3>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td align="left" class="es-m-txt-l"
+                                                                        style="padding:0;Margin:0;padding-top:10px">
+                                                                        <h3
+                                                                            style="Margin:0;line-height:23px;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;font-size:19px;font-style:normal;font-weight:normal;color:#e97730">
+                                                                            <strong><span
+                                                                                    style="color:#000000">Precio:</span>&nbsp;{{ number_format($item->subtotal, 2, '.', ',') }}
+                                                                                MXN</strong>
+                                                                        </h3>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if mso]></td></tr></table><![endif]-->
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
                                 </table>
                             </td>
                         </tr>
@@ -826,32 +704,38 @@
                                                                             <td style="padding:0;Margin:0">
                                                                                 <h4
                                                                                     style="Margin:0;line-height:200%;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;color:#333333">
-                                                                                    Subtot<strong>al (3 items):</strong>
+                                                                                    Total:
                                                                                 </h4>
                                                                             </td>
                                                                             <td
                                                                                 style="padding:0;Margin:0;color:#e97730">
-                                                                                <strong>$22.00</strong></td>
+                                                                                <strong>{{ number_format($orden->total, 2, '.', ',') }}
+                                                                                    MXN</strong>
+                                                                            </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td style="padding:0;Margin:0">
                                                                                 <h4
                                                                                     style="Margin:0;line-height:200%;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;color:#333333">
-                                                                                    Flat-rate Shipping:</h4>
+                                                                                    Costo de envío:</h4>
                                                                             </td>
                                                                             <td
-                                                                                style="padding:0;Margin:0;color:#ff0000">
-                                                                                <strong>Free</strong></td>
+                                                                                style="padding:0;Margin:0;color:#e97730">
+                                                                                <strong>
+                                                                                    {{ number_format($orden->shipping_cost, 2, '.', ',') }}
+                                                                                    MXN</strong>
+                                                                            </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td style="padding:0;Margin:0">
                                                                                 <h4
                                                                                     style="Margin:0;line-height:200%;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;color:#333333">
-                                                                                    Discount:</h4>
+                                                                                    Descuento:</h4>
                                                                             </td>
                                                                             <td
-                                                                                style="padding:0;Margin:0;color:#ff0000">
-                                                                                <strong>$0.00</strong></td>
+                                                                                style="padding:0;Margin:0;color:#e97730">
+                                                                                <strong>0.00 MXN</strong>
+                                                                            </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td style="padding:0;Margin:0">
@@ -861,7 +745,9 @@
                                                                             </td>
                                                                             <td
                                                                                 style="padding:0;Margin:0;color:#e97730">
-                                                                                <strong>$22.00</strong></td>
+                                                                                <strong>{{ number_format($orden->total, 2, '.', ',') }}
+                                                                                    MXN</strong>
+                                                                            </td>
                                                                         </tr>
                                                                     </table>
                                                                 </td>
@@ -888,7 +774,7 @@
                                                                 <td align="left" style="padding:0;Margin:0">
                                                                     <h4
                                                                         style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;color:#e97730">
-                                                                        Contact Us:</h4>
+                                                                        Contacto:</h4>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -897,8 +783,7 @@
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
                                                                         We prepare healthy, ready-to-eat,weekly meal
-                                                                        plans and delivers them to your door.
-                                                                    </p>
+                                                                        plans and delivers them to your door.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -1131,10 +1016,9 @@
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:20px;color:#ffffff;font-size:13px">
                                                                         You are receiving this email because you have
-                                                                        visited our site or asked us about a
-                                                                        regular newsletter. Make sure our messages get
-                                                                        to your inbox (and not your bulk or
-                                                                        junk folders).</p>
+                                                                        visited our site or asked us about a regular
+                                                                        newsletter. Make sure our messages get to your
+                                                                        inbox (and not your bulk or junk folders).</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -1143,7 +1027,8 @@
                                                                     <img src="https://rqnfof.stripocdn.email/content/guids/CABINET_c6d6983b8f90c1ab10065255fbabfbaf/images/15841556884046468.png"
                                                                         alt
                                                                         style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                        width="140"></td>
+                                                                        width="140">
+                                                                </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center"

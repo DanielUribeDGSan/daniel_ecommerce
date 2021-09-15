@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\EditProduct;
 use App\Http\Livewire\Admin\Home;
 use App\Http\Livewire\Admin\ShowEditBrand;
 use App\Http\Livewire\Admin\ShowEditCategory;
+use App\Http\Livewire\Admin\ShowEditColor;
 use App\Http\Livewire\Admin\ShowEditSubcategory;
 use App\Http\Livewire\Admin\ShowOrder;
 use App\Http\Livewire\Admin\ShowOrders;
@@ -20,6 +21,8 @@ Route::post('productos/{product}/files', [ProductController::class, 'files'])->n
 
 Route::get('categorias', ShowEditCategory::class)->name('admin.category');
 Route::get('categorias/{category}', ShowEditSubcategory::class)->name('admin.category.show');
+
+Route::get('colores', ShowEditColor::class)->name('admin.color.show');
 
 Route::get('marcas', ShowEditBrand::class)->name('admin.marca');
 

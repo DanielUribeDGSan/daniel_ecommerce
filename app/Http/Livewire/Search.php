@@ -46,13 +46,11 @@ class Search extends Component
         $this->size = $product->sizes->first();
 
         if (isset($this->size)) {
-
-            $this->colorSize = $this->size->colors->find($this->size->id);
             $this->options['size'] = $this->size->name;
             $this->options['size_id'] = $this->size->id;
-            $this->options['color'] = $this->colorSize->name;
-            $this->options['color_id'] = $this->colorSize->id;
-            $this->quantity = qty_available($product->id, $this->colorSize->id, $this->size->id);
+            $this->options['color'] = $this->size->colors->first()->name;
+            $this->options['color_id'] = $this->size->colors->first()->id;
+            $this->quantity = qty_available($product->id, $this->size->colors->first()->id, $this->size->id);
         } else if (isset($this->colorArr->name)) {
             $this->options = [
                 'size_id' => null

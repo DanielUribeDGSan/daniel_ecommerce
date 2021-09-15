@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Livewire\Profile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('pago/{orden}/pendiente', [App\Http\Controllers\PaymentController::class, 'pagoPendiente'])->name('pagoPendiente');
     Route::get('pago/{orden}/rechazado', [App\Http\Controllers\PaymentController::class, 'pagoCancelado'])->name('pagoCancelado');
     Route::get('pago/{orden}/exitoso', [App\Http\Controllers\PaymentController::class, 'pagoExitoso'])->name('pagoExitoso');
+
+
+    //Perfil
+    Route::get('perfil', Profile::class)->name('perfil');
 });
 
 

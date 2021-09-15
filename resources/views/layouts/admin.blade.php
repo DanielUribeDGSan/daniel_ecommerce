@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
+    <!-- asColorpicker -->
+    <link href="{{ asset('admin/vendor/jquery-asColorPicker/css/asColorPicker.min.css') }}" rel="stylesheet">
+
     {{-- Dropzone --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css"
         integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
@@ -281,6 +284,12 @@
                             <span class="nav-text">Ordenes</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.color.show') }}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-381-settings-2"></i>
+                            <span class="nav-text">Colores</span>
+                        </a>
+                    </li>
                 </ul>
                 <div class="add-menu-sidebar">
                     <img src="{{ asset('admin/images/calendar.png') }}" alt="" class="mr-3">
@@ -366,6 +375,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"
         integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- clockpicker -->
+    <script src="./vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <!-- asColorPicker -->
+    <script src="./vendor/jquery-asColor/jquery-asColor.min.js"></script>
+    <script src="./vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+    <script src="./vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <!-- Material color picker -->
+
+    <!-- asColorPicker init -->
+    <script src="./js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+
+
 
     @include('sweetalert::alert')
     @livewireScripts

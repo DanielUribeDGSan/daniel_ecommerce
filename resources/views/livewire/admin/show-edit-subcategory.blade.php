@@ -193,7 +193,7 @@
         <script>
             Livewire.on('messageUpdateSubcategory', function() {
                 Swal.fire({
-                    title: 'Categoría actualizada',
+                    title: 'Subcategoría actualizada',
                     text: '',
                     icon: 'success',
                     showCancelButton: false,

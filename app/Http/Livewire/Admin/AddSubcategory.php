@@ -17,7 +17,7 @@ class AddSubcategory extends Component
     ];
 
     protected $rules = [
-        'createForm.name' => 'required|unique:subcategories,name',
+        'createForm.name' => 'required',
         'createForm.color' => 'required',
         'createForm.size' => 'required',
     ];

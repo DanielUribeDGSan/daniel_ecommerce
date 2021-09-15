@@ -54,7 +54,7 @@ class ShowEditSubcategory extends Component
     public function editSubcategory()
     {
         $rules = [
-            'editForm.name' => 'required|unique:subcategories,name,' . $this->subcategory->id,
+            'editForm.name' => 'required',
             'editForm.color' => 'required',
             'editForm.size' => 'required',
         ];

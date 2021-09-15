@@ -80,13 +80,14 @@
 
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center mt-2">
-                                    <span><b>Precio</b><span><br>{{ $item->price }}</span>
+                                    <span><b>Precio</b><span><br>{{ number_format($item->price, 2, '.', ',') }}</span>
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center mt-2">
                                     <span><b>Cantidad</b><span><br>{{ $item->qty }}</span>
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center mt-2">
-                                    <span><b>Total</b><span><br>{{ $item->subtotal }}</span>
+                                    <span><b>Total</b><span><br>{{ number_format($item->subtotal, 2, '.', ',') }}
+                                            MXN</span>
                                 </div>
                             @endforeach
                         </div>
@@ -98,8 +99,8 @@
                     <div class="card-body d-flex align-items-start justify-content-center">
                         {{-- <div> --}}
                         <div class="">
-                            <p class="border-b-primary">Total:</p> <span
-                                class="float-right">{{ $orden->total }}</span><br>
+                            <p class=" border-b-primary">Total:</p> <span
+                                class="float-right">{{ number_format($orden->total, 2, '.', ',') }} MXN</span><br>
                             <div class="divisor-20"></div>
                             {{-- <div class="slider-btn btn-hover">
                                 <a href="" class="btn animated d-block">

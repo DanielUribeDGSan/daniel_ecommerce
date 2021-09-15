@@ -50,7 +50,7 @@ class CreateOrder extends Component
 
     public function create_order()
     {
-        if (FacadesCart::subtotal() > 2000) {
+        if (floatval(str_replace(',', '', FacadesCart::subtotal())) > 2000) {
             $this->costo = 0;
         }
         $this->validate = true;
@@ -66,7 +66,7 @@ class CreateOrder extends Component
         $order->note = $this->note;
         $order->envio_type = 1;
         $order->shipping_cost = $this->costo;
-        $order->total = $this->costo + FacadesCart::subtotal();
+        $order->total =  floatval(str_replace(',', '', FacadesCart::subtotal())) + floatval($this->costo);
         $order->content = FacadesCart::content();
         $order->state_id = $this->state_id;
         $order->municipality_id = $this->municipality_id;
