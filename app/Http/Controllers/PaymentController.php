@@ -35,9 +35,9 @@ class PaymentController extends Controller
                     Mail::to('daniel.uribe.garcia07@gmail.com')->send(new MailClient());
                 }
                 return view('payment.pago-exitoso-page', compact('orden', 'items'));
-            } else {
-                return redirect()->route('pagoCancelado', $orden);
-            }
+            } //else {
+            //     return redirect()->route('pagoCancelado', $orden);
+            // }
         }
     }
 
