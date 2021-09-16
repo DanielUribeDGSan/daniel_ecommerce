@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailClient;
 use App\Mail\OrdenPagada;
 use App\Models\Order;
 use App\Models\User;
@@ -20,7 +21,7 @@ class PaymentController extends Controller
         if ($request->get('payment_id')) {
             $payment_id = $request->get('payment_id');
 
-            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=APP_USR-7260790674054640-081218-df6bacdd5688965f92aca54c2782d7ef-806649757");
+            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=TEST-7260790674054640-081218-51f13ec78ca1a34204d2f33877b6721c-806649757");
             $reponse = json_decode($reponse);
             $status = $reponse->status;
             if ($status == 'approved') {
@@ -31,6 +32,7 @@ class PaymentController extends Controller
                     $orden->save();
                     $user = User::where('email', Auth::user()->email)->first();
                     Mail::to($orden->email)->send(new OrdenPagada($user, $orden, $items));
+                    Mail::to('daniel.uribe.garcia07@gmail.com')->send(new MailClient());
                 }
                 return view('payment.pago-exitoso-page', compact('orden', 'items'));
             } else {

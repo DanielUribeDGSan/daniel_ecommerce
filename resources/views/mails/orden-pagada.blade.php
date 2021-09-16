@@ -433,6 +433,45 @@
                                     cellspacing="0"
                                     style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
                                     <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0;background-position:center top">
+                                            <table cellpadding="0" cellspacing="0" width="100%"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="center" valign="top"
+                                                        style="padding:0;Margin:0;width:600px">
+                                                        <table cellpadding="0" cellspacing="0" width="100%"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;position:relative"><a
+                                                                        target="_blank"
+                                                                        href="https://daniel-ecommerce-2021.herokuapp.com/"
+                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#E97730;font-size:14px"><img
+                                                                            class="adapt-img"
+                                                                            src="{{ asset('assets/images/mails/pagado.gif') }}"
+                                                                            alt title width="100%"
+                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" class="es-content" align="center"
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0"
+                                    cellspacing="0"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                    <tr style="border-collapse:collapse">
                                         <td align="left"
                                             style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px;background-position:center top">
                                             <table cellpadding="0" cellspacing="0" width="100%"
