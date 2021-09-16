@@ -18,7 +18,8 @@
                         </div>
                         <div class="product-action-wrap">
                             <button class="product-action-btn-1" title="Wishlist"><i class="pe-7s-like"></i></button>
-                            <button class="product-action-btn-1 cart-btn" title="Quick View" data-bs-toggle="modal"
+                            <button class="product-action-btn-1 cart-btn" title="Quick View"
+                                wire:click="modalProduct({{ $product->id }})" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 <i class="pe-7s-look"></i>
                             </button>
@@ -84,6 +85,7 @@
                 }
             });
         </script>
+
     @else
         <x-loading-products />
     @endif

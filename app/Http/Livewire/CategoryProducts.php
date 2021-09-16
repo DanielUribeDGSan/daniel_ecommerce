@@ -23,8 +23,13 @@ class CategoryProducts extends Component
 
     public function loadData()
     {
-
         $this->products = $this->category->products()->where('status', 2)->limit(10)->get();
+        $this->emit('swiper', $this->category->id);
+    }
+
+    public function modalProduct($productId)
+    {
+        $this->emitTo('modal-product', 'showModalProduct', $productId);
         $this->emit('swiper', $this->category->id);
     }
 

@@ -10,7 +10,7 @@ class WebController extends Controller
     public function inicio()
     {
         $categories = Category::all();
-        return view('web.inicio', compact('categories'));
+        return view('home.inicio', compact('categories'));
     }
 
     public function nosotros()

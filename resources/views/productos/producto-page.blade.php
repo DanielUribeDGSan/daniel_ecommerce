@@ -81,11 +81,11 @@
                             <span>( 1 Customer Review )</span>
                         </div>
                         @if ($product->subcategory->size)
-                            @livewire('add-cart-item-size',['product' => $product])
+                            @livewire('add-cart-item-size',['product' => $product], key('product-size'))
                         @elseif($product->subcategory->color)
-                            @livewire('add-cart-item-color',['product' => $product])
+                            @livewire('add-cart-item-color',['product' => $product], key('product-color'))
                         @else
-                            @livewire('add-cart-item',['product' => $product])
+                            @livewire('add-cart-item',['product' => $product], key('product-default'))
                         @endif
 
                         <div class="social-icon-style-4">
@@ -104,36 +104,38 @@
         <div class="container">
             <div class="description-review-topbar nav" data-aos="fade-up" data-aos-delay="200">
                 <a class="active" data-bs-toggle="tab" href="#des-details1"> Description </a>
-                <a data-bs-toggle="tab" href="#des-details2" class=""> Information </a>
+                <a data-bs-toggle="tab" href="#des-details2"
+                    class=""> Information </a>
                 {{-- <a data-bs-toggle="tab" href="#des-details3" class=""> Reviews </a> --}}
             </div>
-            <div class="tab-content">
-                <div id="des-details1" class="tab-pane active">
-                    <div class="product-description-content text-center">
-                        <p data-aos="fade-up" data-aos-delay="200">{{ $product->description }}</p>
+            <div class="
+                    tab-content">
+                    <div id="des-details1" class="tab-pane active">
+                        <div class="product-description-content text-center">
+                            <p data-aos="fade-up" data-aos-delay="200">{{ $product->description }}</p>
+                        </div>
                     </div>
-                </div>
-                <div id="des-details2" class="tab-pane">
-                    <div class="specification-wrap table-responsive">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="width1">Brands</td>
-                                    <td>Airi, Brand, Draven, Skudmart, Yena</td>
-                                </tr>
-                                <tr>
-                                    <td class="width1">Color</td>
-                                    <td>Blue, Gray, Pink</td>
-                                </tr>
-                                <tr>
-                                    <td class="width1">Size</td>
-                                    <td>L, M, S, XL, XXL</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div id="des-details2" class="tab-pane">
+                        <div class="specification-wrap table-responsive">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="width1">Brands</td>
+                                        <td>Airi, Brand, Draven, Skudmart, Yena</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width1">Color</td>
+                                        <td>Blue, Gray, Pink</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width1">Size</td>
+                                        <td>L, M, S, XL, XXL</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                {{-- <div id="des-details3" class="tab-pane">
+                    {{-- <div id="des-details3" class="tab-pane">
                     <div class="review-wrapper">
                         <h3>1 review for Sleeve Button Cowl Neck</h3>
                         <div class="single-review">
