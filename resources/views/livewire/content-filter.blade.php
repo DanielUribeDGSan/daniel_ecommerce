@@ -407,16 +407,6 @@
             </div>
             <div class="col-lg-3 ocultar-movil">
                 <div class="sidebar-wrapper">
-
-
-                    <div class="sidebar-widget mb-40">
-                        <div class="search-wrap-2">
-                            <form class="search-2-form" action="#">
-                                <input placeholder="Search*" type="text">
-                                <button class="button-search"><i class=" ti-search "></i></button>
-                            </form>
-                        </div>
-                    </div>
                     <div class="sidebar-widget sidebar-widget-border mb-40 pb-35">
                         <div class="sidebar-widget-title mb-30">
                             <h3>Filtar por precio</h3>

@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 // Inicio
 Route::get('/', [App\Http\Controllers\WebController::class, 'inicio'])->name('inicio');
 
+// Nosotros
+Route::get('/nosotros', [App\Http\Controllers\WebController::class, 'nosotros'])->name('nosotros');
+
+// Contacto
+Route::get('/contacto', [App\Http\Controllers\WebController::class, 'contacto'])->name('contacto');
+
 // Categorias
 Route::get('categorias/{category}/{subcategory?}', [App\Http\Controllers\CategoryController::class, 'categoria'])->name('categoria');
 

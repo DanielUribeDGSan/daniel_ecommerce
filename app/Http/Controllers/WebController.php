@@ -12,4 +12,14 @@ class WebController extends Controller
         $categories = Category::all();
         return view('web.inicio', compact('categories'));
     }
+
+    public function nosotros()
+    {
+        return view('about.about');
+    }
+
+    public function contacto()
+    {
+        return view('contacto.contacto');
+    }
 }

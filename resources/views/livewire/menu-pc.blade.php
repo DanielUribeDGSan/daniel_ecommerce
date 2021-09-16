@@ -56,9 +56,9 @@
                         <div class="main-menu text-center">
                             <nav>
                                 <ul>
-                                    <li><a href="{{ route('inicio') }}">HOME</a>
+                                    <li><a href="{{ route('inicio') }}" class="text-uppercase">Inicio</a>
                                     </li>
-                                    <li><a href="shop.html">SHOP</a>
+                                    <li><a href="" class="text-uppercase">Shop</a>
                                         <ul class="mega-menu-style mega-menu-mrg-1">
                                             <li>
                                                 <ul>
@@ -172,12 +172,9 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">PAGES</a>
+                                    <li><a href="{{ route('nosotros') }}" class="text-uppercase">Sobre Nosotros</a>
                                     </li>
-                                    <li><a href="blog.html">BLOG</a>
-                                    </li>
-                                    <li><a href="about-us.html">ABOUT</a></li>
-                                    <li><a href="contact-us.html">CONTACT US</a></li>
+                                    <li><a href="{{ route('contacto') }}" class="text-uppercase">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>

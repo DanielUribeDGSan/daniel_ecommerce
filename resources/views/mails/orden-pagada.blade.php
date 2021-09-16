@@ -450,8 +450,8 @@
                                                                         style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#E97730;font-size:14px"><img
                                                                             class="adapt-img"
                                                                             src="{{ asset('assets/images/mails/pagado.gif') }}"
-                                                                            alt title width="100%"
-                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a>
+                                                                            alt title width="35%"
+                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;width: 220px !important;"></a>
                                                                 </td>
                                                             </tr>
                                                         </table>

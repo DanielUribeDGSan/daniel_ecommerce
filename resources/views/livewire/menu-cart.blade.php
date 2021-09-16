@@ -3,7 +3,7 @@
         @forelse (Cart::content() as $item)
             <li>
                 <div class="cart-img">
-                    <a href="#">
+                    <a>
                         @if ($item->options->image)
                             <div class="content__product__cart"
                                 style="background-image: url({{ asset($item->options->image) }});    background-repeat: no-repeat;background-size: cover;background-position: center;">
@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div class="cart-title">
-                    <h4><a href="#">{{ $item->name }}</a></h4>
+                    <h4><a>{{ $item->name }}</a></h4>
                     <span> {{ $item->qty }} × {{ $item->price }} MXN</span><br>
                     @isset($item->options['color'])
                         <span><b>Color:</b> {{ $item->options['color'] }}</span><br>
@@ -29,7 +29,8 @@
                     <div wire:loading wire:target="delete('{{ $item->rowId }}')">
                         <x-loading-delete-product />
                     </div>
-                    <a wire:loading.remove wire:click="delete('{{ $item->rowId }}')">×</a>
+                    <button class="btn" wire:loading.remove wire:loading.attr="disabled"
+                        wire:click="delete('{{ $item->rowId }}')">×</button>
                 </div>
             </li>
         @empty
