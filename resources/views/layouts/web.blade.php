@@ -47,14 +47,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/easyzoom.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/slinky.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.4') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/payment.css?ver=1.0.4') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/ordenes.css?ver=1.0.4') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/profile.css?ver=1.0.4') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.4') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?ver=1.0.5') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/payment.css?ver=1.0.5') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/ordenes.css?ver=1.0.5') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/profile.css?ver=1.0.5') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/cambios.css?ver=1.0.5') }}" />
 
 
-    <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.4') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/loading.css?ver=1.0.5') }}" />
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
@@ -214,7 +214,7 @@
     <script src="{{ asset('assets/js/ordenes.js') }}"></script>
     <script src="{{ asset('assets/js/alertas.js') }}"></script>
 
-    <script src="{{ asset('assets/js/main.js?ver=1.0.4') }}"></script>
+    <script src="{{ asset('assets/js/main.js?ver=1.0.5') }}"></script>
     @include('sweetalert::alert')
     @stack('script')
 
