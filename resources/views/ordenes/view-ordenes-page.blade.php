@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="enviadas">
-                        <div class="main-header mt-10 anim" style="--delay: 0s">Ordenes enviadas</div>
+                        <div class="main-header mt-10 anim" style="--delay: 0s">Ordenes pagadas</div>
                         <div class="main-ordens">
                             <div class="row">
                                 @forelse ($ordenes->where('status',3) as $orden)
@@ -151,7 +151,7 @@
                                                         src="{{ asset('assets/images/ordenes/enviado.svg') }}" />
                                                 </div>
                                                 <div class="orden-detail">
-                                                    <div class="orden-name">Enviado</div>
+                                                    <div class="orden-name">Pagada</div>
                                                     <div class="orden-info">
                                                         {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>

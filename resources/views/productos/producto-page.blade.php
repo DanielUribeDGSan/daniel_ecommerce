@@ -210,6 +210,6 @@
             </div>
         </div>
     </div>
-    @livewire('related-product',['category' => $product->subcategory->category,'id_category'
-    =>$product->subcategory->id])
+    @livewire('related-product',['category' => $product->subcategory->category,'product'
+    =>$product], key('product-related'))
 </x-web-layout>

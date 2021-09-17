@@ -43,6 +43,11 @@ class ContentFilter extends Component
         $this->emit('limpiarPrecio2');
     }
 
+    public function modalProduct($productId)
+    {
+        $this->emitTo('modal-product', 'showModalProduct', $productId);
+    }
+
     public function loadData()
     {
         $this->loading = 1;

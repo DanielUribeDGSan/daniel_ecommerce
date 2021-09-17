@@ -14,7 +14,7 @@
                             </div>
                         </a>
                         <div class="product-badge badge-top badge-right badge-pink">
-                            <span>-10%</span>
+                            {{-- <span>-10%</span> --}}
                         </div>
                         <div class="product-action-wrap">
                             <button class="product-action-btn-1" title="Wishlist"><i class="pe-7s-like"></i></button>

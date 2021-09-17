@@ -8,7 +8,7 @@ use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 
 class RelatedProduct extends Component
 {
-    public $category, $id_category;
+    public $category, $product;
     public $products = [];
     public $options = [];
     public $colorArr = [];
@@ -20,7 +20,13 @@ class RelatedProduct extends Component
 
     public function loadData()
     {
-        $this->products = $this->category->products()->where('status', 2)->where('subcategory_id', '!=', $this->id_category)->limit(6)->get();
+        $this->products = $this->category->products()->where('status', 2)->where('subcategory_id', '!=', $this->product->subcategory_id)->limit(6)->get();
+        $this->emit('swiper2');
+    }
+
+    public function modalProduct($productId)
+    {
+        $this->emitTo('modal-product', 'showModalProduct', $productId);
         $this->emit('swiper2');
     }
 

@@ -34,6 +34,11 @@ class Search extends Component
         $this->resetPage();
     }
 
+    public function modalProduct($productId)
+    {
+        $this->emitTo('modal-product', 'showModalProduct', $productId);
+    }
+
     public function loadData()
     {
         $this->loading = 1;
