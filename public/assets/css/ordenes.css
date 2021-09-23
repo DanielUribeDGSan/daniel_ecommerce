@@ -391,6 +391,7 @@ img {
     position: absolute;
     right: 125px;
     bottom: 20px;
+    margin-right: 0.5rem;
 }
 
 .orden-img {

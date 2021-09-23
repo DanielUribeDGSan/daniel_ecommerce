@@ -61,21 +61,43 @@
                                             <div class="main-orden__title">Orden: {{ $orden->id }}</div>
                                             <div class="main-orden__orden tips">
                                                 <div class="main-orden__img">
-                                                    <lottie-player src="{{ asset('json/paquete.json') }}"
-                                                        background="transparent" speed="1"
-                                                        style="width: 150px; height: 150px;" loop autoplay>
-                                                    </lottie-player>
+
+                                                    @if (!$orden->payment_id)
+                                                        <lottie-player src="{{ asset('json/paquete.json') }}"
+                                                            background="transparent" speed="1"
+                                                            style="width: 150px; height: 150px;" loop autoplay>
+                                                        </lottie-player>
+                                                    @else
+                                                        <lottie-player src="{{ asset('json/pago-pendiente.json') }}"
+                                                            background="transparent" speed="1"
+                                                            style="width: 100px; height: 100px;" loop autoplay>
+                                                        </lottie-player>
+                                                    @endif
+
                                                 </div>
-                                                <div class="main-orden__time">{{ $orden->total }} MXN</div>
-                                                <div class="main-orden__link"><a class="text-white"
-                                                        href="{{ route('orderPayment', $orden) }}">Pagar orden</a>
-                                                </div>
+                                                <div class="main-orden__time">
+                                                    {{ number_format($orden->total, 2, '.', ',') }} MXN</div>
+                                                @if (!$orden->payment_id)
+                                                    <div class="main-orden__link"><a class="text-white"
+                                                            href="{{ route('orderPayment', $orden) }}">Pagar orden</a>
+                                                    </div>
+                                                @else
+                                                    <div class="main-orden__link"><a class="text-white"
+                                                            href="{{ route('viewOrder', $orden) }}">Ver orden</a>
+                                                    </div>
+                                                @endif
+
+
                                                 <div class="orden-img__wrapper">
                                                     <img class="orden-img"
                                                         src="{{ asset('assets/images/ordenes/pendiente.svg') }}" />
                                                 </div>
                                                 <div class="orden-detail">
-                                                    <div class="orden-name">Pendiente</div>
+                                                    @if (!$orden->payment_id)
+                                                        <div class="orden-name">Pendiente</div>
+                                                    @else
+                                                        <div class="orden-name">Pendiente de recibir el pago</div>
+                                                    @endif
                                                     <div class="orden-info">
                                                         {{ $orden->created_at->format('d/m/y') }}
                                                         <span></span>
@@ -105,7 +127,8 @@
                                                         style="width: 150px; height: 150px;" loop autoplay>
                                                     </lottie-player>
                                                 </div>
-                                                <div class="main-orden__time">{{ $orden->total }} MXN</div>
+                                                <div class="main-orden__time">
+                                                    {{ number_format($orden->total, 2, '.', ',') }} MXN</div>
                                                 <div class="main-orden__link"><a class="text-white"
                                                         href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
@@ -143,7 +166,8 @@
                                                         style="width: 150px; height: 150px;" loop autoplay>
                                                     </lottie-player>
                                                 </div>
-                                                <div class="main-orden__time">{{ $orden->total }} MXN</div>
+                                                <div class="main-orden__time">
+                                                    {{ number_format($orden->total, 2, '.', ',') }} MXN</div>
                                                 <div class="main-orden__link"><a class="text-white"
                                                         href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
@@ -181,7 +205,8 @@
                                                         style="width: 150px; height: 150px;" loop autoplay>
                                                     </lottie-player>
                                                 </div>
-                                                <div class="main-orden__time">{{ $orden->total }} MXN</div>
+                                                <div class="main-orden__time">
+                                                    {{ number_format($orden->total, 2, '.', ',') }} MXN</div>
                                                 <div class="main-orden__link"><a class="text-white"
                                                         href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">
@@ -219,7 +244,8 @@
                                                         style="width: 150px; height: 150px;" loop autoplay>
                                                     </lottie-player>
                                                 </div>
-                                                <div class="main-orden__time">{{ $orden->total }} MXN</div>
+                                                <div class="main-orden__time">
+                                                    {{ number_format($orden->total, 2, '.', ',') }} MXN</div>
                                                 <div class="main-orden__link"><a class="text-white"
                                                         href="{{ route('viewOrder', $orden) }}">Ver orden</a></div>
                                                 <div class="orden-img__wrapper">

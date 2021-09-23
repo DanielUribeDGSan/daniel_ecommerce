@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\MailClient;
+use App\Mail\OrdenCancelada;
 use App\Mail\OrdenPagada;
+use App\Mail\OrdenPendiente;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -15,13 +17,17 @@ class PaymentController extends Controller
 {
     public function pagoExitoso(Order $orden, Request $request)
     {
-        $this->authorize('payment', $orden);
         $this->authorize('author', $orden);
+        $this->authorize('payment', $orden);
 
         if ($request->get('payment_id')) {
             $payment_id = $request->get('payment_id');
-
-            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=APP_USR-7260790674054640-081218-df6bacdd5688965f92aca54c2782d7ef-806649757");
+            if (!$orden->payment_id) {
+                $orden->payment_id = $payment_id;
+                $orden->save();
+            }
+            $token = config('services.mercadopago.token');
+            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id?access_token=$token");
             $reponse = json_decode($reponse);
             $status = $reponse->status;
             if ($status == 'approved') {
@@ -38,22 +44,67 @@ class PaymentController extends Controller
             } else {
                 return redirect()->route('pagoCancelado', $orden);
             }
+        } else {
+            return redirect()->route('ordenes');
         }
     }
 
-    public function pagoPendiente(Order $orden)
+    public function pagoPendiente(Order $orden, Request $request)
     {
         $this->authorize('author', $orden);
 
-        $items = json_decode($orden->content);
-        return view('payment.pago-pendiente-page', compact('orden', 'items'));
+        if ($request->get('payment_id')) {
+            $payment_id = $request->get('payment_id');
+            if (!$orden->payment_id) {
+                $orden->payment_id = $payment_id;
+                $orden->save();
+            }
+            $token = config('services.mercadopago.token');
+            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id?access_token=$token");
+            $reponse = json_decode($reponse);
+            $status = $reponse->status;
+            if ($status == 'in_process') {
+                $items = json_decode($orden->content);
+
+
+                $user = User::where('email', Auth::user()->email)->first();
+                Mail::to($orden->email)->send(new OrdenPendiente($user, $orden, $items));
+
+                return view('payment.pago-pendiente-page', compact('orden', 'items'));
+            } else {
+                return redirect()->route('pagoCancelado', $orden);
+            }
+        } else {
+            return redirect()->route('ordenes');
+        }
     }
 
-    public function pagoCancelado(Order $orden)
+    public function pagoCancelado(Order $orden, Request $request)
     {
         $this->authorize('author', $orden);
 
-        $items = json_decode($orden->content);
-        return view('payment.pago-cancelado-page', compact('orden', 'items'));
+        if ($request->get('payment_id')) {
+            $payment_id = $request->get('payment_id');
+
+            if (!$orden->payment_id) {
+                $orden->payment_id = $payment_id;
+                $orden->save();
+            }
+
+            $token = config('services.mercadopago.token');
+            $reponse = Http::get("https://api.mercadopago.com/v1/payments/$payment_id?access_token=$token");
+            $reponse = json_decode($reponse);
+            $status = $reponse->status;
+
+            $items = json_decode($orden->content);
+
+
+            $user = User::where('email', Auth::user()->email)->first();
+            Mail::to($orden->email)->send(new OrdenCancelada($user, $orden, $items));
+
+            return view('payment.pago-cancelado-page', compact('orden', 'items'));
+        } else {
+            return redirect()->route('ordenes');
+        }
     }
 }

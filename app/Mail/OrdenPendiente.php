@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Order;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,9 +18,13 @@ class OrdenPendiente extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $orden, $user, $items = [];
+
+    public function __construct(User $user, Order $orden, $items)
     {
-        //
+        $this->user = $user;
+        $this->orden = $orden;
+        $this->items = $items;
     }
 
     /**
@@ -26,8 +32,10 @@ class OrdenPendiente extends Mailable
      *
      * @return $this
      */
+
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mails.orden-pendiente')->from('daniel.uribe.garcia07@gmail.com', 'Kasa Shop Orden Pendiente')
+            ->subject('Tu compra esta pendiente, te avisaremos cuando se haya realizado tu pago');
     }
 }

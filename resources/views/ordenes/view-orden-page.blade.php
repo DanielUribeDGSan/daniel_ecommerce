@@ -51,13 +51,13 @@
 
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center mt-2">
-                                    <span><b>Precio</b><span><br>{{ $item->price }}</span>
+                                    <span><b>Precio</b><span><br>{{ number_format($item->price, 2, '.', ',') }}</span>
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center mt-2">
                                     <span><b>Cantidad</b><span><br>{{ $item->qty }}</span>
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center mt-2">
-                                    <span><b>Total</b><span><br>{{ $item->subtotal }}</span>
+                                    <span><b>Total</b><span><br>{{ number_format($item->subtotal, 2, '.', ',') }}</span>
                                 </div>
                             @endforeach
                         </div>
@@ -70,7 +70,8 @@
                         {{-- <div> --}}
                         @if ($orden->status == 2)
                             <div class="">
-                                <p class="border-b-primary">Orden:</p> <span class="float-right">Recibida</span><br>
+                                <p class=" border-b-primary">Orden:</p> <span
+                                    class="float-right">Recibida</span><br>
                                 <div class="divisor-20"></div>
                                 {{-- Btn --}}
 
@@ -80,7 +81,8 @@
                             </div>
                         @elseif ($orden->status == 3)
                             <div class="">
-                                <p class="border-b-primary">Orden:</p> <span class="float-right">Enviada</span><br>
+                                <p class=" border-b-primary">Orden:</p> <span
+                                    class="float-right">Enviada</span><br>
                                 <div class="divisor-20"></div>
                                 {{-- Btn --}}
 
@@ -90,7 +92,8 @@
                             </div>
                         @elseif ($orden->status == 4)
                             <div class="">
-                                <p class="border-b-primary">Orden:</p> <span class="float-right">Entregada</span><br>
+                                <p class=" border-b-primary">Orden:</p> <span
+                                    class="float-right">Entregada</span><br>
                                 <div class="divisor-20"></div>
                                 {{-- Btn --}}
 
@@ -100,7 +103,8 @@
                             </div>
                         @elseif ($orden->status == 5)
                             <div class="">
-                                <p class="border-b-primary">Orden:</p> <span class="float-right">Anulada</span><br>
+                                <p class=" border-b-primary">Orden:</p> <span
+                                    class="float-right">Anulada</span><br>
                                 <div class="divisor-20"></div>
                                 {{-- Btn --}}
 
@@ -108,10 +112,21 @@
                                 <lottie-player src="{{ asset('json/anulado.json') }}" background="transparent"
                                     speed="1" style="width: 321px; height: 321px;" loop autoplay></lottie-player>
                             </div>
-                        @else
+                        @elseif ($orden->status == 1 && !$orden->payment_id)
                             <script>
                                 location.href = "{{ route('orderPayment', $orden) }}";
                             </script>
+                        @elseif ($orden->status == 1 && $orden->payment_id)
+                            <div class="">
+                                <p class=" border-b-primary">Orden:</p> <span
+                                    class="float-right">Pendiente de recibir pago</span><br>
+                                <div class="divisor-20"></div>
+                                {{-- Btn --}}
+
+                                <div class="divisor-20"></div>
+                                <lottie-player src="{{ asset('json/pago-pendiente.json') }}" background="transparent"
+                                    speed="1" style="width: 321px; height: 321px;" loop autoplay></lottie-player>
+                            </div>
                         @endif
                     </div>
                 </div>

@@ -36,6 +36,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('locality_id')->references('id')->on('localities');
             $table->string('address');
             $table->string('referencia');
+            $table->string('payment_id')->nullable();
+
             $table->timestamps();
         });
     }
