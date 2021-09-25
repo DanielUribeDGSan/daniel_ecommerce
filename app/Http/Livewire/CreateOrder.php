@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Address;
 use App\Models\Locality;
 use App\Models\Municipality;
 use App\Models\Order;
@@ -20,15 +21,16 @@ class CreateOrder extends Component
     public $validate = false;
 
     public $rules = [
-        'contact' => 'required',
+        'contact' => 'required|max:255',
         'state_id' => 'required',
         'municipality_id' => 'required',
         'locality_id' => 'required',
-        'codePostal' => 'required',
-        'address' => 'required',
-        'reference' => 'required',
-        'phone' => 'required',
-        'email' => 'required',
+        'codePostal' => 'required|max:5',
+        'address' => 'required|max:255',
+        'reference' => 'required|max:255',
+        'phone' => 'required|max:20',
+        'email' => 'required|max:255',
+        'note' => 'max:255',
     ];
 
     public function mount()
@@ -50,6 +52,7 @@ class CreateOrder extends Component
 
     public function create_order()
     {
+
         if (floatval(str_replace(',', '', FacadesCart::subtotal())) > 2000) {
             $this->costo = 0;
         }
@@ -57,13 +60,14 @@ class CreateOrder extends Component
         $this->emit('select');
         $this->validate($this->rules);
         $order = new Order();
+        $address = Address::where('address', trim($this->address))->get();
 
         $order->user_id = auth()->user()->id;
-        $order->contact = $this->contact;
-        $order->code_postal = $this->codePostal;
-        $order->phone = $this->phone;
-        $order->email = $this->email;
-        $order->note = $this->note;
+        $order->contact = trim($this->contact);
+        $order->code_postal = trim($this->codePostal);
+        $order->phone = trim($this->phone);
+        $order->email = trim($this->email);
+        $order->note = trim($this->note);
         $order->envio_type = 1;
         $order->shipping_cost = $this->costo;
         $order->total =  floatval(str_replace(',', '', FacadesCart::subtotal())) + floatval($this->costo);
@@ -71,13 +75,30 @@ class CreateOrder extends Component
         $order->state_id = $this->state_id;
         $order->municipality_id = $this->municipality_id;
         $order->locality_id = $this->locality_id;
-        $order->address = $this->address;
-        $order->referencia = $this->reference;
+        $order->address = trim($this->address);
+        $order->referencia = trim($this->reference);
         $order->save();
         foreach (FacadesCart::content() as $item) {
             discount($item);
         }
         FacadesCart::destroy();
+
+        if ($address->count() == 0) {
+            $addressCreate = new Address();
+
+            $addressCreate->user_id = auth()->user()->id;
+            $addressCreate->contact = trim($this->contact);
+            $addressCreate->code_postal = trim($this->codePostal);
+            $addressCreate->phone = trim($this->phone);
+            $addressCreate->email = trim($this->email);
+            $addressCreate->state_id = $this->state_id;
+            $addressCreate->municipality_id = $this->municipality_id;
+            $addressCreate->locality_id = $this->locality_id;
+            $addressCreate->address = trim($this->address);
+            $addressCreate->referencia = trim($this->reference);
+            $addressCreate->save();
+        }
+
         return redirect()->route('orderPayment', $order);
     }
 

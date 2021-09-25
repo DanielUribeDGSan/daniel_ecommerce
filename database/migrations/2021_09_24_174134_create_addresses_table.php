@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\Order;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrdersTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +13,7 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -22,12 +21,6 @@ class CreateOrdersTable extends Migration
             $table->string('code_postal', 5);
             $table->string('phone', 20);
             $table->string('email');
-            $table->text('note')->nullable();
-            $table->enum('status', [Order::PENDIENTE, Order::RECIBIDO, Order::ENVIADO, Order::ENTREGADO, Order::ANULADO])->default(Order::PENDIENTE);
-            $table->enum('envio_type', [Order::TIENDA, Order::CASA]);
-            $table->float('shipping_cost');
-            $table->float('total');
-            $table->json('content');
             $table->unsignedBigInteger('state_id')->nullable();
             $table->foreign('state_id')->references('id')->on('states');
             $table->unsignedBigInteger('municipality_id')->nullable();
@@ -36,8 +29,6 @@ class CreateOrdersTable extends Migration
             $table->foreign('locality_id')->references('id')->on('localities');
             $table->string('address');
             $table->string('referencia');
-            $table->string('payment_id')->nullable();
-
             $table->timestamps();
         });
     }
@@ -49,6 +40,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('addresses');
     }
 }

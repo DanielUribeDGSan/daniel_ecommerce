@@ -10,12 +10,12 @@
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" id="name" name="name" :value="old('name')" required autofocus
-                            autocomplete="name" placeholder="Nombre" />
+                            autocomplete="name" placeholder="Nombre" onkeyup="onlyLetrasNum(this)" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="email" id="email" name="email" :value="old('email')" required
-                            placeholder="Correo" />
+                        <input type="email" id="email" name="email" :value="old('email')" required placeholder="Correo"
+                            onkeyup="onlyLetrasNum(this)" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>

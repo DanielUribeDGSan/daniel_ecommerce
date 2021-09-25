@@ -215,6 +215,7 @@
     <script src="{{ asset('assets/js/loading.js') }}"></script>
     <script src="{{ asset('assets/js/ordenes.js') }}"></script>
     <script src="{{ asset('assets/js/alertas.js') }}"></script>
+    <script src="{{ asset('assets/js/validarInput.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.5') }}"></script>
     @include('sweetalert::alert')
