@@ -38,6 +38,27 @@
                 <form wire:submit.prevent="create_order">
                     <div class="row">
                         <div class="col-lg-7">
+                            @if ($direcciones->count())
+                                <div class="billing-info-wrap mb-20">
+                                    <h3 class="mb-5">Tus direcciones guardadas</h3>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="billing-select select-style ">
+                                                <label>Direcciones <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <select class="form-control-select" wire:model="direccion_select">
+                                                    <option value="" disabled selected>Selecciona una dirección</option>
+                                                    @foreach ($direcciones as $direccion)
+                                                        <option value="{{ $direccion->id }}">
+                                                            {{ $direccion->address }}</option>
+                                                    @endforeach
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             <div class="billing-info-wrap">
                                 <h3>Datos de facturación</h3>
                                 <div class="row">
@@ -58,7 +79,8 @@
                                             <select class="form-control-select" wire:model="state_id">
                                                 <option value="" disabled selected>Selecciona un estado</option>
                                                 @foreach ($states as $state)
-                                                    <option value="{{ $state->id }}">{{ $state->nombre }}</option>
+                                                    <option value="{{ $state->id }}">{{ $state->nombre }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                             @if ($state_id == '' && $validate)
@@ -146,7 +168,8 @@
                                             <input type="email" wire:model.defer="email" onkeyup="onlyEmail(this)"
                                                 maxlength="255">
                                             @if ($email == '' && $validate)
-                                                <p class="cl-danger mt-3">El Correo electrónico no puede quedar vacío
+                                                <p class="cl-danger mt-3">El Correo electrónico no puede quedar
+                                                    vacío
                                                 </p>
                                             @endif
                                         </div>
@@ -157,7 +180,8 @@
                                     </label>
                                     <textarea
                                         placeholder="Notas sobre su pedido, por ejemplo, notas especiales para la entrega."
-                                        wire:model.defer="note" maxlength="255"></textarea>
+                                        wire:model.defer="note" maxlength="255"
+                                        onkeyup="onlyLetrasNum(this)"></textarea>
                                 </div>
                             </div>
                         </div>

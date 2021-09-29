@@ -15,7 +15,9 @@ class CreateOrder extends Component
     protected $listeners = ['render'];
 
     public $contact, $codePostal, $address, $reference, $phone, $email, $note, $costo = 200;
-    public $states, $municipalities = [], $localities = [];
+    public $states, $municipalities =  [], $localities = [];
+
+    public $direcciones = [], $direccion_select = "";
 
     public $state_id = "", $municipality_id = "", $locality_id = "";
     public $validate = false;
@@ -36,6 +38,25 @@ class CreateOrder extends Component
     public function mount()
     {
         $this->states = State::orderByRaw('nombre ASC')->get();
+        $this->direcciones = Address::where('user_id', auth()->user()->id)->get();
+    }
+
+    public function updatedDireccionSelect($value)
+    {
+        $direccion = Address::where('id', $value)->first();
+        $this->municipalities = Municipality::where('estado_id', $direccion->state_id)->orderByRaw('nombre ASC')->get();
+        $this->localities = Locality::where('municipio_id', $direccion->municipality_id)->orderByRaw('nombre ASC')->get();
+
+        $this->contact = $direccion->contact;
+        $this->codePostal = $direccion->code_postal;
+        $this->address = $direccion->address;
+        $this->reference = $direccion->referencia;
+        $this->phone = $direccion->phone;
+        $this->email = $direccion->email;
+        $this->email = $direccion->email;
+        $this->state_id = $direccion->state_id;
+        $this->municipality_id = $direccion->municipality_id;
+        $this->locality_id = $direccion->locality_id;
     }
 
     public function updatedStateId($value)

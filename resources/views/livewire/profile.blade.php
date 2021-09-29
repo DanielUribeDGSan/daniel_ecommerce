@@ -10,8 +10,9 @@
                  <div class="profile-fondo"
                      style="background-image: url({{ asset('assets/images/profile/fondo.jpg') }})"></div>
                  <div class="profile-menu">
-                     <a class="profile-menu-link active">Lista de deseos</a>
-                     <a class="profile-menu-link">Mis compras</a>
+                     <a class="profile-menu-link active">Mis compras</a>
+                     <a class="profile-menu-link">Lista de deseos</a>
+                     <a class="profile-menu-link" href="{{ route('ordenes') }}">Mis ordenes</a>
                      {{-- <a class="profile-menu-link">Friends</a>
                      <a class="profile-menu-link">Photos</a>
                      <a class="profile-menu-link">More</a> --}}
@@ -29,77 +30,92 @@
                                  <i class="far fa-envelope pt-3p mr-05r"></i>
                                  <span>{{ Auth::user()->email }}</span>
                              </div>
+                             @if ($address->count())
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span>{{ $address->address }}</span>
+                                 </div>
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span>{{ $address->referencia }}</span>
+                                 </div>
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span>{{ $address->code_postal }}</span>
+                                 </div>
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span> {{ $address->state->nombre }},
+                                         {{ $address->municipality->nombre }},
+                                         {{ $address->locality->nombre }}</span>
+                                 </div>
 
+                             @endif
                          </div>
                      </div>
                  </div>
                  <div class="timeline-right">
-                     <div class="status box">
-                         <div class="status-menu">
-                             <a class="status-menu-item active" href="#">Status</a>
-                             <a class="status-menu-item" href="#">Photos</a>
-                             <a class="status-menu-item" href="#">Videos</a>
-                         </div>
-                         <div class="status-main">
-                             <img src="https://images.genius.com/2326b69829d58232a2521f09333da1b3.1000x1000x1.jpg"
-                                 class="status-img">
-                             <textarea class="status-textarea" placeholder="Write something to Quan Ha.."></textarea>
-                         </div>
-                         <div class="status-actions">
-                             <a href="#" class="status-action">
-                                 <svg viewBox="-42 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                     <path
-                                         d="M333.7 123.3c0 33.9-12.2 63.2-36.2 87.2-24 24-53.3 36.1-87.1 36.1h-.1c-33.9 0-63.2-12.1-87.1-36.1-24-24-36.2-53.3-36.2-87.2 0-33.9 12.2-63.2 36.2-87.2 24-24 53.2-36 87-36.1h.2c33.8 0 63.2 12.2 87.1 36.1 24 24 36.2 53.3 36.2 87.2zm0 0"
-                                         fill="#ffbb85" />
-                                     <path
-                                         d="M427.2 424c0 26.7-8.5 48.3-25.3 64.3-16.5 15.7-38.4 23.7-65 23.7H90.2c-26.6 0-48.5-8-65-23.7C8.5 472.3 0 450.7 0 423.9c0-10.2.3-20.4 1-30.2a302.7 302.7 0 0112.1-64.9c3.3-10.3 7.8-20.5 13.4-30.3 5.8-10.2 12.5-19 20.1-26.3a89 89 0 0129-18.2c11.2-4.4 23.7-6.7 37-6.7 5.2 0 10.3 2.2 20 8.5l21 13.5c6.6 4.3 15.7 8.3 27 11.9a107.7 107.7 0 0033 5.3c11 0 22-1.8 33-5.3 11.2-3.6 20.3-7.6 27-12l21-13.4c9.7-6.3 14.7-8.5 20-8.5 13.3 0 25.7 2.3 37 6.7a89 89 0 0128.9 18.2c7.6 7.3 14.4 16.1 20.2 26.3 5.5 9.8 10 20 13.3 30.3a305.5 305.5 0 0112.1 64.9c.7 9.8 1 20 1 30.2zm0 0"
-                                         fill="#6aa9ff" />
-                                     <path
-                                         d="M210.4 246.6h-.1V0c34 0 63.3 12.2 87.2 36.1 24 24 36.2 53.3 36.2 87.2 0 33.9-12.2 63.2-36.2 87.2-24 24-53.3 36.1-87.1 36.1zm0 0"
-                                         fill="#f5a86c" />
-                                     <path
-                                         d="M427.2 424c0 26.7-8.5 48.3-25.3 64.3-16.5 15.7-38.4 23.7-65 23.7H210.2V286.5h3.3c11 0 22-1.8 33-5.3 11.2-3.6 20.3-7.6 27-12l21-13.4c9.7-6.3 14.7-8.5 20-8.5 13.3 0 25.7 2.3 37 6.7a89 89 0 0128.9 18.2c7.6 7.3 14.4 16.1 20.2 26.3 5.5 9.8 10 20 13.3 30.3a305.5 305.5 0 0112.1 64.9c.7 9.8 1 20 1 30.2zm0 0"
-                                         fill="#2682ff" />
-                                 </svg>
-                                 People
-                             </a>
-                             <a href="#" class="status-action">
-                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                     <path
-                                         d="M87.084 192c-.456-5.272-.688-10.6-.688-16C86.404 78.8 162.34 0 256.004 0s169.6 78.8 169.6 176c0 5.392-.232 10.728-.688 16h.688c0 96.184-169.6 320-169.6 320s-169.6-223.288-169.6-320h.68zm168.92 32c36.392 1.024 66.744-27.608 67.84-64-1.096-36.392-31.448-65.024-67.84-64-36.392-1.024-66.744 27.608-67.84 64 1.096 36.392 31.448 65.024 67.84 64z"
-                                         fill="#e21b1b" />
-                                 </svg>
-                                 Check in
-                             </a>
-                             <a href="#" class="status-action">
-                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                     <circle cx="256" cy="256" r="256" fill="#ffca28" />
-                                     <g fill="#6d4c41">
-                                         <path
-                                             d="M399.68 208.32c-8.832 0-16-7.168-16-16 0-17.632-14.336-32-32-32s-32 14.368-32 32c0 8.832-7.168 16-16 16s-16-7.168-16-16c0-35.296 28.704-64 64-64s64 28.704 64 64c0 8.864-7.168 16-16 16zM207.68 208.32c-8.832 0-16-7.168-16-16 0-17.632-14.368-32-32-32s-32 14.368-32 32c0 8.832-7.168 16-16 16s-16-7.168-16-16c0-35.296 28.704-64 64-64s64 28.704 64 64c0 8.864-7.168 16-16 16z" />
-                                     </g>
-                                     <path
-                                         d="M437.696 294.688c-3.04-4-7.744-6.368-12.736-6.368H86.4c-5.024 0-9.728 2.336-12.736 6.336-3.072 4.032-4.032 9.184-2.688 14.016C94.112 390.88 170.08 448.32 255.648 448.32s161.536-57.44 184.672-139.648c1.376-4.832.416-9.984-2.624-13.984z"
-                                         fill="#fafafa" />
-                                 </svg>
-                                 Mood
-                             </a>
-                             <button class="status-share">Share</button>
-                         </div>
-                     </div>
-                     {{-- <div class="album box">
-                         <div class="status-main">
-                             <img src="https://images.genius.com/2326b69829d58232a2521f09333da1b3.1000x1000x1.jpg"
-                                 class="status-img" />
-                             <div class="album-detail">
-                                 <div class="album-title"><strong>Quan Ha</strong> create new <span>album</span>
+                     @if ($orders->count())
+                         @foreach ($orders as $order)
+                             <div class="album box">
+                                 <div class="status-main">
+                                     <div class="d-flex w-100 mb-2">
+                                         <div>
+                                             <p class="border-b-primary"><strong>Orden</strong></p>
+                                             <p>Orden {{ $order->id }}</p>
+                                         </div>
+                                     </div>
+                                     <div class="d-flex w-100 mb-2">
+                                         <div>
+                                             <p class="border-b-primary"><strong>Envió</strong></p>
+                                             <p> <span>{{ $order->address }}</span>
+                                                 <span>{{ $order->referencia }}</span>.
+                                                 <span>{{ $order->state->nombre }}, </span><span>
+                                                     {{ $order->municipality->nombre }},</span><span>
+                                                     {{ $order->locality->nombre }}</span>
+                                             </p>
+                                         </div>
+                                     </div>
+                                     <div class="d-flex w-100 mb-2">
+                                         <div>
+                                             <p class="border-b-primary"><strong>Datos de contacto</strong></p>
+                                             <p> <span>{{ $order->contact }}</span>
+                                             </p>
+                                         </div>
+                                     </div>
+                                     <div class="d-flex w-100 mb-2">
+                                         <div>
+                                             <p class="border-b-primary"><strong>Productos</strong></p>
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         @foreach (json_decode($order->content) as $item)
+                                             <div class="col-auto mb-3 ">
+                                                 <img src="{{ $item->options->image }}"
+                                                     class="status-img float-left" />
+                                                 <div>
+                                                     <div class="album-title"><strong>{{ $item->name }}</strong>
+                                                         {{ $item->qty }}
+                                                     </div>
+                                                     <div class="album-date">
+                                                         {{ number_format($item->subtotal, 2, '.', ',') }}</div>
+                                                 </div>
+                                             </div>
+                                         @endforeach
+                                     </div>
+                                     <div class="d-flex w-100 mb-2">
+                                         <div>
+                                             <p class="border-b-primary"><strong>Total</strong></p>
+                                             <p> <span> {{ number_format($order->total, 2, '.', ',') }}
+                                         </div></span>
+                                         </p>
+                                     </div>
                                  </div>
-                                 <div class="album-date">6 hours ago</div>
                              </div>
-                             <button class="intro-menu"></button>
-                         </div>
-
-                     </div> --}}
+                         @endforeach
+                     @else
+                         <x-order-empty />
+                     @endif
                  </div>
              </div>
          </div>

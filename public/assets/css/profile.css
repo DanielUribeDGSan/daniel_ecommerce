@@ -444,7 +444,7 @@
 
 .album {
     padding-top: 20px;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .album .status-main {
     border: none;
@@ -695,6 +695,7 @@
     }
 
     .profile-menu {
+        bottom: -8%;
         padding-left: 0;
         width: 100%;
         overflow: auto;
@@ -704,11 +705,5 @@
     .profile-menu-link {
         padding: 16px;
         font-size: 15px;
-    }
-}
-@media screen and (max-width: 480px) {
-    .profile-menu-link:nth-last-child(1),
-    .profile-menu-link:nth-last-child(2) {
-        display: none;
     }
 }
