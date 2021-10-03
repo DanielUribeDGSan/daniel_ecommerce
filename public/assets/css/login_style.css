@@ -11,6 +11,14 @@ input {
     font-family: "Poppins", sans-serif;
 }
 
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
 .container-login {
     position: relative;
     width: 100%;
@@ -74,7 +82,7 @@ form.sign-in-form {
     height: 55px;
     border-radius: 55px;
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 15% 70% 15%;
     padding: 0 0.4rem;
     position: relative;
 }
@@ -177,7 +185,7 @@ a {
     transform: translateY(-50%);
     background-image: linear-gradient(-45deg, #e97730 0%, #c38965 100%);
     transition: 1.8s ease-in-out;
-    border-radius: 50%;
+    border-radius: 0%;
     z-index: 6;
 }
 

@@ -21,11 +21,15 @@
                         <i class="fas fa-user"></i>
                         <input type="password" id="password" name="password" required autocomplete="new-password"
                             placeholder="Contraseña" />
+                        <i class="fas fa-eye mostrarPass" onclick="mostrarPass()"></i>
+                        <i class="fas fa-eye-slash ocultarPass ocultar" onclick="ocultarPass()"></i>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="password" id="password_confirmation" name="password_confirmation" required
                             autocomplete="new-password" placeholder="Repite tu contraseña" />
+                        <i class="fas fa-eye mostrarPass2" onclick="mostrarPass2()"></i>
+                        <i class="fas fa-eye-slash ocultarPass2 ocultar" onclick="ocultarPass2()"></i>
                     </div>
 
                     <button type="submit" class="btn solid">Registrarme</button>

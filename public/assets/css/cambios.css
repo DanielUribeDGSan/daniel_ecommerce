@@ -1278,6 +1278,13 @@ button:disabled {
     width: 12rem;
 }
 /* Utilidades */
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
 
 .cl-danger {
     color: #ff6b6b;

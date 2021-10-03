@@ -57,7 +57,7 @@
     --primary: #e97730;
     --blanco: #fff;
     --negro: #000;
-    --gris:#5c5e6e;
+    --gris: #5c5e6e;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -4112,7 +4112,20 @@ textarea {
     z-index: 1;
 }
 
+.btn-style-2 button {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+}
+
 .btn-style-2 a.btn {
+    color: #fdfdfd;
+    background-color: var(--primary);
+    padding: 10px 23px 10px;
+    border: none;
+}
+
+.btn-style-2 button.btn {
     color: #fdfdfd;
     background-color: var(--primary);
     padding: 10px 23px 10px;
@@ -4121,6 +4134,9 @@ textarea {
 
 @media only screen and (max-width: 767px) {
     .btn-style-2 a.btn {
+        padding: 7px 15px 9px;
+    }
+    .btn-style-2 button.btn {
         padding: 7px 15px 9px;
     }
 }
@@ -4145,8 +4161,29 @@ textarea {
     border-radius: 0px;
 }
 
+.btn-style-3 button.btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blanco);
+    letter-spacing: 0.02px;
+    border: none;
+    background-color: var(--primary);
+    border-radius: 50px;
+    z-index: 1;
+    padding: 14px 42px 15px;
+}
+
+.btn-style-3 button.btn.border-radius-none {
+    border-radius: 0px;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .btn-style-3 a.btn {
+        font-size: 15px;
+        padding: 10px 25px 12px;
+    }
+
+    .btn-style-3 button.btn {
         font-size: 15px;
         padding: 10px 25px 12px;
     }
@@ -4154,6 +4191,10 @@ textarea {
 
 @media only screen and (max-width: 767px) {
     .btn-style-3 a.btn {
+        font-size: 15px;
+        padding: 10px 25px 12px;
+    }
+    .btn-style-3 button.btn {
         font-size: 15px;
         padding: 10px 25px 12px;
     }

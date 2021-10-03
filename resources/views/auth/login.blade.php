@@ -15,6 +15,9 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" id="password" placeholder="Contraseña" name="password" required
                             autocomplete="current-password" />
+                        <i class="fas fa-eye mostrarPass" onclick="mostrarPass()"></i>
+                        <i class="fas fa-eye-slash ocultarPass ocultar" onclick="ocultarPass()"></i>
+
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="remember_me" name="remember">
@@ -30,7 +33,7 @@
                     <a class="mt-2 btn-login btn-light w-100 mostrar_movil" href="{{ route('inicio') }}">
                         <p class="link-password mt-2">Regresar al inicio</p>
                     </a>
-                    <p class="social-text">Or Sign in with social platforms</p>
+                    {{-- <p class="social-text">Or Sign in with social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -44,7 +47,7 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> --}}
                 </form>
                 <form action="#" class="sign-up-form">
                     <h2 class="title">Sign up</h2>
