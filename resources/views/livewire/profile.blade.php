@@ -19,7 +19,7 @@
                  </div>
              </div>
              <div class="timeline">
-                 <div class="timeline-left">
+                 <div class="timeline-left ocultar-movil">
                      <div class="intro box position-relative">
                          <div class="intro-title">
                              Datos personales
@@ -527,6 +527,56 @@
                          @else
                              <x-order-empty />
                          @endif
+                     </div>
+                 </div>
+                 <div class="timeline-left ocultar-pc">
+                     <div class="intro box position-relative">
+                         <div class="intro-title">
+                             Datos personales
+                             <div class="language-currency-wrap language-currency-wrap-modify btn-option">
+                                 <div class="currency-wrap border-style">
+                                     <a class="currency-active" href="#"><i class="fas fa-ellipsis-h"
+                                             style="font-size: 23px;"></i></a>
+
+                                     <div class="currency-dropdown dropdown-profile-sm">
+                                         <ul>
+                                             <li class="profile-li-menu" onclick="addDirecciones()">Agregar dirección
+                                             </li>
+                                             <li class="profile-li-menu" onclick="mostrarDirecciones()">Mis direcciones
+                                             </li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+
+                         </div>
+                         <div class="info">
+                             <div class="info-item">
+                                 <i class="far fa-envelope pt-3p mr-05r"></i>
+                                 <span>{{ Auth::user()->email }}</span>
+                             </div>
+                             @if ($addressArr->count())
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span>{{ $addressArr->address }}</span>
+                                 </div>
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span>{{ $addressArr->referencia }}</span>
+                                 </div>
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span>{{ $addressArr->code_postal }}</span>
+                                 </div>
+                                 <div class="info-item">
+                                     <i class="far fa-address-card pt-3p mr-05r"></i>
+                                     <span> {{ $addressArr->state->nombre }},
+                                         {{ $addressArr->municipality->nombre }},
+                                         {{ $addressArr->locality->nombre }}</span>
+                                 </div>
+
+                             @endif
+                         </div>
                      </div>
                  </div>
              </div>

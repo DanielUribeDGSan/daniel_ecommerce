@@ -28,7 +28,7 @@
                         <div wire:init="loadData" class="row" wire:loading.remove wire:target="search">
                             @if ($loading == 1)
                                 @forelse ($products as $product)
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                                         <div class="product-wrap mb-35">
                                             <div class="product-img img-zoom mb-25">
                                                 <a href="{{ route('producto', $product) }}">

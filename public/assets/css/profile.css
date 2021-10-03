@@ -4,6 +4,9 @@
 .pt-3p {
     padding-top: 3px;
 }
+.mr-1 {
+    margin-right: 0.7rem;
+}
 .btn-option {
     position: absolute;
     right: 6%;
@@ -234,7 +237,10 @@
     flex-grow: 1;
     padding-left: 20px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
+    .dropdown-profile-sm {
+        left: -400% !important;
+    }
     .timeline {
         flex-wrap: wrap;
         flex-direction: column-reverse;
@@ -245,6 +251,8 @@
     }
     .timeline-left {
         width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }
 

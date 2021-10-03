@@ -190,7 +190,7 @@
                                 <div wire:init="loadData" class="row">
                                     @if ($loading == 1)
                                         @foreach ($products as $product)
-                                            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                                                 <div class="product-wrap mb-35" data-aos-delay="400">
                                                     <div class="product-img img-zoom mb-25">
                                                         <a href="{{ route('producto', $product) }}">
