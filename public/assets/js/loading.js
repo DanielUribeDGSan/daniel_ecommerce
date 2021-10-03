@@ -6,3 +6,33 @@ $(window).on('load', function () {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+
+$(window).on("load", function () {
+    /*
+        Lines Animations
+    */
+    $('.lines').addClass('finish');
+    setTimeout(function () {
+        $('.lines').addClass('ready');
+    }, 2000);
+
+});
+
+$('body').on('click', '.link_ref', function () {
+    var link = $(this).attr('href');
+
+    $('.lines').removeClass('finish');
+    $('.lines').removeClass('ready');
+    $('.lines').addClass('no-lines');
+    setTimeout(function () {
+        location.href = "" + link;
+    }, 2500);
+
+    setTimeout(function () {
+        $('.lines').addClass('finish');
+        $(".preloader").show();
+    }, 2000);
+
+
+    return false;
+});

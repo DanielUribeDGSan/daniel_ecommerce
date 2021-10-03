@@ -47,7 +47,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-6 col-6">
                         <div class="logo">
-                            <a href="{{ route('inicio') }}"><img
+                            <a class="link_ref" href="{{ route('inicio') }}"><img
                                     src="{{ asset('assets/images/logo/logo_kasa.png') }}" style="width: 95px"
                                     alt="logo"></a>
                         </div>
@@ -56,9 +56,9 @@
                         <div class="main-menu text-center">
                             <nav>
                                 <ul>
-                                    <li><a href="{{ route('inicio') }}" class="text-uppercase">Inicio</a>
+                                    <li><a href="{{ route('inicio') }}" class="text-uppercase link_ref">Inicio</a>
                                     </li>
-                                    <li><a href="" class="text-uppercase">Shop</a>
+                                    <li><a href="" class="text-uppercase ">Shop</a>
                                         <ul class="mega-menu-style mega-menu-mrg-1">
                                             <li>
                                                 <ul>
@@ -79,7 +79,7 @@
                                                                                     href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
                                                                                 <ul>
                                                                                     @foreach ($category->subcategories as $subcategory)
-                                                                                        <li><a
+                                                                                        <li><a class="link_ref"
                                                                                                 href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
                                                                                         </li>
                                                                                     @endforeach
@@ -95,11 +95,11 @@
                                                                                 <div class="mb-3"
                                                                                     style="width: 150px; height: 100px;background-image: url('{{ Storage::url($category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
                                                                                 </div>
-                                                                                <a class="dropdown-title"
+                                                                                <a class="dropdown-title link_ref"
                                                                                     href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
                                                                                 <ul>
                                                                                     @foreach ($category->subcategories as $subcategory)
-                                                                                        <li><a
+                                                                                        <li><a class="link_ref"
                                                                                                 href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
                                                                                         </li>
                                                                                     @endforeach
@@ -114,11 +114,11 @@
                                                                                 <div class="mb-3"
                                                                                     style="width: 150px; height: 100px;background-image: url('{{ Storage::url($category->image) }}');background-repeat: no-repeat;background-size: cover;background-position: center;">
                                                                                 </div>
-                                                                                <a class="dropdown-title"
+                                                                                <a class="dropdown-title link_ref"
                                                                                     href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
                                                                                 <ul>
                                                                                     @foreach ($category->subcategories as $subcategory)
-                                                                                        <li><a
+                                                                                        <li><a class="link_ref"
                                                                                                 href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
                                                                                         </li>
                                                                                     @endforeach
@@ -172,9 +172,11 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ route('nosotros') }}" class="text-uppercase">Sobre Nosotros</a>
+                                    <li><a href="{{ route('nosotros') }}" class="text-uppercase link_ref">Sobre
+                                            Nosotros</a>
                                     </li>
-                                    <li><a href="{{ route('contacto') }}" class="text-uppercase">Contacto</a></li>
+                                    <li><a href="{{ route('contacto') }}"
+                                            class="text-uppercase link_ref">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -204,13 +206,14 @@
                                         <div class="currency-dropdown">
                                             <ul>
                                                 @auth
-                                                    <li><a href="{{ route('perfil') }}">Mi perfil</a></li>
+                                                    <li><a class="link_ref" href="{{ route('perfil') }}">Mi
+                                                            perfil</a></li>
                                                     <li>
-                                                        <a href="{{ route('ordenes') }}">
+                                                        <a class="link_ref" href="{{ route('ordenes') }}">
                                                             Ver mis ordenes
                                                         </a>
                                                     </li>
-                                                    <li><a class="hover__orange"
+                                                    <li><a class="hover__orange link_ref"
                                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
                                                             Sesión </a>
                                                         <form id="logout-form" action="{{ route('logout') }}"
@@ -218,8 +221,10 @@
                                                             @csrf </form>
                                                     </li>
                                                 @else
-                                                    <li><a href="{{ route('login') }}">Iniciar sesión </a></li>
-                                                    <li><a href="{{ route('register') }}">Registrarme </a></li>
+                                                    <li><a class="link_ref" href="{{ route('login') }}">Iniciar
+                                                            sesión </a></li>
+                                                    <li><a class="link_ref"
+                                                            href="{{ route('register') }}">Registrarme </a></li>
                                                 @endauth
                                             </ul>
                                         </div>

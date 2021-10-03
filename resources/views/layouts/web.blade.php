@@ -62,6 +62,8 @@
     @livewireStyles
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
 
@@ -166,6 +168,17 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Lines -->
+        <div class="lines">
+            <div class="content">
+                <div class="line-col"></div>
+                <div class="line-col"></div>
+                <div class="line-col"></div>
+                <div class="line-col"></div>
+                <div class="line-col"></div>
+            </div>
+        </div>
         <!-- Product Modal start -->
         <div class="modal fade quickview-modal-style" id="exampleModal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -219,6 +232,7 @@
     <script src="{{ asset('assets/js/profile.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.6') }}"></script>
+
     @include('sweetalert::alert')
     @stack('script')
 

@@ -8,10 +8,12 @@
              <div id="mobile-menu" class="slinky-mobile-menu text-left">
                  <ul>
                      <li>
-                         <a href="{{ route('inicio') }}" class="text-uppercase">Inicio</a>
+                         <a href="{{ route('inicio') }}" class="text-uppercase link_ref">Inicio</a>
                      </li>
-                     <li><a href="{{ route('nosotros') }}" class="text-uppercase">Sobre Nosotros</a></li>
-                     <li><a href="{{ route('contacto') }}" class="text-uppercase">Contacto</a></li>
+                     <li><a href="{{ route('nosotros') }}" class="text-uppercase link_ref">Sobre
+                             Nosotros</a></li>
+                     <li><a href="{{ route('contacto') }}" class="text-uppercase link_ref">Contacto</a>
+                     </li>
 
                      <div class="welcome-text off-canvas-margin-padding mb-3 pb-3">
                          <p class="ft-14 mt-2 text-uppercase">Categorias</p>
@@ -19,10 +21,11 @@
                      @foreach ($categories as $category)
 
                          <li>
-                             <a href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
+                             <a class="link_ref"
+                                 href="{{ route('categoria', $category) }}">{{ $category->name }}</a>
                              <ul>
                                  @foreach ($category->subcategories as $subcategory)
-                                     <li><a
+                                     <li><a class="link_ref"
                                              href="{{ route('categoria', $category) . '?subcategoria=' . $subcategory->slug }}">{{ $subcategory->name }}</a>
                                      </li>
                                  @endforeach
