@@ -248,42 +248,109 @@
     <script src="{{ asset('assets/js/conexion.js') }}"></script>
     <script src="{{ asset('assets/js/notificaciones.js') }}"></script>
 
-    <script>
-        const messaging = firebase.messaging();
 
-        const pedirPermiso = () => {
-            const miStorageGlobal = window.localStorage;
-            messaging.requestPermission()
-                .then(function() {
-                    console.log("Se han haceptado las notificaciones");
+    @auth
+        <script>
+            const messaging = firebase.messaging();
 
-                    return messaging.getToken();
-                }).then(function(token) {
-                    console.log(token);
+            const pedirPermiso = () => {
+                const miStorageGlobal = window.localStorage;
+                // miStorageGlobal.removeItem('tokenAuth');
+                // miStorageGlobal.removeItem('token');                
+                messaging.requestPermission()
+                    .then(function() {
+                        console.log("Se han haceptado las notificaciones");
 
-                    if (!miStorageGlobal.token) {
-                        db.collection("col-notificaciones").add({
-                                token: token,
-                            })
-                            .then((docRef) => {
-                                miStorageGlobal.setItem('token', 'add');
-                            })
-                            .catch((error) => {
-                                console.error("Error adding document: ", error);
-                            });
+                        return messaging.getToken();
+                    }).then(function(token) {
+
+                        if (!miStorageGlobal.tokenAuth) {
+                            db.collection("col-notificaciones").add({
+                                    token: token,
+                                    usuario: `{{ Auth::user()->name }}`,
+                                    id_usuario: {{ Auth::user()->id }},
+                                    auth: true
+                                })
+                                .then((docRef) => {
+                                    miStorageGlobal.setItem('tokenAuth', 'add');
+                                })
+                                .catch((error) => {
+                                    console.error("Error adding document: ", error);
+                                });
+                        }
+
+                    }).catch(function(err) {
+                        console.log(err);
+                    });
+            }
+
+            window.onload = function() {
+                pedirPermiso();
+                let enableForegroundNotification = true;
+                messaging.onMessage(function(payload) {
+                    console.log("mensaje recibido");
+                    if (enableForegroundNotification) {
+                        const {
+                            title,
+                            ...options
+                        } = JSON.parse(payload.data.notification);
+                        navigator.serviceWorker.getRegistrations().then(registration => {
+                            registration[0].showNotification(title, options);
+                        });
                     }
-
-
-                    // guardarToken(token);
-                }).catch(function(err) {
-                    console.log(err);
                 });
-        }
+            }
+        </script>
+    @else
+        <script>
+            const messaging = firebase.messaging();
 
-        window.onload = function() {
-            pedirPermiso();
-        }
-    </script>
+            const pedirPermiso = () => {
+                const miStorageGlobal = window.localStorage;
+                messaging.requestPermission()
+                    .then(function() {
+                        console.log("Se han haceptado las notificaciones");
+
+                        return messaging.getToken();
+                    }).then(function(token) {
+
+                        if (!miStorageGlobal.token) {
+                            db.collection("col-notificaciones").add({
+                                    token: token,
+                                    auth: false
+                                })
+                                .then((docRef) => {
+                                    miStorageGlobal.setItem('token', 'add');
+                                })
+                                .catch((error) => {
+                                    console.error("Error adding document: ", error);
+                                });
+                        }
+                    }).catch(function(err) {
+                        console.log(err);
+                    });
+            }
+
+            window.onload = function() {
+                pedirPermiso();
+                let enableForegroundNotification = true;
+                messaging.onMessage(function(payload) {
+                    console.log("mensaje recibido");
+                    if (enableForegroundNotification) {
+                        const {
+                            title,
+                            ...options
+                        } = JSON.parse(payload.data.notification);
+                        navigator.serviceWorker.getRegistrations().then(registration => {
+                            registration[0].showNotification(title, options);
+                        });
+                    }
+                });
+            }
+        </script>
+    @endauth
+
+
 
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.6') }}"></script>

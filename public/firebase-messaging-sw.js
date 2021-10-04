@@ -55,7 +55,7 @@ messaging.onBackgroundMessage(function (payload) {
     const notificationTitle = 'Background Message Title';
     const notificationOptions = {
         body: 'Background Message body.',
-        icon: 'http://localhost/notificaciones/img/icon.png'
+        icon: 'https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png'
     };
 
     self.registration.showNotification(notificationTitle,

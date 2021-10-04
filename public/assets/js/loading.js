@@ -26,7 +26,7 @@ $('body').on('click', '.link_ref', function () {
     $('.lines').addClass('no-lines');
     setTimeout(function () {
         location.href = "" + link;
-    }, 2500);
+    }, 1000);
 
     setTimeout(function () {
         $('.lines').addClass('finish');

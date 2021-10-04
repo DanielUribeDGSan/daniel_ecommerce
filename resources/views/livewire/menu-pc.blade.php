@@ -213,7 +213,7 @@
                                                             Ver mis ordenes
                                                         </a>
                                                     </li>
-                                                    <li><a class="hover__orange link_ref"
+                                                    <li><a class="hover__orange"
                                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
                                                             Sesión </a>
                                                         <form id="logout-form" action="{{ route('logout') }}"
