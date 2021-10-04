@@ -235,6 +235,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/firebase-messaging-sw.js');
+            });
+        }
+    </script>
 
     <script src="{{ asset('assets/js/conexion.js') }}"></script>
     <script src="{{ asset('assets/js/notificaciones.js') }}"></script>
