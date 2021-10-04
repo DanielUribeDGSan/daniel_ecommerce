@@ -63,7 +63,6 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
     <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
 
@@ -230,6 +229,16 @@
     <script src="{{ asset('assets/js/alertas.js') }}"></script>
     <script src="{{ asset('assets/js/validarInput.js') }}"></script>
     <script src="{{ asset('assets/js/profile.js') }}"></script>
+
+
+    {{-- Firebase --}}
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
+
+    <script src="{{ asset('assets/js/conexion.js') }}"></script>
+    <script src="{{ asset('assets/js/notificaciones.js') }}"></script>
+
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.6') }}"></script>
 
