@@ -235,6 +235,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -245,6 +247,43 @@
 
     <script src="{{ asset('assets/js/conexion.js') }}"></script>
     <script src="{{ asset('assets/js/notificaciones.js') }}"></script>
+
+    <script>
+        const messaging = firebase.messaging();
+
+        const pedirPermiso = () => {
+            const miStorageGlobal = window.localStorage;
+            messaging.requestPermission()
+                .then(function() {
+                    console.log("Se han haceptado las notificaciones");
+
+                    return messaging.getToken();
+                }).then(function(token) {
+                    console.log(token);
+
+                    if (!miStorageGlobal.token) {
+                        db.collection("col-notificaciones").add({
+                                token: token,
+                            })
+                            .then((docRef) => {
+                                miStorageGlobal.setItem('token', 'add');
+                            })
+                            .catch((error) => {
+                                console.error("Error adding document: ", error);
+                            });
+                    }
+
+
+                    // guardarToken(token);
+                }).catch(function(err) {
+                    console.log(err);
+                });
+        }
+
+        window.onload = function() {
+            pedirPermiso();
+        }
+    </script>
 
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.6') }}"></script>
