@@ -234,8 +234,8 @@
     {{-- Firebase --}}
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -246,13 +246,9 @@
     </script>
 
     <script src="{{ asset('assets/js/conexion.js') }}"></script>
-    <script src="{{ asset('assets/js/notificaciones.js') }}"></script>
-
 
     @auth
         <script>
-            const messaging = firebase.messaging();
-
             const pedirPermiso = () => {
                 const miStorageGlobal = window.localStorage;
                 // miStorageGlobal.removeItem('tokenAuth');
@@ -286,25 +282,10 @@
 
             window.onload = function() {
                 pedirPermiso();
-                let enableForegroundNotification = true;
-                messaging.onMessage(function(payload) {
-                    console.log("mensaje recibido");
-                    if (enableForegroundNotification) {
-                        const {
-                            title,
-                            ...options
-                        } = JSON.parse(payload.data.notification);
-                        navigator.serviceWorker.getRegistrations().then(registration => {
-                            registration[0].showNotification(title, options);
-                        });
-                    }
-                });
             }
         </script>
     @else
         <script>
-            const messaging = firebase.messaging();
-
             const pedirPermiso = () => {
                 const miStorageGlobal = window.localStorage;
                 messaging.requestPermission()
@@ -333,23 +314,10 @@
 
             window.onload = function() {
                 pedirPermiso();
-                let enableForegroundNotification = true;
-                messaging.onMessage(function(payload) {
-                    console.log("mensaje recibido");
-                    if (enableForegroundNotification) {
-                        const {
-                            title,
-                            ...options
-                        } = JSON.parse(payload.data.notification);
-                        navigator.serviceWorker.getRegistrations().then(registration => {
-                            registration[0].showNotification(title, options);
-                        });
-                    }
-                });
             }
         </script>
     @endauth
-
+    <script src="{{ asset('assets/js/notificaciones.js?ver=1.0.1') }}"></script>
 
 
 
