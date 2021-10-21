@@ -206,6 +206,10 @@
                                         <div class="currency-dropdown">
                                             <ul>
                                                 @auth
+                                                    @role('admin')
+                                                        <li><a class="link_ref"
+                                                                href="{{ route('admin.inicio') }}">Administrador</a></li>
+                                                    @endrole
                                                     <li><a class="link_ref" href="{{ route('perfil') }}">Mi
                                                             perfil</a></li>
                                                     <li>
